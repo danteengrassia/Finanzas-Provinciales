@@ -1,6 +1,58 @@
 (function () {
   "use strict";
 
+  const GATE_USER = "danteengrassia";
+  const GATE_TOKEN = "06dc05f6bd2ae96a590a2a338fd9ec86982f676897f7adb51dcef41fa266fb9e";
+  const GATE_KEY = "fp_acceso_autorizado";
+  const gateElement = document.getElementById("loginGate");
+
+  async function sha256Hex(value) {
+    const digest = await window.crypto.subtle.digest("SHA-256", new TextEncoder().encode(value));
+    return Array.from(new Uint8Array(digest)).map((byte) => byte.toString(16).padStart(2, "0")).join("");
+  }
+
+  function storedToken() {
+    try {
+      return window.localStorage.getItem(GATE_KEY);
+    } catch (storageError) {
+      return null;
+    }
+  }
+
+  function unlock() {
+    document.body.classList.remove("auth-locked");
+    if (gateElement && gateElement.parentNode) gateElement.parentNode.removeChild(gateElement);
+    bootApp();
+  }
+
+  async function authorize(event) {
+    event.preventDefault();
+    const userField = document.getElementById("gateUser");
+    const passField = document.getElementById("gatePass");
+    const errorMessage = document.getElementById("gateError");
+    let token = null;
+    try {
+      token = await sha256Hex(passField.value);
+    } catch (digestError) {
+      errorMessage.textContent = "El navegador no permite validar el acceso.";
+      errorMessage.hidden = false;
+      return;
+    }
+    if (userField.value.trim().toLowerCase() === GATE_USER && token === GATE_TOKEN) {
+      try {
+        window.localStorage.setItem(GATE_KEY, GATE_TOKEN);
+      } catch (storageError) {
+        window.sessionStorage.setItem(GATE_KEY, GATE_TOKEN);
+      }
+      unlock();
+    } else {
+      errorMessage.hidden = false;
+      passField.value = "";
+      passField.focus();
+    }
+  }
+
+  function bootApp() {
   const DATA = window.PROVINCIAS_DATA;
   if (!DATA || !DATA.provinces) {
     document.body.innerHTML = '<div class="empty-state">No se encontraron datos consolidados.</div>';
@@ -582,4 +634,14 @@
   }
 
   render();
+  }
+
+  if (storedToken() === GATE_TOKEN) {
+    unlock();
+  } else if (gateElement) {
+    document.getElementById("loginForm").addEventListener("submit", (event) => {
+      authorize(event);
+    });
+    document.getElementById("gateUser").focus();
+  }
 })();

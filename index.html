@@ -7,7 +7,23 @@
     <title>Finanzas Provinciales</title>
     <link rel="stylesheet" href="styles.css">
   </head>
-  <body>
+  <body class="auth-locked">
+    <div id="loginGate" class="login-gate">
+      <div class="login-card">
+        <p class="eyebrow">Monitor fiscal</p>
+        <span class="login-brand">Finanzas Provinciales</span>
+        <p class="login-note">Sitio en construcción · Acceso restringido</p>
+        <form id="loginForm" autocomplete="off">
+          <label for="gateUser">Usuario</label>
+          <input id="gateUser" name="username" type="text" required>
+          <label for="gatePass">Contraseña</label>
+          <input id="gatePass" name="password" type="password" required>
+          <button id="gateSubmit" type="submit">Ingresar</button>
+          <p id="gateError" class="gate-error" hidden>Usuario o contraseña incorrectos.</p>
+        </form>
+      </div>
+    </div>
+
     <div class="app-shell">
       <aside class="sidebar">
         <div class="brand-block">
