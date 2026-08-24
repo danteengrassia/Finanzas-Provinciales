@@ -579,7 +579,7 @@
     "province_id": "neuquen",
     "check_id": "debt_categories_2009Q2",
     "status": "pass",
-    "detail": "Diferencia total menos categorías: -0.000 millones de pesos."
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
   },
   {
     "province_id": "neuquen",
@@ -663,7 +663,7 @@
     "province_id": "neuquen",
     "check_id": "debt_categories_2012Q4",
     "status": "pass",
-    "detail": "Diferencia total menos categorías: -0.000 millones de pesos."
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
   },
   {
     "province_id": "neuquen",
@@ -711,7 +711,7 @@
     "province_id": "neuquen",
     "check_id": "debt_categories_2014Q4",
     "status": "pass",
-    "detail": "Diferencia total menos categorías: -0.000 millones de pesos."
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
   },
   {
     "province_id": "neuquen",
@@ -741,7 +741,7 @@
     "province_id": "neuquen",
     "check_id": "debt_categories_2016Q1",
     "status": "pass",
-    "detail": "Diferencia total menos categorías: -0.000 millones de pesos."
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
   },
   {
     "province_id": "neuquen",
@@ -771,7 +771,7 @@
     "province_id": "neuquen",
     "check_id": "debt_categories_2017Q2",
     "status": "pass",
-    "detail": "Diferencia total menos categorías: -0.000 millones de pesos."
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
   },
   {
     "province_id": "neuquen",
@@ -783,7 +783,7 @@
     "province_id": "neuquen",
     "check_id": "debt_categories_2017Q4",
     "status": "pass",
-    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+    "detail": "Diferencia total menos categorías: -0.000 millones de pesos."
   },
   {
     "province_id": "neuquen",
@@ -807,7 +807,7 @@
     "province_id": "neuquen",
     "check_id": "debt_categories_2018Q4",
     "status": "pass",
-    "detail": "Diferencia total menos categorías: 0.010 millones de pesos."
+    "detail": "Diferencia total menos categorías: 0.020 millones de pesos."
   },
   {
     "province_id": "neuquen",
@@ -825,7 +825,7 @@
     "province_id": "neuquen",
     "check_id": "debt_categories_2019Q3",
     "status": "pass",
-    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+    "detail": "Diferencia total menos categorías: 0.010 millones de pesos."
   },
   {
     "province_id": "neuquen",
@@ -837,25 +837,25 @@
     "province_id": "neuquen",
     "check_id": "debt_categories_2020Q1",
     "status": "pass",
-    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+    "detail": "Diferencia total menos categorías: 0.010 millones de pesos."
   },
   {
     "province_id": "neuquen",
     "check_id": "debt_categories_2020Q2",
     "status": "pass",
-    "detail": "Diferencia total menos categorías: 0.010 millones de pesos."
+    "detail": "Diferencia total menos categorías: 0.020 millones de pesos."
   },
   {
     "province_id": "neuquen",
     "check_id": "debt_categories_2020Q3",
     "status": "pass",
-    "detail": "Diferencia total menos categorías: -0.000 millones de pesos."
+    "detail": "Diferencia total menos categorías: -0.010 millones de pesos."
   },
   {
     "province_id": "neuquen",
     "check_id": "debt_categories_2020Q4",
     "status": "pass",
-    "detail": "Diferencia total menos categorías: 0.010 millones de pesos."
+    "detail": "Diferencia total menos categorías: 0.020 millones de pesos."
   },
   {
     "province_id": "neuquen",
@@ -867,19 +867,19 @@
     "province_id": "neuquen",
     "check_id": "debt_categories_2021Q2",
     "status": "pass",
-    "detail": "Diferencia total menos categorías: -0.010 millones de pesos."
+    "detail": "Diferencia total menos categorías: 0.010 millones de pesos."
   },
   {
     "province_id": "neuquen",
     "check_id": "debt_categories_2021Q3",
     "status": "pass",
-    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+    "detail": "Diferencia total menos categorías: 0.010 millones de pesos."
   },
   {
     "province_id": "neuquen",
     "check_id": "debt_categories_2021Q4",
     "status": "pass",
-    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+    "detail": "Diferencia total menos categorías: 0.010 millones de pesos."
   },
   {
     "province_id": "neuquen",
@@ -891,19 +891,19 @@
     "province_id": "neuquen",
     "check_id": "debt_categories_2022Q2",
     "status": "pass",
-    "detail": "Diferencia total menos categorías: -0.010 millones de pesos."
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
   },
   {
     "province_id": "neuquen",
     "check_id": "debt_categories_2022Q3",
     "status": "pass",
-    "detail": "Diferencia total menos categorías: 0.010 millones de pesos."
+    "detail": "Diferencia total menos categorías: -0.010 millones de pesos."
   },
   {
     "province_id": "neuquen",
     "check_id": "debt_categories_2022Q4",
     "status": "pass",
-    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+    "detail": "Diferencia total menos categorías: -0.010 millones de pesos."
   },
   {
     "province_id": "neuquen",
@@ -915,31 +915,31 @@
     "province_id": "neuquen",
     "check_id": "debt_categories_2023Q2",
     "status": "pass",
-    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+    "detail": "Diferencia total menos categorías: -0.010 millones de pesos."
   },
   {
     "province_id": "neuquen",
     "check_id": "debt_categories_2023Q3",
     "status": "pass",
-    "detail": "Diferencia total menos categorías: -0.010 millones de pesos."
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
   },
   {
     "province_id": "neuquen",
     "check_id": "debt_categories_2023Q4",
     "status": "pass",
-    "detail": "Diferencia total menos categorías: -0.020 millones de pesos."
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
   },
   {
     "province_id": "neuquen",
     "check_id": "debt_categories_2024Q1",
     "status": "pass",
-    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+    "detail": "Diferencia total menos categorías: 0.010 millones de pesos."
   },
   {
     "province_id": "neuquen",
     "check_id": "debt_categories_2024Q2",
     "status": "pass",
-    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+    "detail": "Diferencia total menos categorías: 0.020 millones de pesos."
   },
   {
     "province_id": "neuquen",
@@ -951,37 +951,43 @@
     "province_id": "neuquen",
     "check_id": "debt_categories_2024Q4",
     "status": "pass",
-    "detail": "Diferencia total menos categorías: 0.010 millones de pesos."
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
   },
   {
     "province_id": "neuquen",
     "check_id": "debt_categories_2025Q1",
     "status": "pass",
-    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+    "detail": "Diferencia total menos categorías: 0.020 millones de pesos."
   },
   {
     "province_id": "neuquen",
     "check_id": "debt_categories_2025Q2",
     "status": "pass",
-    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+    "detail": "Diferencia total menos categorías: 0.010 millones de pesos."
   },
   {
     "province_id": "neuquen",
     "check_id": "debt_categories_2025Q3",
     "status": "pass",
-    "detail": "Diferencia total menos categorías: 0.010 millones de pesos."
+    "detail": "Diferencia total menos categorías: 0.030 millones de pesos."
   },
   {
     "province_id": "neuquen",
     "check_id": "debt_categories_2025Q4",
     "status": "pass",
-    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+    "detail": "Diferencia total menos categorías: 0.010 millones de pesos."
   },
   {
     "province_id": "neuquen",
     "check_id": "debt_categories_2026Q1",
     "status": "pass",
-    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+    "detail": "Diferencia total menos categorías: 0.010 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2026Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.010 millones de pesos."
   },
   {
     "province_id": "neuquen",
@@ -1237,8 +1243,14 @@
   },
   {
     "province_id": "neuquen",
-    "check_id": "latest_indicator_coverage",
+    "check_id": "floating_debt_components_2026Q2",
     "status": "pass",
-    "detail": "45/45 indicadores disponibles en 2026Q1."
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "latest_indicator_coverage",
+    "status": "warn",
+    "detail": "25/45 indicadores disponibles en 2026Q2."
   }
 ]

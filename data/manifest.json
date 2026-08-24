@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T21:51:22-03:00",
+  "generated_at": "2026-08-23T22:30:20-03:00",
   "schema_version": "1.2.0",
   "sources": [
     {
@@ -33,28 +33,28 @@
       "sha256": "13e1f547a214cfba864799d9d020c3a773de4a7e0b361348f526dec871d35b91"
     },
     {
-      "path": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\20260814_130319\\neuquen_data.sqlite",
-      "size": 94674944,
-      "modified": "2026-07-30T15:03:00",
-      "sha256": "753d1d7e4478095fbb5df3c0d767580bcf51007c34ea9fce079400056ac396da"
+      "path": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\20260823_222944\\neuquen_data.sqlite",
+      "size": 407465984,
+      "modified": "2026-08-23T21:30:44",
+      "sha256": "3ec8d84adbf501aaba39377faf7c497e57cc1db9024fe7111286858328ddf15d"
     },
     {
-      "path": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\20260814_130319\\neuquen_deuda_stock_long_v3.csv",
-      "size": 1646762,
-      "modified": "2026-07-29T18:11:06",
-      "sha256": "e7e9fee512a1ce1e99b21749c6fbefd26b4f61a7723b025d17373c2c0bf1bb55"
+      "path": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\20260823_222944\\neuquen_deuda_stock_long_extraccion_limpia_datos_deuda.csv",
+      "size": 1835773,
+      "modified": "2026-08-18T18:59:51",
+      "sha256": "95f313c33f915f3683590d95a85eb26626f72c626132b4ed47c2df83d5b409a0"
     },
     {
-      "path": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\20260814_130319\\neuquen_deuda_metricas_long_extraccion_limpia_datos_deuda.csv",
-      "size": 142983571,
-      "modified": "2026-07-30T09:51:01",
-      "sha256": "0d9d48b7ace29d218e30b846a017e5d3134c33d2f8b72dde9bb40ddce90c3ddc"
+      "path": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\20260823_222944\\neuquen_deuda_metricas_long_extraccion_limpia_datos_deuda.csv",
+      "size": 146455301,
+      "modified": "2026-08-18T19:00:01",
+      "sha256": "aafde1aea9257b89bda214df7fd30195625545683945997719fb4b0b61dcab22"
     },
     {
-      "path": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\20260814_130319\\deuda_tesoro_flotante.csv",
-      "size": 68450,
-      "modified": "2026-07-30T15:02:51",
-      "sha256": "17e458f76ff9ef0089367fac2741b7683d26b7d2f8e0156474a15a88e1389bd6"
+      "path": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\20260823_222944\\deuda_tesoro_flotante.csv",
+      "size": 70186,
+      "modified": "2026-08-20T20:08:07",
+      "sha256": "9c9773f5dff92b7190fc147b1d795cc2318ef37366de49942a9488e21f69e35d"
     }
   ],
   "province_summary": {
@@ -65,8 +65,8 @@
     },
     "neuquen": {
       "name": "Neuquén",
-      "latest_period": "2026Q1",
-      "period_count": 72
+      "latest_period": "2026Q2",
+      "period_count": 73
     }
   }
 }

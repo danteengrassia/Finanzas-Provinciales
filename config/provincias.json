@@ -1,6 +1,6 @@
 {
   "schema_version": "1.2.0",
-  "frozen_source_version": "Santa Fe 20260814_213940; Neuquén 20260814_130319",
+  "frozen_source_version": "Santa Fe 20260814_213940; Neuquén 20260823_222944",
   "macro_file": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\20260814_130319\\macro_trimestral.csv",
   "monthly_macro_file": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\macro\\a3500_mensual.csv",
   "ipc_file": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\macro\\ipc_nacional_mensual.json",
@@ -56,11 +56,11 @@
     },
     "neuquen": {
       "name": "Neuquén",
-      "fiscal_db": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\20260814_130319\\neuquen_data.sqlite",
-      "debt_db": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\20260814_130319\\neuquen_data.sqlite",
-      "debt_stock_file": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\20260814_130319\\neuquen_deuda_stock_long_v3.csv",
-      "debt_metrics_file": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\20260814_130319\\neuquen_deuda_metricas_long_extraccion_limpia_datos_deuda.csv",
-      "floating_debt_file": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\20260814_130319\\deuda_tesoro_flotante.csv",
+      "fiscal_db": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\20260823_222944\\neuquen_data.sqlite",
+      "debt_db": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\20260823_222944\\neuquen_data.sqlite",
+      "debt_stock_file": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\20260823_222944\\neuquen_deuda_stock_long_extraccion_limpia_datos_deuda.csv",
+      "debt_metrics_file": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\20260823_222944\\neuquen_deuda_metricas_long_extraccion_limpia_datos_deuda.csv",
+      "floating_debt_file": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\20260823_222944\\deuda_tesoro_flotante.csv",
       "financial_keys": {
         "amortization_commercial": [
           "APLICACIONES FINANCIERAS|DEVOLUCION DE TITULOS PUBLICOS LETRAS Y PRESTAMOS CON ENTIDADES FINANCIERAS"
