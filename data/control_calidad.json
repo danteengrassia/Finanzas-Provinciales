@@ -1,0 +1,1244 @@
+[
+  {
+    "province_id": "santa_fe",
+    "check_id": "fiscal_duplicate_conflicts",
+    "status": "pass",
+    "detail": "0 conflictos de duplicación con valores diferentes."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2005Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2005Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2005Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2006Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2006Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2006Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2006Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2007Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2007Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2007Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2007Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2008Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2008Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2008Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2008Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2009Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2009Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2009Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2009Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2010Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2010Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2010Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2010Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2011Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2011Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2011Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2011Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2012Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2012Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2012Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2012Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2013Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2013Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2013Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2013Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2014Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2014Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2014Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2014Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2015Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2015Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: -0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2015Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: -0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2015Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2016Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2016Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2016Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2016Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2017Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2017Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2017Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2017Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2018Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2018Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2018Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2018Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2019Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2019Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2019Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2019Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2020Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2020Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2020Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2020Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2021Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2021Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2021Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2021Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2022Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2022Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2022Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2022Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2023Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2023Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2023Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2023Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2024Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2024Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2024Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2024Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2025Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2025Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2025Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2025Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "debt_categories_2026Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "santa_fe",
+    "check_id": "latest_indicator_coverage",
+    "status": "warn",
+    "detail": "44/45 indicadores disponibles en 2026Q1."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "fiscal_duplicate_conflicts",
+    "status": "pass",
+    "detail": "0 conflictos de duplicación con valores diferentes."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2007Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: -0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2007Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: -0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2007Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2007Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2008Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2008Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2008Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2008Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: -0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2009Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2009Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: -0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2009Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2009Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2010Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2010Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2010Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2010Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: -0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2011Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: -0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2011Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2011Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2011Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2012Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2012Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2012Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2012Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: -0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2013Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2013Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2013Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2013Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: -0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2014Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2014Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2014Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2014Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: -0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2015Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2015Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: -0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2015Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: -0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2015Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2016Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: -0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2016Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2016Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2016Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2017Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2017Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: -0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2017Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2017Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2018Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: -0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2018Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2018Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.010 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2018Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.010 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2019Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.010 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2019Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2019Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2019Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.010 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2020Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2020Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.010 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2020Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: -0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2020Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.010 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2021Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2021Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: -0.010 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2021Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2021Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2022Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2022Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: -0.010 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2022Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.010 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2022Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2023Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2023Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2023Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: -0.010 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2023Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: -0.020 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2024Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2024Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2024Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.010 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2024Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.010 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2025Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2025Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2025Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.010 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2025Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "debt_categories_2026Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "floating_debt_components_2026Q1",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "floating_debt_components_2025Q1",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "floating_debt_components_2025Q2",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "floating_debt_components_2025Q3",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "floating_debt_components_2025Q4",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "floating_debt_components_2024Q1",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "floating_debt_components_2024Q2",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "floating_debt_components_2024Q3",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "floating_debt_components_2024Q4",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "floating_debt_components_2023Q1",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "floating_debt_components_2023Q2",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "floating_debt_components_2023Q3",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "floating_debt_components_2023Q4",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "floating_debt_components_2022Q1",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "floating_debt_components_2022Q2",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "floating_debt_components_2022Q3",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "floating_debt_components_2022Q4",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "floating_debt_components_2021Q1",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "floating_debt_components_2021Q2",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: -0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "floating_debt_components_2021Q3",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "floating_debt_components_2021Q4",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "floating_debt_components_2020Q1",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "floating_debt_components_2020Q2",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "floating_debt_components_2020Q3",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "floating_debt_components_2020Q4",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "floating_debt_components_2019Q1",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: -0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "floating_debt_components_2019Q2",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "floating_debt_components_2019Q3",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "floating_debt_components_2019Q4",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "floating_debt_components_2018Q1",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "floating_debt_components_2018Q2",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "floating_debt_components_2018Q3",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "floating_debt_components_2018Q4",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "floating_debt_components_2017Q1",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "floating_debt_components_2017Q2",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "floating_debt_components_2017Q3",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "floating_debt_components_2017Q4",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "floating_debt_components_2016Q1",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "floating_debt_components_2016Q2",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "floating_debt_components_2016Q3",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "floating_debt_components_2016Q4",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "floating_debt_components_2015Q4",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "neuquen",
+    "check_id": "latest_indicator_coverage",
+    "status": "pass",
+    "detail": "45/45 indicadores disponibles en 2026Q1."
+  }
+]

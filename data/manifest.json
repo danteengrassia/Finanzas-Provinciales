@@ -1,0 +1,72 @@
+{
+  "generated_at": "2026-08-14T21:51:22-03:00",
+  "schema_version": "1.2.0",
+  "sources": [
+    {
+      "path": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\20260814_130319\\macro_trimestral.csv",
+      "size": 5380,
+      "modified": "2026-07-30T15:02:51",
+      "sha256": "3f4dad95935a762765bd691a12b231c3acec236b7ab9c8fe4fa0c967741f6cbe"
+    },
+    {
+      "path": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\macro\\a3500_mensual.csv",
+      "size": 28828,
+      "modified": "2026-06-20T00:22:03",
+      "sha256": "5176ed433258ce53b70afda05f28021770329325a462b3416ce60b91735f05c1"
+    },
+    {
+      "path": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\macro\\ipc_nacional_mensual.json",
+      "size": 8262,
+      "modified": "2026-08-14T20:36:45",
+      "sha256": "abda6786b0669dc6178c989dc927462f11404c698ab4bf9d6fe967e2a845a6a7"
+    },
+    {
+      "path": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\macro\\depositos_provinciales_mensual.json",
+      "size": 133661,
+      "modified": "2026-08-14T20:36:45",
+      "sha256": "d4fc5791ceab10b8f292b3cad251b49c6974506b6244955bfb3161ac7712af41"
+    },
+    {
+      "path": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\santa_fe_20260814_213940\\santa_fe_data.sqlite",
+      "size": 426143744,
+      "modified": "2026-08-14T20:50:35",
+      "sha256": "13e1f547a214cfba864799d9d020c3a773de4a7e0b361348f526dec871d35b91"
+    },
+    {
+      "path": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\20260814_130319\\neuquen_data.sqlite",
+      "size": 94674944,
+      "modified": "2026-07-30T15:03:00",
+      "sha256": "753d1d7e4478095fbb5df3c0d767580bcf51007c34ea9fce079400056ac396da"
+    },
+    {
+      "path": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\20260814_130319\\neuquen_deuda_stock_long_v3.csv",
+      "size": 1646762,
+      "modified": "2026-07-29T18:11:06",
+      "sha256": "e7e9fee512a1ce1e99b21749c6fbefd26b4f61a7723b025d17373c2c0bf1bb55"
+    },
+    {
+      "path": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\20260814_130319\\neuquen_deuda_metricas_long_extraccion_limpia_datos_deuda.csv",
+      "size": 142983571,
+      "modified": "2026-07-30T09:51:01",
+      "sha256": "0d9d48b7ace29d218e30b846a017e5d3134c33d2f8b72dde9bb40ddce90c3ddc"
+    },
+    {
+      "path": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\20260814_130319\\deuda_tesoro_flotante.csv",
+      "size": 68450,
+      "modified": "2026-07-30T15:02:51",
+      "sha256": "17e458f76ff9ef0089367fac2741b7683d26b7d2f8e0156474a15a88e1389bd6"
+    }
+  ],
+  "province_summary": {
+    "santa_fe": {
+      "name": "Santa Fe",
+      "latest_period": "2026Q1",
+      "period_count": 80
+    },
+    "neuquen": {
+      "name": "Neuquén",
+      "latest_period": "2026Q1",
+      "period_count": 72
+    }
+  }
+}

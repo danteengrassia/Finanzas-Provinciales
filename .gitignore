@@ -1,0 +1,7 @@
+scripts/__pycache__/
+*.pyc
+data/.base_consolidada_*.sqlite
+data/base_consolidada.sqlite
+data/fuentes_congeladas/
+data/versiones/
+*.inspect.ndjson

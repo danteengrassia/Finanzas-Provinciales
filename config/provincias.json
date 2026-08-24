@@ -1,0 +1,107 @@
+{
+  "schema_version": "1.2.0",
+  "frozen_source_version": "Santa Fe 20260814_213940; Neuquén 20260814_130319",
+  "macro_file": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\20260814_130319\\macro_trimestral.csv",
+  "monthly_macro_file": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\macro\\a3500_mensual.csv",
+  "ipc_file": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\macro\\ipc_nacional_mensual.json",
+  "deposits_file": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\macro\\depositos_provinciales_mensual.json",
+  "provinces": {
+    "santa_fe": {
+      "name": "Santa Fe",
+      "fiscal_db": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\santa_fe_20260814_213940\\santa_fe_data.sqlite",
+      "debt_db": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\santa_fe_20260814_213940\\santa_fe_data.sqlite",
+      "floating_debt_file": null,
+      "financial_keys": {
+        "amortization_commercial": [
+          "sf_apnof_dev_r232_amortizacion_de_titulos_publicaicos",
+          "sf_apnof_dev_r234_devolucion_de_otros_prestamos"
+        ],
+        "amortization_multilateral": [
+          "sf_apnof_dev_r233_devolucion_de_prestamos_de_organismos_internac"
+        ],
+        "borrowing_commercial": [
+          "sf_apnof_dev_r219_colocacion_titulos_publicaicos",
+          "sf_apnof_dev_r221_obtencion_de_otros_prestamos"
+        ],
+        "borrowing_multilateral": [
+          "sf_apnof_dev_r220_obtencion_de_prestamos_de_organismos_internac"
+        ],
+        "financial_investment_application": [
+          "sf_apnof_dev_r226_inversion_financiera"
+        ],
+        "financial_investment_decrease": [
+          "sf_apnof_dev_r214_disminucion_de_la_inversion_financiera"
+        ]
+      },
+      "fiscal_keys": {
+        "ingresos_corrientes": "sf_apnof_dev_r101_ingresos_corrientes",
+        "ingresos_origen_nacional": "sf_apnof_dev_r110_de_origen_nacional",
+        "contribuciones_seguridad_social": "sf_apnof_dev_r137_contribuciones_a_la_seguridad_social",
+        "transferencias_corrientes_ingresos": "sf_apnof_dev_r144_transferencias_corrientes",
+        "gastos_corrientes": "sf_apnof_dev_r145_gastos_corrientes",
+        "resultado_economico": "sf_apnof_dev_r175_resultado_economico",
+        "inversion_real_directa": "sf_apnof_dev_r181_inversion_real_directa",
+        "transferencias_capital_gasto": "sf_apnof_dev_r188_transferencias_de_capital",
+        "coparticipacion_municipios": "sf_apnof_dev_r164_coparticipacion_a_municipios",
+        "ingresos_totales": "sf_apnof_dev_r197_ingresos_totales",
+        "gastos_totales": "sf_apnof_dev_r198_gastos_totales",
+        "gastos_primarios": "sf_apnof_dev_r199_gastos_primarios",
+        "resultado_financiero_previo_figurativas": "sf_apnof_dev_r200_resultado_financieroprevio_a_figurativas",
+        "contribuciones_figurativas": "sf_apnof_dev_r201_contribuciones_figurativas",
+        "resultado_primario": "sf_apnof_dev_r211_resultado_primario",
+        "resultado_financiero": "sf_apnof_dev_r212_resultado_financiero",
+        "endeudamiento_publico_pasivos": "sf_apnof_dev_r218_endeudamiento_publico_e_incremento_pasivos",
+        "amortizacion_deuda_pasivos": "sf_apnof_dev_r231_amortizacion_deudas_y_disminucion_pasivos"
+      }
+    },
+    "neuquen": {
+      "name": "Neuquén",
+      "fiscal_db": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\20260814_130319\\neuquen_data.sqlite",
+      "debt_db": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\20260814_130319\\neuquen_data.sqlite",
+      "debt_stock_file": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\20260814_130319\\neuquen_deuda_stock_long_v3.csv",
+      "debt_metrics_file": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\20260814_130319\\neuquen_deuda_metricas_long_extraccion_limpia_datos_deuda.csv",
+      "floating_debt_file": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\20260814_130319\\deuda_tesoro_flotante.csv",
+      "financial_keys": {
+        "amortization_commercial": [
+          "APLICACIONES FINANCIERAS|DEVOLUCION DE TITULOS PUBLICOS LETRAS Y PRESTAMOS CON ENTIDADES FINANCIERAS"
+        ],
+        "amortization_multilateral": [
+          "APLICACIONES FINANCIERAS|DEVOLUCION DE PRESTAMOS DE ORGANISMOS INTERNACIONALES"
+        ],
+        "borrowing_commercial": [
+          "FUENTES FINANCIERAS|COLOCACION DE TITULOS PUBLICOS LETRAS Y PRESTAMOS CON ENTIDADES FINANCIERAS"
+        ],
+        "borrowing_multilateral": [
+          "FUENTES FINANCIERAS|OBTENCION DE PRESTAMOS DE ORGANISMOS INTERNACIONALES"
+        ],
+        "financial_investment_application": [
+          "APLICACIONES FINANCIERAS|INVERSION FINANCIERA"
+        ],
+        "financial_investment_decrease": [
+          "FUENTES FINANCIERAS|DISMINUCION DE LA INVERSION FINANCIERA"
+        ]
+      },
+      "fiscal_keys": {
+        "ingresos_corrientes": "INGRESOS CORRIENTES|I INGRESOS CORRIENTES",
+        "ingresos_origen_nacional": "INGRESOS CORRIENTES|DE ORIGEN NACIONAL",
+        "contribuciones_seguridad_social": "INGRESOS CORRIENTES|CONTRIBUCIONES A LA SEGURIDAD SOCIAL",
+        "transferencias_corrientes_ingresos": "INGRESOS CORRIENTES|TRANSFERENCIAS CORRIENTES",
+        "gastos_corrientes": "GASTOS CORRIENTES|II GASTOS CORRIENTES",
+        "resultado_economico": "RESULTADO ECONOMICO|III RESULTADO ECONOMICO",
+        "inversion_real_directa": "GASTOS DE CAPITAL|INVERSION REAL DIRECTA",
+        "transferencias_capital_gasto": "GASTOS DE CAPITAL|TRANSFERENCIAS DE CAPITAL",
+        "coparticipacion_municipios": "GASTOS CORRIENTES|COPARTICIPACION Y OTRAS TRANSFERENCIAS AUTOMATICAS A MUNICIPIOS",
+        "coparticipacion_municipios_fallback": "GASTOS CORRIENTES|MUNICIPIOS",
+        "ingresos_totales": "INGRESOS TOTALES|VI INGRESOS TOTALES",
+        "gastos_totales": "GASTOS TOTALES|VII GASTOS TOTALES",
+        "gastos_primarios": "GASTOS PRIMARIOS|VIII GASTOS PRIMARIOS",
+        "resultado_financiero_previo_figurativas": "RESULTADO FINANCIERO PREVIO A FIGURATIVAS|IX RESULTADO FINANCIERO PREVIO A FIGURATIVAS",
+        "contribuciones_figurativas": "CONTRIBUCIONES FIGURATIVAS|X CONTRIBUCIONES FIGURATIVAS",
+        "resultado_primario": "RESULTADO PRIMARIO|XII RESULTADO PRIMARIO",
+        "resultado_financiero": "RESULTADO FINANCIERO|XIII RESULTADO FINANCIERO",
+        "endeudamiento_publico_pasivos": "FUENTES FINANCIERAS|ENDEUDAMIENTO PUBLICO E INCREMENTO DE OTROS PASIVOS",
+        "amortizacion_deuda_pasivos": "APLICACIONES FINANCIERAS|AMORTIZACION DE LA DEUDA Y DISMINUCION OTROS PASIVOS"
+      }
+    }
+  }
+}

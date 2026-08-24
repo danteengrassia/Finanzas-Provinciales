@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Indicadores fiscales y de deuda de Santa Fe y Neuquén.">
+    <title>Finanzas Provinciales</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand-block">
+          <p class="eyebrow">Monitor fiscal</p>
+          <span class="brand-name">Finanzas Provinciales</span>
+        </div>
+
+        <div class="sidebar-group">
+          <span class="sidebar-label">Provincias</span>
+          <nav id="provinceTabs" class="province-tabs" aria-label="Provincias"></nav>
+        </div>
+
+        <div class="sidebar-group view-group">
+          <span class="sidebar-label">Vistas</span>
+          <nav aria-label="Vistas del análisis">
+            <button class="view-tab" type="button" aria-current="page">Resumen Crediticio</button>
+          </nav>
+        </div>
+      </aside>
+
+      <div class="main-shell">
+        <header class="app-header">
+          <div class="selected-province">
+            <p class="eyebrow" id="provinceEyebrow">Provincia</p>
+            <h1 id="provinceTitle">Santa Fe</h1>
+          </div>
+          <div class="period-control">
+            <label for="periodSelect">Cierre</label>
+            <select id="periodSelect" aria-label="Seleccionar trimestre"></select>
+          </div>
+        </header>
+
+        <main>
+          <section class="summary-band">
+            <div class="section-inner">
+              <div class="section-heading summary-heading">
+                <div>
+                  <p class="eyebrow">Resumen Crediticio</p>
+                  <h2>Indicadores clave</h2>
+                </div>
+                <div class="as-of-block">
+                  <span id="periodLabel">1T 2026</span>
+                  <small id="frequencyNote">Base devengado · flujos últimos 12 meses</small>
+                </div>
+              </div>
+              <div id="kpiGrid" class="kpi-grid" aria-live="polite"></div>
+            </div>
+          </section>
+
+          <section class="content-band">
+            <div class="section-inner">
+              <div class="section-heading">
+                <div>
+                  <p class="eyebrow">Resultado y cobertura</p>
+                  <h2>Performance Fiscal</h2>
+                </div>
+                <span class="unit-label">% de ingresos</span>
+              </div>
+              <div class="chart-grid chart-grid-wide">
+                <article class="chart-panel chart-panel-untitled">
+                  <div class="chart-frame"><canvas id="balanceChart" aria-label="Evolución de los balances operativo, primario y financiero"></canvas></div>
+                </article>
+                <article class="chart-panel">
+                  <div class="panel-heading">
+                    <h3>Servicio de deuda / ingresos operativos netos de coparticipación a municipios</h3>
+                    <span class="threshold-key">Límite 15% Ley de Disciplina Financiera</span>
+                  </div>
+                  <div class="chart-frame"><canvas id="serviceChart" aria-label="Amortizaciones, intereses y servicio de deuda sobre ingresos operativos netos"></canvas></div>
+                </article>
+              </div>
+            </div>
+          </section>
+
+          <section class="content-band alternate-band">
+            <div class="section-inner">
+              <div class="section-heading">
+                <div>
+                  <p class="eyebrow">Solvencia y liquidez</p>
+                  <h2>Deuda y Liquidez</h2>
+                </div>
+                <span class="unit-label">% de ingresos totales</span>
+              </div>
+              <article class="chart-panel wide-panel">
+                <h3>Deuda bruta y neta de depósitos BCRA</h3>
+                <div class="chart-frame"><canvas id="debtEvolutionChart" aria-label="Evolución de la deuda bruta y neta sobre ingresos totales"></canvas></div>
+              </article>
+            </div>
+          </section>
+
+          <section class="content-band">
+            <div class="section-inner">
+              <div class="section-heading">
+                <div>
+                  <p class="eyebrow">Calidad del gasto</p>
+                  <h2>Inversión en Infraestructura</h2>
+                </div>
+              </div>
+              <div class="chart-grid chart-grid-wide">
+                <article class="chart-panel">
+                  <h3>CAPEX / gasto primario y CAPEX en USD</h3>
+                  <div class="chart-frame"><canvas id="capexChart" aria-label="CAPEX sobre gasto primario y CAPEX en dólares"></canvas></div>
+                </article>
+                <article class="chart-panel">
+                  <h3>CAPEX en términos reales</h3>
+                  <div class="chart-frame"><canvas id="realCapexChart" aria-label="CAPEX real y participación sobre gasto primario"></canvas></div>
+                </article>
+              </div>
+            </div>
+          </section>
+
+          <section class="content-band alternate-band">
+            <div class="section-inner">
+              <div class="section-heading">
+                <div>
+                  <p class="eyebrow">Stock al cierre</p>
+                  <h2>Composición de la deuda</h2>
+                </div>
+                <span class="unit-label">Millones de pesos</span>
+              </div>
+              <div class="debt-layout">
+                <article class="chart-panel">
+                  <h3>Por categoría</h3>
+                  <div class="chart-frame"><canvas id="categoryChart" aria-label="Deuda por categoría"></canvas></div>
+                </article>
+                <article class="chart-panel">
+                  <h3>Por moneda</h3>
+                  <div class="chart-frame chart-frame-compact"><canvas id="currencyChart" aria-label="Deuda por moneda"></canvas></div>
+                  <div class="table-scroll compact-table">
+                    <table>
+                      <thead><tr><th>Moneda</th><th>Stock</th><th>% total</th></tr></thead>
+                      <tbody id="currencyRows"></tbody>
+                    </table>
+                  </div>
+                </article>
+                <article class="table-panel debt-category-panel">
+                  <h3>Resumen por categoría</h3>
+                  <div class="table-scroll">
+                    <table>
+                      <thead><tr><th>Categoría</th><th>Stock</th><th>% total</th></tr></thead>
+                      <tbody id="debtCategoryRows"></tbody>
+                    </table>
+                  </div>
+                </article>
+              </div>
+              <article class="table-panel floating-panel">
+                <h3>Deuda flotante y comercial</h3>
+                <div id="commercialDebtContent" class="table-scroll"></div>
+              </article>
+            </div>
+          </section>
+
+          <section class="content-band">
+            <div class="section-inner">
+              <div class="section-heading">
+                <div>
+                  <p class="eyebrow">Flujos últimos 12 meses</p>
+                  <h2>Fuentes y Aplicaciones Financieras</h2>
+                </div>
+                <span class="unit-label">USD millones</span>
+              </div>
+              <article class="table-panel financial-panel">
+                <div class="table-scroll">
+                  <table class="financial-table">
+                    <thead><tr><th>Concepto</th><th>USD millones</th></tr></thead>
+                    <tbody id="financialFlowRows"></tbody>
+                  </table>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section class="content-band alternate-band">
+            <div class="section-inner">
+              <div class="section-heading">
+                <div>
+                  <p class="eyebrow">Detalle</p>
+                  <h2>Todos los indicadores</h2>
+                </div>
+              </div>
+              <div class="table-panel full-table-panel">
+                <div class="table-scroll">
+                  <table class="metrics-table">
+                    <thead><tr><th>Indicador</th><th>Valor</th><th>Variación interanual</th></tr></thead>
+                    <tbody id="metricRows"></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+
+        <footer>
+          <div class="section-inner footer-inner">
+            <span id="updatedAt">Actualizado</span>
+            <span>Flujos reales a IPC nacional más reciente · A3500 para conversión a USD</span>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <div id="chartError" class="chart-error" hidden>No se pudo cargar el motor de gráficos.</div>
+    <script src="vendor/chart.umd.min.js"></script>
+    <script src="data/dashboard_data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
