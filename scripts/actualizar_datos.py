@@ -1059,6 +1059,23 @@ def load_debt(province_id: str, spec: dict[str, object], checks: list[dict[str, 
         usd_stock_ars = currency_values.get("USD")
         foreign_stock_ars = sum(value for currency, value in currency_values.items() if currency in {"USD", "EUR", "KWD"} or (not currency.startswith("ARS") and currency not in {"Sin desagregar", "Sin identificar"}))
 
+        ars_buckets = {"ARS", "ARS + CER", "ARS + ICC"}
+        split_by_currency: dict[str, dict[str, float]] = defaultdict(lambda: {"usd": 0.0, "ars": 0.0, "otras": 0.0})
+        for row in rows:
+            if not row.get("is_detail"):
+                continue
+            value = as_float(row.get("stock_pesos"))
+            if value is None:
+                continue
+            canonical = canonical_currency(row.get("currency_raw"))
+            bucket = "usd" if canonical == "USD" else ("ars" if canonical in ars_buckets else "otras")
+            split_by_currency[canonical_category(str(row.get("category_raw") or ""))][bucket] += value
+        categories_by_currency = [
+            {"category": category, **buckets}
+            for category, buckets in sorted(split_by_currency.items(), key=lambda item: sum(item[1].values()), reverse=True)
+            if abs(sum(buckets.values())) > 1e-9
+        ]
+
         intl_bond_rows = debt_special_rows(province_id, rows, "international_bonds")
         ooii_rows = debt_special_rows(province_id, rows, "ooii")
         cumulative[period] = {
@@ -1078,6 +1095,7 @@ def load_debt(province_id: str, spec: dict[str, object], checks: list[dict[str, 
             "usd_stock_ars": usd_stock_ars,
             "foreign_stock_ars": foreign_stock_ars,
             "categories": categories,
+            "categories_by_currency": categories_by_currency,
             "currencies": currencies,
             "floating_total": floating.get(period, {}).get("total"),
             "commercial_details": floating.get(period, {}).get("details", []),

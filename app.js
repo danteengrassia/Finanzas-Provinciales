@@ -465,17 +465,26 @@
     ["categoryChart", "currencyChart"].forEach(destroyChart);
     if (typeof Chart === "undefined" || !snapshot) return;
 
-    const categories = snapshot.categories.filter((item) => item.value > 0);
+    const split = snapshot.categories_by_currency?.length
+      ? snapshot.categories_by_currency
+      : snapshot.categories.map((item) => ({ category: item.category, usd: null, ars: null, otras: item.value }));
+    const buckets = [
+      { key: "usd", label: "Pagadero en USD", color: palette.blue },
+      { key: "ars", label: "Pagadero en ARS", color: palette.teal },
+      { key: "otras", label: "Otras monedas", color: palette.gray },
+    ];
     charts.categoryChart = new Chart(document.getElementById("categoryChart"), {
       type: "bar",
       data: {
-        labels: categories.map((item) => item.category),
-        datasets: [{
-          data: categories.map((item) => item.value),
-          backgroundColor: [palette.teal, palette.gold, palette.blue, palette.charcoal, palette.red, palette.gray],
+        labels: split.map((item) => item.category),
+        datasets: buckets.map((bucket) => ({
+          label: bucket.label,
+          data: split.map((item) => item[bucket.key] || null),
+          backgroundColor: bucket.color,
           borderWidth: 0,
           borderRadius: 2,
-        }],
+          stack: "stock",
+        })),
       },
       options: {
         responsive: true,
@@ -483,12 +492,15 @@
         indexAxis: "y",
         animation: false,
         plugins: {
-          legend: { display: false },
-          tooltip: { callbacks: { label: (context) => `$ ${integerFormatter.format(context.raw)} M` } },
+          legend: { position: "bottom", labels: { boxWidth: 12, boxHeight: 2, padding: 14 } },
+          tooltip: {
+            filter: (context) => context.raw !== null && Math.abs(context.raw) > 1e-9,
+            callbacks: { label: (context) => `${context.dataset.label}: $ ${integerFormatter.format(context.raw)} M` },
+          },
         },
         scales: {
-          x: { grid: { color: "#e0e0e0" }, ticks: { callback: (value) => compactFormatter.format(value) } },
-          y: { grid: { display: false } },
+          x: { stacked: true, grid: { color: "#e0e0e0" }, ticks: { callback: (value) => compactFormatter.format(value) } },
+          y: { stacked: true, grid: { display: false } },
         },
       },
     });
@@ -518,19 +530,43 @@
     });
   }
 
+  function latestSnapshot(province) {
+    const periods = Object.keys(province.debt.snapshots);
+    if (!periods.length) return null;
+    const last = periods.reduce((a, b) => (periodIndex(b) > periodIndex(a) ? b : a));
+    return province.debt.snapshots[last];
+  }
+
+  function renderDebtSummary() {
+    const periodLabel = document.getElementById("debtSummaryPeriod");
+    const container = document.getElementById("debtSummaryRows");
+    if (!periodLabel || !container) return;
+    const snapshot = latestSnapshot(DATA.provinces[state.provinceId]);
+    if (!snapshot) {
+      periodLabel.textContent = "";
+      container.innerHTML = '<tr><td colspan="2" class="data-missing">Sin datos disponibles.</td></tr>';
+      return;
+    }
+    periodLabel.textContent = formatPeriod(snapshot.period);
+    const rows = [
+      ["Deuda bruta total", snapshot.total_stock],
+      ["Depósitos en pesos", snapshot.deposits_domestic],
+      ["Depósitos en USD", snapshot.deposits_foreign],
+      ["Deuda neta de depósitos BCRA", snapshot.net_debt],
+    ];
+    container.innerHTML = rows.map(([label, value]) => {
+      const signClass = value === null || value === undefined ? "" : value >= 0 ? "value-positive" : "value-negative";
+      return `<tr><td>${escapeHtml(label)}</td><td class="numeric ${signClass}">${formatValue(value, "ars_millions", false)}</td></tr>`;
+    }).join("");
+  }
+
   function renderDebtTables(province) {
     const snapshot = snapshotForPeriod(province);
-    const categoryBody = document.getElementById("debtCategoryRows");
     const currencyBody = document.getElementById("currencyRows");
     if (!snapshot) {
-      categoryBody.innerHTML = '<tr><td colspan="3" class="data-missing">Sin datos para este cierre.</td></tr>';
       currencyBody.innerHTML = '<tr><td colspan="3" class="data-missing">Sin datos para este cierre.</td></tr>';
     } else {
       const total = snapshot.total_stock;
-      categoryBody.innerHTML = snapshot.categories
-        .filter((item) => item.value > 0)
-        .map((item) => `<tr><td>${escapeHtml(item.category)}</td><td class="numeric">${formatValue(item.value, "ars_millions", false)}</td><td class="numeric">${total ? decimalFormatter.format((item.value / total) * 100) : "s/d"}%</td></tr>`)
-        .join("");
       currencyBody.innerHTML = snapshot.currencies
         .filter((item) => item.value > 0)
         .map((item) => `<tr><td>${escapeHtml(item.currency)}</td><td class="numeric">${formatValue(item.value, "ars_millions", false)}</td><td class="numeric">${total ? decimalFormatter.format((item.value / total) * 100) : "s/d"}%</td></tr>`)
@@ -558,21 +594,6 @@
       financialRow("fuentes_endeudamiento_otros_usd_m", "financial-detail"),
       financialRow("fuentes_variacion_inversion_financiera_usd_m", "financial-cash"),
     ].join("");
-
-    const commercialContainer = document.getElementById("commercialDebtContent");
-    if (!snapshot || !snapshot.commercial_details.length) {
-      commercialContainer.innerHTML = '<div class="empty-state">No hay una serie separada de deuda flotante y comercial para este cierre.</div>';
-      return;
-    }
-    const total = snapshot.floating_total;
-    commercialContainer.innerHTML = `
-      <table>
-        <thead><tr><th>Concepto</th><th>Stock</th><th>% total</th></tr></thead>
-        <tbody>
-          ${snapshot.commercial_details.map((item) => `<tr><td>${escapeHtml(item.item)}</td><td class="numeric">${formatValue(item.value, "ars_millions", false)}</td><td class="numeric">${total ? decimalFormatter.format((item.value / total) * 100) : "s/d"}%</td></tr>`).join("")}
-          <tr><td><strong>Total deuda flotante</strong></td><td class="numeric"><strong>${formatValue(total, "ars_millions", false)}</strong></td><td class="numeric"><strong>100,0%</strong></td></tr>
-        </tbody>
-      </table>`;
   }
 
   function renderMetricTable(province) {
@@ -617,6 +638,7 @@
     renderTrendCharts(province);
     renderCompositionCharts(province);
     renderDebtTables(province);
+    renderDebtSummary();
     renderMetricTable(province);
   }
 

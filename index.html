@@ -1,29 +1,29 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="es">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#232d4f">
-    <meta name="description" content="Indicadores fiscales y de deuda de Santa Fe y Neuquén.">
+    <meta name="description" content="Indicadores fiscales y de deuda de Santa Fe y NeuquÃ©n.">
     <title>Finanzas Provinciales</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@400;600;700&display=swap">
-    <link rel="stylesheet" href="styles.css?v=3">
+    <link rel="stylesheet" href="styles.css?v=4">
   </head>
   <body class="auth-locked">
     <div id="loginGate" class="login-gate">
       <div class="login-card">
         <p class="eyebrow">Monitor fiscal</p>
         <span class="login-brand">Finanzas Provinciales</span>
-        <p class="login-note">Sitio en construcción · Acceso restringido</p>
+        <p class="login-note">Sitio en construcciÃ³n Â· Acceso restringido</p>
         <form id="loginForm" autocomplete="off">
           <label for="gateUser">Usuario</label>
           <input id="gateUser" name="username" type="text" required>
-          <label for="gatePass">Contraseña</label>
+          <label for="gatePass">ContraseÃ±a</label>
           <input id="gatePass" name="password" type="password" required>
           <button id="gateSubmit" type="submit">Ingresar</button>
-          <p id="gateError" class="gate-error" hidden>Usuario o contraseña incorrectos.</p>
+          <p id="gateError" class="gate-error" hidden>Usuario o contraseÃ±a incorrectos.</p>
         </form>
       </div>
     </div>
@@ -42,7 +42,7 @@
 
         <div class="sidebar-group view-group">
           <span class="sidebar-label">Vistas</span>
-          <nav aria-label="Vistas del análisis">
+          <nav aria-label="Vistas del anÃ¡lisis">
             <button class="view-tab" type="button" aria-current="page">Resumen Crediticio</button>
           </nav>
         </div>
@@ -70,7 +70,7 @@
                 </div>
                 <div class="as-of-block">
                   <span id="periodLabel">1T 2026</span>
-                  <small id="frequencyNote">Base devengado · flujos últimos 12 meses</small>
+                  <small id="frequencyNote">Base devengado Â· flujos Ãºltimos 12 meses</small>
                 </div>
               </div>
               <div id="kpiGrid" class="kpi-grid" aria-live="polite"></div>
@@ -88,12 +88,12 @@
               </div>
               <div class="chart-grid chart-grid-wide">
                 <article class="chart-panel chart-panel-untitled">
-                  <div class="chart-frame"><canvas id="balanceChart" aria-label="Evolución de los balances operativo, primario y financiero"></canvas></div>
+                  <div class="chart-frame"><canvas id="balanceChart" aria-label="EvoluciÃ³n de los balances operativo, primario y financiero"></canvas></div>
                 </article>
                 <article class="chart-panel">
                   <div class="panel-heading">
-                    <h3>Servicio de deuda / ingresos operativos netos de coparticipación a municipios</h3>
-                    <span class="threshold-key">Límite 15% Ley de Disciplina Financiera</span>
+                    <h3>Servicio de deuda / ingresos operativos netos de coparticipaciÃ³n a municipios</h3>
+                    <span class="threshold-key">LÃ­mite 15% Ley de Disciplina Financiera</span>
                   </div>
                   <div class="chart-frame"><canvas id="serviceChart" aria-label="Amortizaciones, intereses y servicio de deuda sobre ingresos operativos netos"></canvas></div>
                 </article>
@@ -106,13 +106,40 @@
               <div class="section-heading">
                 <div>
                   <p class="eyebrow">Solvencia y liquidez</p>
-                  <h2>Deuda y Liquidez</h2>
+                  <h2>ComposiciÃ³n de la deuda y Liquidez</h2>
                 </div>
-                <span class="unit-label">% de ingresos totales</span>
+                <span class="unit-label">% de ingresos Â· Millones de pesos</span>
               </div>
-              <article class="chart-panel wide-panel">
-                <h3>Deuda bruta y neta de depósitos BCRA</h3>
-                <div class="chart-frame"><canvas id="debtEvolutionChart" aria-label="Evolución de la deuda bruta y neta sobre ingresos totales"></canvas></div>
+              <div class="chart-grid chart-grid-wide">
+                <article class="chart-panel">
+                  <h3>Deuda bruta y neta de depÃ³sitos BCRA</h3>
+                  <div class="chart-frame"><canvas id="debtEvolutionChart" aria-label="EvoluciÃ³n de la deuda bruta y neta sobre ingresos totales"></canvas></div>
+                </article>
+                <div class="chart-stack">
+                  <article class="chart-panel">
+                    <h3>Por categorÃ­a y moneda de pago</h3>
+                    <div class="chart-frame chart-frame-short"><canvas id="categoryChart" aria-label="Deuda por categorÃ­a diferenciada por moneda de pago"></canvas></div>
+                  </article>
+                  <article class="chart-panel">
+                    <h3>Por moneda</h3>
+                    <div class="chart-frame chart-frame-compact"><canvas id="currencyChart" aria-label="Deuda por moneda"></canvas></div>
+                    <div class="table-scroll compact-table">
+                      <table>
+                        <thead><tr><th>Moneda</th><th>Stock</th><th>% total</th></tr></thead>
+                        <tbody id="currencyRows"></tbody>
+                      </table>
+                    </div>
+                  </article>
+                </div>
+              </div>
+              <article class="table-panel floating-panel">
+                <h3>Totales al Ãºltimo cierre disponible Â· <span id="debtSummaryPeriod"></span></h3>
+                <div class="table-scroll">
+                  <table class="financial-table">
+                    <thead><tr><th>Concepto</th><th>Millones de pesos</th></tr></thead>
+                    <tbody id="debtSummaryRows"></tbody>
+                  </table>
+                </div>
               </article>
             </div>
           </section>
@@ -122,60 +149,19 @@
               <div class="section-heading">
                 <div>
                   <p class="eyebrow">Calidad del gasto</p>
-                  <h2>Inversión en Infraestructura</h2>
+                  <h2>InversiÃ³n en Infraestructura</h2>
                 </div>
               </div>
               <div class="chart-grid chart-grid-wide">
                 <article class="chart-panel">
                   <h3>CAPEX / gasto primario y CAPEX en USD</h3>
-                  <div class="chart-frame"><canvas id="capexChart" aria-label="CAPEX sobre gasto primario y CAPEX en dólares"></canvas></div>
+                  <div class="chart-frame"><canvas id="capexChart" aria-label="CAPEX sobre gasto primario y CAPEX en dÃ³lares"></canvas></div>
                 </article>
                 <article class="chart-panel">
-                  <h3>CAPEX en términos reales</h3>
-                  <div class="chart-frame"><canvas id="realCapexChart" aria-label="CAPEX real y participación sobre gasto primario"></canvas></div>
+                  <h3>CAPEX en tÃ©rminos reales</h3>
+                  <div class="chart-frame"><canvas id="realCapexChart" aria-label="CAPEX real y participaciÃ³n sobre gasto primario"></canvas></div>
                 </article>
               </div>
-            </div>
-          </section>
-
-          <section class="content-band alternate-band">
-            <div class="section-inner">
-              <div class="section-heading">
-                <div>
-                  <p class="eyebrow">Stock al cierre</p>
-                  <h2>Composición de la deuda</h2>
-                </div>
-                <span class="unit-label">Millones de pesos</span>
-              </div>
-              <div class="debt-layout">
-                <article class="chart-panel">
-                  <h3>Por categoría</h3>
-                  <div class="chart-frame"><canvas id="categoryChart" aria-label="Deuda por categoría"></canvas></div>
-                </article>
-                <article class="chart-panel">
-                  <h3>Por moneda</h3>
-                  <div class="chart-frame chart-frame-compact"><canvas id="currencyChart" aria-label="Deuda por moneda"></canvas></div>
-                  <div class="table-scroll compact-table">
-                    <table>
-                      <thead><tr><th>Moneda</th><th>Stock</th><th>% total</th></tr></thead>
-                      <tbody id="currencyRows"></tbody>
-                    </table>
-                  </div>
-                </article>
-                <article class="table-panel debt-category-panel">
-                  <h3>Resumen por categoría</h3>
-                  <div class="table-scroll">
-                    <table>
-                      <thead><tr><th>Categoría</th><th>Stock</th><th>% total</th></tr></thead>
-                      <tbody id="debtCategoryRows"></tbody>
-                    </table>
-                  </div>
-                </article>
-              </div>
-              <article class="table-panel floating-panel">
-                <h3>Deuda flotante y comercial</h3>
-                <div id="commercialDebtContent" class="table-scroll"></div>
-              </article>
             </div>
           </section>
 
@@ -183,7 +169,7 @@
             <div class="section-inner">
               <div class="section-heading">
                 <div>
-                  <p class="eyebrow">Flujos últimos 12 meses</p>
+                  <p class="eyebrow">Flujos Ãºltimos 12 meses</p>
                   <h2>Fuentes y Aplicaciones Financieras</h2>
                 </div>
                 <span class="unit-label">USD millones</span>
@@ -210,7 +196,7 @@
               <div class="table-panel full-table-panel">
                 <div class="table-scroll">
                   <table class="metrics-table">
-                    <thead><tr><th>Indicador</th><th>Valor</th><th>Variación interanual</th></tr></thead>
+                    <thead><tr><th>Indicador</th><th>Valor</th><th>VariaciÃ³n interanual</th></tr></thead>
                     <tbody id="metricRows"></tbody>
                   </table>
                 </div>
@@ -222,15 +208,15 @@
         <footer>
           <div class="section-inner footer-inner">
             <span id="updatedAt">Actualizado</span>
-            <span>Flujos reales a IPC nacional más reciente · A3500 para conversión a USD</span>
+            <span>Flujos reales a IPC nacional mÃ¡s reciente Â· A3500 para conversiÃ³n a USD</span>
           </div>
         </footer>
       </div>
     </div>
 
-    <div id="chartError" class="chart-error" hidden>No se pudo cargar el motor de gráficos.</div>
+    <div id="chartError" class="chart-error" hidden>No se pudo cargar el motor de grÃ¡ficos.</div>
     <script src="vendor/chart.umd.min.js"></script>
     <script src="data/dashboard_data.js"></script>
-    <script src="app.js?v=3"></script>
+    <script src="app.js?v=4"></script>
   </body>
 </html>
