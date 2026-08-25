@@ -68,14 +68,14 @@
   };
   const charts = {};
   const palette = {
-    teal: "#167c77",
-    tealDark: "#0d5d59",
-    blue: "#3f708e",
-    gold: "#bd8b2e",
-    red: "#b64c3f",
-    charcoal: "#2e3a38",
-    gray: "#87928e",
-    pale: "#d9e2de",
+    teal: "#3b8681",
+    tealDark: "#2c615d",
+    blue: "#35618f",
+    gold: "#cf9d43",
+    red: "#c0392b",
+    charcoal: "#232d4f",
+    gray: "#9aa0ad",
+    pale: "#d9dbe9",
   };
 
   const integerFormatter = new Intl.NumberFormat("es-AR", { maximumFractionDigits: 0 });
@@ -282,7 +282,7 @@
           ticks: { maxRotation: 0, autoSkip: true, maxTicksLimit: 8 },
         },
         y: {
-          grid: { color: "#e5eae7" },
+          grid: { color: "#e0e0e0" },
           ticks: { callback: (value) => unit === "percent" ? `${value}%` : compactFormatter.format(value) },
         },
         ...(extraScales || {}),
@@ -401,7 +401,7 @@
         },
         scales: {
           x: { stacked: true, grid: { display: false }, ticks: { maxRotation: 0, autoSkip: true, maxTicksLimit: 8 } },
-          y: { stacked: true, grid: { color: "#e5eae7" }, ticks: { callback: (value) => `${value}%` } },
+          y: { stacked: true, grid: { color: "#e0e0e0" }, ticks: { callback: (value) => `${value}%` } },
         },
       },
     });
@@ -444,7 +444,7 @@
       quarterlyMaximum: 32,
       scales: {
         y: {
-          grid: { color: "#e5eae7" },
+          grid: { color: "#e0e0e0" },
           ticks: { callback: (value) => `$ ${compactFormatter.format(value)} M` },
         },
         y1: {
@@ -487,7 +487,7 @@
           tooltip: { callbacks: { label: (context) => `$ ${integerFormatter.format(context.raw)} M` } },
         },
         scales: {
-          x: { grid: { color: "#e5eae7" }, ticks: { callback: (value) => compactFormatter.format(value) } },
+          x: { grid: { color: "#e0e0e0" }, ticks: { callback: (value) => compactFormatter.format(value) } },
           y: { grid: { display: false } },
         },
       },
@@ -626,9 +626,9 @@
   });
 
   if (typeof Chart !== "undefined") {
-    Chart.defaults.font.family = "Arial, sans-serif";
-    Chart.defaults.color = "#66716e";
-    Chart.defaults.borderColor = "#d5dcd8";
+    Chart.defaults.font.family = "'Encode Sans', Arial, sans-serif";
+    Chart.defaults.color = "#666666";
+    Chart.defaults.borderColor = "#e0e0e0";
   } else {
     document.getElementById("chartError").hidden = false;
   }
