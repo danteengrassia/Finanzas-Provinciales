@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@400;600;700&display=swap">
-    <link rel="stylesheet" href="styles.css?v=5">
+    <link rel="stylesheet" href="styles.css?v=6">
   </head>
   <body class="auth-locked">
     <div id="loginGate" class="login-gate">
@@ -113,7 +113,7 @@
               <div class="chart-grid chart-grid-wide">
                 <article class="chart-panel">
                   <h3>Deuda bruta y neta de depósitos BCRA · <span id="evoSummaryPeriod"></span></h3>
-                  <div class="chart-frame chart-frame-medium"><canvas id="debtEvolutionChart" aria-label="Evolución de la deuda bruta y neta sobre ingresos totales"></canvas></div>
+                  <div class="chart-frame"><canvas id="debtEvolutionChart" aria-label="Evolución de la deuda bruta y neta sobre ingresos totales"></canvas></div>
                   <div class="table-scroll compact-table">
                     <table>
                       <thead><tr><th>Concepto</th><th>Millones de pesos</th><th>Millones de dólares</th></tr></thead>
@@ -129,24 +129,9 @@
                   <article class="chart-panel">
                     <h3>Por moneda</h3>
                     <div class="chart-frame chart-frame-compact"><canvas id="currencyChart" aria-label="Deuda por moneda"></canvas></div>
-                    <div class="table-scroll compact-table">
-                      <table>
-                        <thead><tr><th>Moneda</th><th>Stock</th><th>% total</th></tr></thead>
-                        <tbody id="currencyRows"></tbody>
-                      </table>
-                    </div>
                   </article>
                 </div>
               </div>
-              <article class="table-panel floating-panel">
-                <h3>Totales al último cierre disponible · <span id="debtSummaryPeriod"></span></h3>
-                <div class="table-scroll">
-                  <table class="financial-table">
-                    <thead><tr><th>Concepto</th><th>Millones de pesos</th><th>Millones de dólares</th></tr></thead>
-                    <tbody id="debtSummaryRows"></tbody>
-                  </table>
-                </div>
-              </article>
             </div>
           </section>
 
@@ -223,6 +208,6 @@
     <div id="chartError" class="chart-error" hidden>No se pudo cargar el motor de gráficos.</div>
     <script src="vendor/chart.umd.min.js"></script>
     <script src="data/dashboard_data.js"></script>
-    <script src="app.js?v=5"></script>
+    <script src="app.js?v=6"></script>
   </body>
 </html>

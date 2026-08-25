@@ -76,6 +76,7 @@
     charcoal: "#232d4f",
     gray: "#9aa0ad",
     pale: "#d9dbe9",
+    lavender: "#9284be",
   };
 
   const integerFormatter = new Intl.NumberFormat("es-AR", { maximumFractionDigits: 0 });
@@ -470,7 +471,7 @@
       : snapshot.categories.map((item) => ({ category: item.category, usd: null, ars: null, otras: item.value }));
     const buckets = [
       { key: "usd", label: "Pagadero en USD", color: palette.blue },
-      { key: "ars", label: "Pagadero en ARS", color: palette.teal },
+      { key: "ars", label: "Pagadero en ARS", color: palette.lavender },
       { key: "otras", label: "Otras monedas", color: palette.gray },
     ];
     charts.categoryChart = new Chart(document.getElementById("categoryChart"), {
@@ -506,13 +507,21 @@
     });
 
     const currencies = snapshot.currencies.filter((item) => item.value > 0);
+    const extraCurrencyColors = [palette.gold, palette.charcoal, palette.gray, palette.pale];
+    let extraColorIndex = 0;
+    const currencyColor = (label) => {
+      const normalized = label.toUpperCase();
+      if (normalized.includes("USD")) return palette.blue;
+      if (normalized.includes("ARS") || normalized.includes("PESO")) return palette.lavender;
+      return extraCurrencyColors[extraColorIndex++ % extraCurrencyColors.length];
+    };
     charts.currencyChart = new Chart(document.getElementById("currencyChart"), {
       type: "doughnut",
       data: {
         labels: currencies.map((item) => item.currency),
         datasets: [{
           data: currencies.map((item) => item.value),
-          backgroundColor: [palette.teal, palette.gold, palette.blue, palette.red, palette.charcoal, palette.gray, palette.pale],
+          backgroundColor: currencies.map((item) => currencyColor(item.currency)),
           borderColor: "#ffffff",
           borderWidth: 2,
         }],
@@ -524,7 +533,11 @@
         animation: false,
         plugins: {
           legend: { position: "bottom", labels: { boxWidth: 10, padding: 14 } },
-          tooltip: { callbacks: { label: (context) => `${context.label}: $ ${integerFormatter.format(context.raw)} M` } },
+          tooltip: {
+            callbacks: {
+              label: (context) => `${context.label}: $ ${integerFormatter.format(context.raw)} M (${decimalFormatter.format((context.raw / snapshot.total_stock) * 100)}%)`,
+            },
+          },
         },
       },
     });
@@ -566,39 +579,7 @@
     ].join("");
   }
 
-  function renderDebtSummary() {
-    const periodLabel = document.getElementById("debtSummaryPeriod");
-    const container = document.getElementById("debtSummaryRows");
-    if (!periodLabel || !container) return;
-    const snapshot = latestSnapshot(DATA.provinces[state.provinceId]);
-    if (!snapshot) {
-      periodLabel.textContent = "";
-      container.innerHTML = '<tr><td colspan="3" class="data-missing">Sin datos disponibles.</td></tr>';
-      return;
-    }
-    periodLabel.textContent = formatPeriod(snapshot.period);
-    const fx = debtStockFx(snapshot);
-    container.innerHTML = [
-      debtSummaryRowHtml("Deuda bruta total", snapshot.total_stock, fx),
-      debtSummaryRowHtml("Depósitos en pesos", snapshot.deposits_domestic, fx),
-      debtSummaryRowHtml("Depósitos en USD", snapshot.deposits_foreign, fx),
-      debtSummaryRowHtml("Deuda neta de depósitos BCRA", snapshot.net_debt, fx),
-    ].join("");
-  }
-
   function renderDebtTables(province) {
-    const snapshot = snapshotForPeriod(province);
-    const currencyBody = document.getElementById("currencyRows");
-    if (!snapshot) {
-      currencyBody.innerHTML = '<tr><td colspan="3" class="data-missing">Sin datos para este cierre.</td></tr>';
-    } else {
-      const total = snapshot.total_stock;
-      currencyBody.innerHTML = snapshot.currencies
-        .filter((item) => item.value > 0)
-        .map((item) => `<tr><td>${escapeHtml(item.currency)}</td><td class="numeric">${formatValue(item.value, "ars_millions", false)}</td><td class="numeric">${total ? decimalFormatter.format((item.value / total) * 100) : "s/d"}%</td></tr>`)
-        .join("");
-    }
-
     const financialValue = (metricId) => metricValue(province, metricId, state.period);
     const financialRow = (metricId, className, labelOverride) => {
       const definition = definitionMap[metricId];
@@ -665,7 +646,6 @@
     renderCompositionCharts(province);
     renderDebtTables(province);
     renderEvolutionSummary(province);
-    renderDebtSummary();
     renderMetricTable(province);
   }
 
