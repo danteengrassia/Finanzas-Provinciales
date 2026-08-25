@@ -169,19 +169,10 @@
       button.addEventListener("click", () => {
         state.provinceId = button.dataset.province;
         const province = DATA.provinces[state.provinceId];
-        state.period = province.periods.includes(state.period) ? state.period : province.latest_period;
+        state.period = province.latest_period;
         render();
       });
     });
-  }
-
-  function renderPeriodSelect() {
-    const province = DATA.provinces[state.provinceId];
-    const select = document.getElementById("periodSelect");
-    select.innerHTML = [...province.periods]
-      .reverse()
-      .map((period) => `<option value="${period}"${period === state.period ? " selected" : ""}>${formatPeriod(period)}</option>`)
-      .join("");
   }
 
   function renderHeader(province) {
@@ -204,6 +195,13 @@
       "deuda_neta_pct_ingresos",
       "servicio_deuda_pct_ingresos_operativos",
     ];
+    const labelOverrides = {
+      balance_operativo_pct: "Balance operativo (% ing. totales)",
+      balance_primario_pct: "Balance primario (% ing. totales)",
+      balance_financiero_pct: "Balance financiero (% ing. totales)",
+      deuda_pct_ingresos: "Deuda (% ing. totales)",
+      deuda_neta_pct_ingresos: "Deuda neta (% ing. totales)",
+    };
     document.getElementById("kpiGrid").innerHTML = kpis.map((metricId) => {
       const definition = definitionMap[metricId];
       const value = metricValue(province, metricId, state.period);
@@ -211,7 +209,7 @@
       let className = isBalance ? (value !== null && value < 0 ? "balance-negative" : "balance-positive") : "debt-kpi";
       return `
         <article class="kpi-card ${className}" title="${escapeHtml(definition.description)}">
-          <span class="kpi-label">${escapeHtml(definition.label)}</span>
+          <span class="kpi-label">${escapeHtml(labelOverrides[metricId] || definition.label)}</span>
           <strong class="kpi-value">${formatValue(value, definition.unit, false)}</strong>
           <span class="kpi-change">${escapeHtml(changeText(province, metricId, state.period))}</span>
         </article>`;
@@ -639,7 +637,6 @@
   function render() {
     const province = DATA.provinces[state.provinceId];
     renderTabs();
-    renderPeriodSelect();
     renderHeader(province);
     renderKpis(province);
     renderTrendCharts(province);
@@ -647,12 +644,8 @@
     renderDebtTables(province);
     renderEvolutionSummary(province);
     renderMetricTable(province);
+    requestAnimationFrame(() => Object.values(charts).forEach((chart) => chart?.resize?.()));
   }
-
-  document.getElementById("periodSelect").addEventListener("change", (event) => {
-    state.period = event.target.value;
-    render();
-  });
 
   if (typeof Chart !== "undefined") {
     Chart.defaults.font.family = "'Encode Sans', Arial, sans-serif";

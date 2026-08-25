@@ -161,19 +161,6 @@ input {
   color: #aab3cf;
 }
 
-.period-control {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.period-control label {
-  color: #aab3cf;
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
 select {
   min-width: 132px;
   height: 40px;
@@ -755,14 +742,6 @@ footer {
     align-items: flex-start;
     flex-direction: column;
     gap: 10px;
-  }
-
-  .period-control {
-    width: 100%;
-  }
-
-  .period-control select {
-    flex: 1;
   }
 
   .as-of-block {
