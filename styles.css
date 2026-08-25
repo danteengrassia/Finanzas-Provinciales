@@ -327,13 +327,8 @@ select {
   height: 240px;
 }
 
-.chart-grid-wide > .chart-panel:first-child {
-  display: flex;
-  flex-direction: column;
-}
-
-.chart-grid-wide > .chart-panel:first-child .chart-frame {
-  flex: 1;
+.chart-frame-medium {
+  height: 240px;
 }
 
 .debt-layout {

@@ -537,6 +537,35 @@
     return province.debt.snapshots[last];
   }
 
+  function debtStockFx(snapshot) {
+    return snapshot && snapshot.stock_fx ? snapshot.stock_fx : null;
+  }
+
+  function debtSummaryRowHtml(label, value, fx) {
+    const usd = value !== null && value !== undefined && fx ? value / fx : null;
+    const signClass = value === null || value === undefined ? "" : value >= 0 ? "value-positive" : "value-negative";
+    return `<tr><td>${escapeHtml(label)}</td><td class="numeric ${signClass}">${formatValue(value, "ars_millions", false)}</td><td class="numeric ${signClass}">${formatValue(usd, "usd_millions", false)}</td></tr>`;
+  }
+
+  function renderEvolutionSummary(province) {
+    const periodLabel = document.getElementById("evoSummaryPeriod");
+    const container = document.getElementById("evoSummaryRows");
+    if (!periodLabel || !container) return;
+    const snapshot = snapshotForPeriod(province) || latestSnapshot(province);
+    if (!snapshot) {
+      periodLabel.textContent = "";
+      container.innerHTML = '<tr><td colspan="3" class="data-missing">Sin datos disponibles.</td></tr>';
+      return;
+    }
+    periodLabel.textContent = formatPeriod(snapshot.period);
+    const fx = debtStockFx(snapshot);
+    container.innerHTML = [
+      debtSummaryRowHtml("Deuda bruta total", snapshot.total_stock, fx),
+      debtSummaryRowHtml("Depósitos totales", snapshot.deposits_total, fx),
+      debtSummaryRowHtml("Deuda neta de depósitos BCRA", snapshot.net_debt, fx),
+    ].join("");
+  }
+
   function renderDebtSummary() {
     const periodLabel = document.getElementById("debtSummaryPeriod");
     const container = document.getElementById("debtSummaryRows");
@@ -544,20 +573,17 @@
     const snapshot = latestSnapshot(DATA.provinces[state.provinceId]);
     if (!snapshot) {
       periodLabel.textContent = "";
-      container.innerHTML = '<tr><td colspan="2" class="data-missing">Sin datos disponibles.</td></tr>';
+      container.innerHTML = '<tr><td colspan="3" class="data-missing">Sin datos disponibles.</td></tr>';
       return;
     }
     periodLabel.textContent = formatPeriod(snapshot.period);
-    const rows = [
-      ["Deuda bruta total", snapshot.total_stock],
-      ["Depósitos en pesos", snapshot.deposits_domestic],
-      ["Depósitos en USD", snapshot.deposits_foreign],
-      ["Deuda neta de depósitos BCRA", snapshot.net_debt],
-    ];
-    container.innerHTML = rows.map(([label, value]) => {
-      const signClass = value === null || value === undefined ? "" : value >= 0 ? "value-positive" : "value-negative";
-      return `<tr><td>${escapeHtml(label)}</td><td class="numeric ${signClass}">${formatValue(value, "ars_millions", false)}</td></tr>`;
-    }).join("");
+    const fx = debtStockFx(snapshot);
+    container.innerHTML = [
+      debtSummaryRowHtml("Deuda bruta total", snapshot.total_stock, fx),
+      debtSummaryRowHtml("Depósitos en pesos", snapshot.deposits_domestic, fx),
+      debtSummaryRowHtml("Depósitos en USD", snapshot.deposits_foreign, fx),
+      debtSummaryRowHtml("Deuda neta de depósitos BCRA", snapshot.net_debt, fx),
+    ].join("");
   }
 
   function renderDebtTables(province) {
@@ -638,6 +664,7 @@
     renderTrendCharts(province);
     renderCompositionCharts(province);
     renderDebtTables(province);
+    renderEvolutionSummary(province);
     renderDebtSummary();
     renderMetricTable(province);
   }
