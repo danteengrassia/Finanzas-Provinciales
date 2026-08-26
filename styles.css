@@ -851,12 +851,13 @@ footer {
 }
 
 .comparator-btn {
-  padding: 8px 20px;
+  margin-left: auto;
+  padding: 7px 18px;
   border: 2px solid var(--amarillo);
   border-radius: 8px;
   background: transparent;
   color: var(--azul);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -871,9 +872,14 @@ footer {
 }
 
 .comparator-btn[aria-current="page"] {
-  background: var(--azul);
-  color: var(--amarillo);
-  border-color: var(--azul);
+  background: var(--amarillo);
+  color: var(--azul);
+  border-color: var(--amarillo);
+  box-shadow: 0 2px 8px rgba(231, 186, 97, 0.4);
+}
+
+.province-tabs.tabs-disabled {
+  opacity: 0.35;
 }
 
 #comparatorProvinces {

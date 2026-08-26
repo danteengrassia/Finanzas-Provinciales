@@ -873,6 +873,8 @@
     document.getElementById("comparatorView").hidden = view !== "comparator";
     const toggle = document.getElementById("comparatorToggle");
     toggle.setAttribute("aria-current", view === "comparator" ? "page" : "false");
+    const provinceTabs = document.getElementById("provinceTabs");
+    if (provinceTabs) provinceTabs.classList.toggle("tabs-disabled", view === "comparator");
     if (view === "comparator") {
       renderComparator();
     } else {
@@ -902,10 +904,6 @@
   } else {
     document.getElementById("chartError").hidden = false;
   }
-
-  document.querySelectorAll(".view-tab").forEach((tab) => {
-    tab.addEventListener("click", () => switchView(tab.dataset.view));
-  });
 
   document.getElementById("comparatorToggle").addEventListener("click", () => {
     switchView(state.view === "comparator" ? "summary" : "comparator");
