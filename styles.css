@@ -849,3 +849,47 @@ footer {
   height: 16px;
   accent-color: #35618f;
 }
+
+.comparator-btn {
+  padding: 8px 20px;
+  border: 2px solid var(--amarillo);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--azul);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s;
+}
+
+.comparator-btn:hover {
+  background: var(--amarillo);
+  color: var(--azul);
+}
+
+.comparator-btn[aria-current="page"] {
+  background: var(--azul);
+  color: var(--amarillo);
+  border-color: var(--azul);
+}
+
+#comparatorProvinces {
+  min-height: 62px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 4px;
+  font-size: 14px;
+}
+
+#comparatorProvinces option {
+  padding: 4px 8px;
+  border-radius: 3px;
+}
+
+#comparatorProvinces option:checked {
+  background: #35618f;
+  color: #ffffff;
+}

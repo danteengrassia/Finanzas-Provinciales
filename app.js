@@ -82,6 +82,7 @@
 
   const integerFormatter = new Intl.NumberFormat("es-AR", { maximumFractionDigits: 0 });
   const decimalFormatter = new Intl.NumberFormat("es-AR", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+  const percentFormatter = new Intl.NumberFormat("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
   const compactFormatter = new Intl.NumberFormat("es-AR", { notation: "compact", maximumFractionDigits: 1 });
 
   function periodIndex(period) {
@@ -719,10 +720,10 @@
       indicatorSelect.value = comparatorState.indicatorId;
     }
 
-    const provContainer = document.getElementById("comparatorProvinces");
-    provContainer.innerHTML = provinceIds.map((id) => {
-      const checked = comparatorState.selectedProvinces.includes(id) ? " checked" : "";
-      return `<label class="checkbox-label"><input type="checkbox" value="${id}"${checked}> ${escapeHtml(DATA.provinces[id].name)}</label>`;
+    const provSelect = document.getElementById("comparatorProvinces");
+    provSelect.innerHTML = provinceIds.map((id) => {
+      const sel = comparatorState.selectedProvinces.includes(id) ? " selected" : "";
+      return `<option value="${id}"${sel}>${escapeHtml(DATA.provinces[id].name)}</option>`;
     }).join("");
 
     const freqSelect = document.getElementById("comparatorFreq");
@@ -739,7 +740,8 @@
     document.getElementById("comparatorStart").innerHTML = optsHtml;
     document.getElementById("comparatorEnd").innerHTML = optsHtml;
     if (periods.length) {
-      if (!periods.includes(comparatorState.startPeriod)) comparatorState.startPeriod = periods[0];
+      const defaultStart = (comparatorState.frequency !== "mensual" && periods.includes("2017Q4")) ? "2017Q4" : periods[0];
+      if (!periods.includes(comparatorState.startPeriod)) comparatorState.startPeriod = defaultStart;
       if (!periods.includes(comparatorState.endPeriod)) comparatorState.endPeriod = periods[periods.length - 1];
       document.getElementById("comparatorStart").value = comparatorState.startPeriod;
       document.getElementById("comparatorEnd").value = comparatorState.endPeriod;
@@ -782,12 +784,13 @@
     const definition = definitionMap[comparatorState.indicatorId];
     if (!definition || !periods.length) return;
 
+    const isPercent = definition.unit === "percent";
     const colors = [palette.blue, palette.lavender, palette.gold, palette.red, palette.charcoal];
     const datasets = comparatorState.selectedProvinces
       .filter((id) => series[id])
       .map((id, idx) => ({
         label: DATA.provinces[id].name,
-        data: series[id],
+        data: series[id].map((v) => (isPercent && v !== null) ? v * 100 : v),
         borderColor: colors[idx % colors.length],
         backgroundColor: colors[idx % colors.length] + "20",
         borderWidth: 2,
@@ -811,7 +814,7 @@
           legend: { position: "bottom", labels: { boxWidth: 12, padding: 14 } },
           tooltip: {
             callbacks: {
-              label: (ctx) => `${ctx.dataset.label}: ${chartValue(ctx.raw, definition.unit)}`,
+              label: (ctx) => `${ctx.dataset.label}: ${isPercent ? percentFormatter.format(ctx.raw) + "%" : chartValue(ctx.raw, definition.unit)}`,
             },
           },
         },
@@ -821,7 +824,7 @@
             grid: { color: "#e0e0e0" },
             ticks: {
               callback: (value) => {
-                if (definition.unit === "percent") return `${value}%`;
+                if (isPercent) return `${percentFormatter.format(value)}%`;
                 if (definition.unit?.includes("usd")) return `USD ${compactFormatter.format(value)} M`;
                 return `$ ${compactFormatter.format(value)} M`;
               },
@@ -836,6 +839,7 @@
     const { periods, series } = getComparisonData();
     const definition = definitionMap[comparatorState.indicatorId];
     const selected = comparatorState.selectedProvinces.filter((id) => series[id]);
+    const isPercent = definition && definition.unit === "percent";
 
     const thead = document.getElementById("comparisonHead");
     thead.innerHTML = `<tr><th>Periodo</th>${selected.map((id) => `<th>${escapeHtml(DATA.provinces[id].name)}</th>`).join("")}</tr>`;
@@ -848,8 +852,10 @@
     tbody.innerHTML = periods.map((period) => {
       const idx = periods.indexOf(period);
       const cells = selected.map((id) => {
-        const value = series[id][idx];
-        return `<td class="numeric">${formatValue(value, definition.unit, false)}</td>`;
+        const raw = series[id][idx];
+        const value = (isPercent && raw !== null) ? raw * 100 : raw;
+        const display = value === null || value === undefined ? "s/d" : (isPercent ? `${percentFormatter.format(value)}%` : formatValue(raw, definition.unit, false));
+        return `<td class="numeric">${escapeHtml(display)}</td>`;
       }).join("");
       return `<tr><td>${formatPeriod(period)}</td>${cells}</tr>`;
     }).join("");
@@ -865,9 +871,8 @@
     state.view = view;
     document.getElementById("summaryView").hidden = view !== "summary";
     document.getElementById("comparatorView").hidden = view !== "comparator";
-    document.querySelectorAll(".view-tab").forEach((tab) => {
-      tab.setAttribute("aria-current", tab.dataset.view === view ? "page" : "false");
-    });
+    const toggle = document.getElementById("comparatorToggle");
+    toggle.setAttribute("aria-current", view === "comparator" ? "page" : "false");
     if (view === "comparator") {
       renderComparator();
     } else {
@@ -902,6 +907,10 @@
     tab.addEventListener("click", () => switchView(tab.dataset.view));
   });
 
+  document.getElementById("comparatorToggle").addEventListener("click", () => {
+    switchView(state.view === "comparator" ? "summary" : "comparator");
+  });
+
   document.getElementById("comparatorUnit").addEventListener("change", (e) => {
     comparatorState.unit = e.target.value;
     comparatorState.indicatorId = "";
@@ -919,7 +928,8 @@
   document.getElementById("comparatorFreq").addEventListener("change", (e) => {
     comparatorState.frequency = e.target.value;
     const periods = getComparatorPeriods();
-    comparatorState.startPeriod = periods[0] || "";
+    const defaultStart = (comparatorState.frequency !== "mensual" && periods.includes("2017Q4")) ? "2017Q4" : (periods[0] || "");
+    comparatorState.startPeriod = defaultStart;
     comparatorState.endPeriod = periods[periods.length - 1] || "";
     populateComparatorControls();
     renderComparisonChart();
@@ -939,8 +949,8 @@
   });
 
   document.getElementById("comparatorProvinces").addEventListener("change", () => {
-    const checked = [...document.querySelectorAll("#comparatorProvinces input:checked")].map((el) => el.value);
-    if (checked.length > 0) comparatorState.selectedProvinces = checked;
+    const selected = [...document.getElementById("comparatorProvinces").selectedOptions].map((opt) => opt.value);
+    if (selected.length > 0) comparatorState.selectedProvinces = selected;
     const freqSelect = document.getElementById("comparatorFreq");
     const mensualOpt = freqSelect.querySelector('option[value="mensual"]');
     mensualOpt.disabled = !isMensualAvailable();
@@ -949,7 +959,8 @@
       freqSelect.value = "trimestral";
     }
     const periods = getComparatorPeriods();
-    comparatorState.startPeriod = periods[0] || "";
+    const defaultStart = (comparatorState.frequency !== "mensual" && periods.includes("2017Q4")) ? "2017Q4" : (periods[0] || "");
+    comparatorState.startPeriod = defaultStart;
     comparatorState.endPeriod = periods[periods.length - 1] || "";
     populateComparatorControls();
     renderComparisonChart();
