@@ -89,7 +89,31 @@ input {
 }
 
 .view-group {
-  display: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.view-tab {
+  padding: 6px 14px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--azul);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.view-tab:hover {
+  background: var(--surface);
+}
+
+.view-tab[aria-current="page"] {
+  background: var(--azul);
+  color: #ffffff;
+  border-color: var(--azul);
 }
 
 .sidebar-label {
