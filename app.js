@@ -967,7 +967,6 @@
   });
 
   render();
-  }
 
   // === PROVINCE MAP ===
 
@@ -1008,7 +1007,9 @@
     if (eyebrow) eyebrow.textContent = "Monitor fiscal";
   }
 
-  function initMap() {
+  function ensureMapCreated() {
+    if (window.__fpMapStarted) return;
+    window.__fpMapStarted = true;
     const mapElement = document.getElementById("provinceMap");
     if (!mapElement) return;
     if (typeof L === "undefined") {
@@ -1060,15 +1061,16 @@
     if (bounds.isValid()) map.fitBounds(bounds.pad(0.08));
   }
 
-  initMap();
+  ensureMapCreated();
   showMap();
+}
 
-  if (storedToken() === GATE_TOKEN) {
-    unlock();
-  } else if (gateElement) {
-    document.getElementById("loginForm").addEventListener("submit", (event) => {
-      authorize(event);
-    });
-    document.getElementById("gateUser").focus();
-  }
+if (storedToken() === GATE_TOKEN) {
+  unlock();
+} else if (gateElement) {
+  document.getElementById("loginForm").addEventListener("submit", (event) => {
+    authorize(event);
+  });
+  document.getElementById("gateUser").focus();
+}
 })();
