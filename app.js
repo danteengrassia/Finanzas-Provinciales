@@ -1033,9 +1033,9 @@
         const nombre = feature.properties?.nombre || feature.properties?.name || "";
         const id = provinceNameToId[nombre];
         if (id && provinceHasData(id)) {
-          return { color: "#ffffff", weight: 1, fillColor: "#75AADB", fillOpacity: 0.65 };
+          return { color: "#ffffff", weight: 0.5, fillColor: "#75AADB", fillOpacity: 0.7 };
         }
-        return { color: "#ffffff", weight: 1, fillColor: "#d9dbe9", fillOpacity: 0.6 };
+        return { color: "#ffffff", weight: 0.5, fillColor: "#d9dbe9", fillOpacity: 0.7 };
       },
       onEachFeature: (feature, layer) => {
         const nombre = feature.properties?.nombre || feature.properties?.name || "";
@@ -1127,7 +1127,7 @@
           const scaled = src.map((pt) => {
             const lon = offsetTarget[1] + (pt[0] - cabaCenter[1]) * scale;
             const lat = offsetTarget[0] + (pt[1] - cabaCenter[0]) * scale;
-            return [lon, lat];
+            return [lat, lon];
           });
           enlarged.push([scaled]);
         });
@@ -1152,6 +1152,7 @@
       const insetEl = document.getElementById("polarInset");
       const polarEl = document.getElementById("polarMap");
       if (insetEl && polarEl) {
+        insetEl.style.display = "block";
         const polarMap = L.map(polarEl, {
           zoomControl: false,
           scrollWheelZoom: false,
@@ -1167,7 +1168,7 @@
           ? L.geoJSON({ type: "FeatureCollection", features: polar }).getBounds()
           : null;
         if (pb && pb.isValid()) polarMap.fitBounds(pb.pad(0.05));
-        insetEl.style.display = "block";
+        requestAnimationFrame(() => polarMap.invalidateSize());
       }
     }
   }
