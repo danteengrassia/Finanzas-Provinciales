@@ -887,6 +887,11 @@ footer {
   padding: 40px 0;
 }
 
+#summaryView.map-active > .summary-band,
+#summaryView.map-active > .content-band {
+  display: none;
+}
+
 .map-section .eyebrow,
 .map-section h2 {
   color: #ffffff;
@@ -897,19 +902,28 @@ footer {
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
-  background: #e8eef7;
+  background: var(--azul);
+}
+
+.province-map .leaflet-container {
+  background: var(--azul);
 }
 
 .province-map:not(.leaflet-container) {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #6b7280;
+  color: #aab3cf;
   font-size: 14px;
 }
 
 .leaflet-container {
   font-family: "Encode Sans", Arial, sans-serif;
+}
+
+.leaflet-control-zoom a {
+  color: var(--azul);
+  border-color: var(--line);
 }
 
 #comparatorProvinces {

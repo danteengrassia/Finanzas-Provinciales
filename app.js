@@ -992,6 +992,15 @@
   function hideMap() {
     const section = document.getElementById("mapSection");
     if (section) section.style.display = "none";
+    const summary = document.getElementById("summaryView");
+    if (summary) summary.classList.remove("map-active");
+  }
+
+  function showMap() {
+    const section = document.getElementById("mapSection");
+    if (section) section.style.display = "";
+    const summary = document.getElementById("summaryView");
+    if (summary) summary.classList.add("map-active");
   }
 
   function initMap() {
@@ -1053,6 +1062,7 @@
   }
 
   initMap();
+  showMap();
 
   if (storedToken() === GATE_TOKEN) {
     unlock();
