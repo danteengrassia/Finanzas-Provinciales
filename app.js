@@ -994,6 +994,7 @@
     if (section) section.style.display = "none";
     const summary = document.getElementById("summaryView");
     if (summary) summary.classList.remove("map-active");
+    document.getElementById("provinceEyebrow").textContent = "Provincia";
   }
 
   function showMap() {
@@ -1001,6 +1002,10 @@
     if (section) section.style.display = "";
     const summary = document.getElementById("summaryView");
     if (summary) summary.classList.add("map-active");
+    const title = document.getElementById("provinceTitle");
+    const eyebrow = document.getElementById("provinceEyebrow");
+    if (title) title.textContent = "Seleccione una provincia";
+    if (eyebrow) eyebrow.textContent = "Monitor fiscal";
   }
 
   function initMap() {
@@ -1045,7 +1050,7 @@
     });
     provinceLayer.addTo(map);
 
-    fetch("https://apis.datos.gob.ar/georef/api/provincias?formato=geojson&campos=nombre,id")
+    fetch("data/provincias.geojson")
       .then((response) => {
         if (!response.ok) throw new Error("status " + response.status);
         return response.json();
