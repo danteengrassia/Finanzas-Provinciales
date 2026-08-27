@@ -872,6 +872,7 @@
     state.view = view;
     document.getElementById("summaryView").hidden = view !== "summary";
     document.getElementById("comparatorView").hidden = view !== "comparator";
+    document.body.classList.toggle("comparator-view", view === "comparator");
     const toggle = document.getElementById("comparatorToggle");
     toggle.setAttribute("aria-current", view === "comparator" ? "page" : "false");
     const provinceTabs = document.getElementById("provinceTabs");
@@ -991,6 +992,7 @@
   function hideMap() {
     const section = document.getElementById("mapSection");
     if (section) section.style.display = "none";
+    document.body.classList.remove("map-open");
     const summary = document.getElementById("summaryView");
     if (summary) summary.classList.remove("map-active");
     document.getElementById("provinceEyebrow").textContent = "Provincia";
@@ -999,6 +1001,7 @@
   function showMap() {
     const section = document.getElementById("mapSection");
     if (section) section.style.display = "";
+    document.body.classList.add("map-open");
     const summary = document.getElementById("summaryView");
     if (summary) summary.classList.add("map-active");
     const title = document.getElementById("provinceTitle");
@@ -1056,9 +1059,75 @@
       mapElement.textContent = "No se pudieron cargar los límites de provincias.";
       return;
     }
-    provinceLayer.addData(data);
+
+    const continental = [];
+    const polar = [];
+    data.features.forEach((feature) => {
+      const nombre = feature.properties?.nombre || "";
+      if (feature.properties?.id === "94" || /Tierra del Fuego/.test(nombre)) {
+        const geometry = feature.geometry;
+        if (geometry.type === "MultiPolygon" || geometry.type === "Polygon") {
+          const polys = geometry.type === "MultiPolygon" ? geometry.coordinates : [geometry.coordinates];
+          const continentalPolys = [];
+          const polarPolys = [];
+          polys.forEach((poly) => {
+            const ring = poly && poly.length ? poly[0] : [];
+            let minLat = Infinity;
+            let maxLon = -Infinity;
+            ring.forEach((pt) => {
+              if (pt[1] < minLat) minLat = pt[1];
+              if (pt[0] > maxLon) maxLon = pt[0];
+            });
+            const isContinentalFueguino = minLat >= -56 && maxLon <= -63.5;
+            if (isContinentalFueguino) continentalPolys.push(poly);
+            else polarPolys.push(poly);
+          });
+          if (continentalPolys.length) {
+            continental.push({
+              type: "Feature",
+              properties: feature.properties,
+              geometry: { type: "MultiPolygon", coordinates: continentalPolys },
+            });
+          }
+          if (polarPolys.length) {
+            polar.push({
+              type: "Feature",
+              properties: feature.properties,
+              geometry: { type: "MultiPolygon", coordinates: polarPolys },
+            });
+          }
+        }
+      } else {
+        continental.push(feature);
+      }
+    });
+
+    provinceLayer.addData({ type: "FeatureCollection", features: continental });
     const bounds = provinceLayer.getBounds();
     if (bounds.isValid()) map.fitBounds(bounds.pad(0.08));
+
+    if (polar.length) {
+      const insetEl = document.getElementById("polarInset");
+      const polarEl = document.getElementById("polarMap");
+      if (insetEl && polarEl) {
+        const polarMap = L.map(polarEl, {
+          zoomControl: false,
+          scrollWheelZoom: false,
+          attributionControl: false,
+        });
+        L.geoJSON(
+          { type: "FeatureCollection", features: polar },
+          {
+            style: () => ({ color: "#ffffff", weight: 1, fillColor: "#d9dbe9", fillOpacity: 0.6 }),
+          }
+        ).addTo(polarMap);
+        const pb = polar.length
+          ? L.geoJSON({ type: "FeatureCollection", features: polar }).getBounds()
+          : null;
+        if (pb && pb.isValid()) polarMap.fitBounds(pb.pad(0.05));
+        insetEl.style.display = "block";
+      }
+    }
   }
 
   ensureMapCreated();
