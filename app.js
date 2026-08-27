@@ -1005,9 +1005,7 @@
     const summary = document.getElementById("summaryView");
     if (summary) summary.classList.add("map-active");
     const title = document.getElementById("provinceTitle");
-    const eyebrow = document.getElementById("provinceEyebrow");
     if (title) title.textContent = "Seleccione una provincia";
-    if (eyebrow) eyebrow.textContent = "Monitor fiscal";
   }
 
   function ensureMapCreated() {
@@ -1134,7 +1132,7 @@
       try {
         const cabaCenter = [cabaFeature.properties.centroide?.lat ?? -34.6037, cabaFeature.properties.centroide?.lon ?? -58.3816];
         const scale = 9;
-        const offsetTarget = [-34.85, -56.5];
+        const offsetTarget = [-34.85, -55.35];
         const enlarged = [];
         const geom = cabaFeature.geometry;
         const rings = geom.type === "Polygon" ? [geom.coordinates] : (geom.coordinates || []);
@@ -1147,7 +1145,14 @@
           });
           enlarged.push([scaled]);
         });
-        L.polyline([offsetTarget, cabaCenter], {
+        let westEdge = offsetTarget;
+        enlarged.forEach((poly) => {
+          const ring = poly && poly.length ? poly[0] : [];
+          ring.forEach((pt) => {
+            if (pt[1] < westEdge[1]) westEdge = pt;
+          });
+        });
+        L.polyline([westEdge, cabaCenter], {
           color: "#ffffff",
           weight: 1.5,
           dashArray: "4 4",
