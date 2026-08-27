@@ -1061,6 +1061,7 @@
     }
 
     const continental = [];
+    const malvinas = [];
     const polar = [];
     data.features.forEach((feature) => {
       const nombre = feature.properties?.nombre || "";
@@ -1069,6 +1070,7 @@
         if (geometry.type === "MultiPolygon" || geometry.type === "Polygon") {
           const polys = geometry.type === "MultiPolygon" ? geometry.coordinates : [geometry.coordinates];
           const continentalPolys = [];
+          const malvinasPolys = [];
           const polarPolys = [];
           polys.forEach((poly) => {
             const ring = poly && poly.length ? poly[0] : [];
@@ -1084,7 +1086,8 @@
             });
             const isContinentalFueguino = minLat >= -56 && maxLon <= -63.5;
             const isMalvinas = minLat >= -52.7 && maxLat <= -50.5 && minLon >= -61.6 && maxLon <= -57.4;
-            if (isContinentalFueguino || isMalvinas) continentalPolys.push(poly);
+            if (isContinentalFueguino) continentalPolys.push(poly);
+            else if (isMalvinas) malvinasPolys.push(poly);
             else polarPolys.push(poly);
           });
           if (continentalPolys.length) {
@@ -1092,6 +1095,13 @@
               type: "Feature",
               properties: feature.properties,
               geometry: { type: "MultiPolygon", coordinates: continentalPolys },
+            });
+          }
+          if (malvinasPolys.length) {
+            malvinas.push({
+              type: "Feature",
+              properties: feature.properties,
+              geometry: { type: "MultiPolygon", coordinates: malvinasPolys },
             });
           }
           if (polarPolys.length) {
@@ -1108,6 +1118,12 @@
     });
 
     provinceLayer.addData({ type: "FeatureCollection", features: continental });
+    if (malvinas.length) {
+      L.geoJSON(
+        { type: "FeatureCollection", features: malvinas },
+        { style: () => ({ color: "#ffffff", weight: 0, fillColor: "#d9dbe9", fillOpacity: 0.75 }) }
+      ).addTo(map);
+    }
     const bounds = provinceLayer.getBounds();
     if (bounds.isValid()) map.fitBounds(bounds.pad(0.08));
 
@@ -1118,7 +1134,7 @@
       try {
         const cabaCenter = [cabaFeature.properties.centroide?.lat ?? -34.6037, cabaFeature.properties.centroide?.lon ?? -58.3816];
         const scale = 9;
-        const offsetTarget = [-34.58, -57.35];
+        const offsetTarget = [-34.85, -56.5];
         const enlarged = [];
         const geom = cabaFeature.geometry;
         const rings = geom.type === "Polygon" ? [geom.coordinates] : (geom.coordinates || []);
