@@ -1050,20 +1050,14 @@
     });
     provinceLayer.addTo(map);
 
-    fetch("data/provincias.geojson")
-      .then((response) => {
-        if (!response.ok) throw new Error("status " + response.status);
-        return response.json();
-      })
-      .then((data) => {
-        provinceLayer.addData(data);
-        const bounds = provinceLayer.getBounds();
-        if (bounds.isValid()) map.fitBounds(bounds.pad(0.08));
-      })
-      .catch(() => {
-        mapElement.textContent = "No se pudo cargar el mapa de provincias.";
-        map.remove();
-      });
+    const data = window.PROVINCIAS_GEOJSON;
+    if (!data || !data.features) {
+      mapElement.textContent = "No se pudieron cargar los límites de provincias.";
+      return;
+    }
+    provinceLayer.addData(data);
+    const bounds = provinceLayer.getBounds();
+    if (bounds.isValid()) map.fitBounds(bounds.pad(0.08));
   }
 
   initMap();
