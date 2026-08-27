@@ -184,6 +184,14 @@
   }
 
   function renderHeader(province) {
+    if (!province) {
+      document.getElementById("provinceTitle").textContent = "Seleccione una provincia";
+      document.getElementById("provinceEyebrow").textContent = "";
+      document.getElementById("periodLabel").textContent = "";
+      document.getElementById("frequencyNote").textContent = "";
+      document.getElementById("updatedAt").textContent = "";
+      return;
+    }
     document.getElementById("provinceTitle").textContent = province.name;
     document.getElementById("provinceEyebrow").textContent = `Provincia de ${province.name}`;
     document.getElementById("periodLabel").textContent = formatPeriod(state.period);
@@ -887,9 +895,10 @@
   // === END COMPARATOR ===
 
   function render() {
-    const province = DATA.provinces[state.provinceId];
+    const province = state.provinceId ? DATA.provinces[state.provinceId] : null;
     renderTabs();
     renderHeader(province);
+    if (!province) return;
     renderKpis(province);
     renderTrendCharts(province);
     renderCompositionCharts(province);
@@ -1006,6 +1015,10 @@
     if (summary) summary.classList.add("map-active");
     const title = document.getElementById("provinceTitle");
     if (title) title.textContent = "Seleccione una provincia";
+    const eyebrow = document.getElementById("provinceEyebrow");
+    if (eyebrow) eyebrow.textContent = "";
+    state.provinceId = null;
+    renderTabs();
   }
 
   function ensureMapCreated() {
@@ -1043,9 +1056,14 @@
             click: () => selectProvinceFromMap(id),
             mouseover: () => {
               layer.setStyle({ fillColor: "#5a9fd4", fillOpacity: 0.85 });
+              layer.bindTooltip(nombre, { sticky: true, direction: "top" });
+              layer.openTooltip();
               layer.bringToFront();
             },
-            mouseout: () => provinceLayer.resetStyle(layer),
+            mouseout: () => {
+              provinceLayer.resetStyle(layer);
+              layer.unbindTooltip();
+            },
           });
         }
       },
