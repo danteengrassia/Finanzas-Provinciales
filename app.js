@@ -173,6 +173,7 @@
         state.provinceId = button.dataset.province;
         const province = DATA.provinces[state.provinceId];
         state.period = province.latest_period;
+        hideMap();
         if (state.view !== "summary") {
           switchView("summary");
         } else {
@@ -967,6 +968,91 @@
 
   render();
   }
+
+  // === PROVINCE MAP ===
+
+  const provinceNameToId = {
+    "Santa Fe": "santa_fe",
+    "Neuquén": "neuquen",
+  };
+
+  function provinceHasData(provinceId) {
+    return Boolean(DATA.provinces[provinceId]);
+  }
+
+  function selectProvinceFromMap(provinceId) {
+    if (!provinceHasData(provinceId)) return;
+    state.provinceId = provinceId;
+    state.period = DATA.provinces[provinceId].latest_period;
+    hideMap();
+    if (state.view !== "summary") switchView("summary");
+    else render();
+  }
+
+  function hideMap() {
+    const section = document.getElementById("mapSection");
+    if (section) section.style.display = "none";
+  }
+
+  function initMap() {
+    const mapElement = document.getElementById("provinceMap");
+    if (!mapElement) return;
+    if (typeof L === "undefined") {
+      mapElement.textContent = "No se pudo cargar el mapa.";
+      return;
+    }
+
+    const map = L.map(mapElement, {
+      zoomControl: true,
+      scrollWheelZoom: false,
+      attributionControl: false,
+      center: [-38.4161, -63.6167],
+      zoom: 4.3,
+    });
+
+    const provinceLayer = L.geoJSON(null, {
+      style: (feature) => {
+        const nombre = feature.properties?.nombre || feature.properties?.name || "";
+        const id = provinceNameToId[nombre];
+        if (id && provinceHasData(id)) {
+          return { color: "#ffffff", weight: 1, fillColor: "#75AADB", fillOpacity: 0.65 };
+        }
+        return { color: "#ffffff", weight: 1, fillColor: "#d9dbe9", fillOpacity: 0.6 };
+      },
+      onEachFeature: (feature, layer) => {
+        const nombre = feature.properties?.nombre || feature.properties?.name || "";
+        const id = provinceNameToId[nombre];
+        if (id && provinceHasData(id)) {
+          layer.on({
+            click: () => selectProvinceFromMap(id),
+            mouseover: () => {
+              layer.setStyle({ fillColor: "#5a9fd4", fillOpacity: 0.85 });
+              layer.bringToFront();
+            },
+            mouseout: () => provinceLayer.resetStyle(layer),
+          });
+        }
+      },
+    });
+    provinceLayer.addTo(map);
+
+    fetch("https://apis.datos.gob.ar/georef/api/provincias?formato=geojson&campos=nombre,id")
+      .then((response) => {
+        if (!response.ok) throw new Error("status " + response.status);
+        return response.json();
+      })
+      .then((data) => {
+        provinceLayer.addData(data);
+        const bounds = provinceLayer.getBounds();
+        if (bounds.isValid()) map.fitBounds(bounds.pad(0.08));
+      })
+      .catch(() => {
+        mapElement.textContent = "No se pudo cargar el mapa de provincias.";
+        map.remove();
+      });
+  }
+
+  initMap();
 
   if (storedToken() === GATE_TOKEN) {
     unlock();

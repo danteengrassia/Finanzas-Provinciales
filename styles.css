@@ -882,6 +882,36 @@ footer {
   opacity: 0.35;
 }
 
+.map-section {
+  background: var(--azul);
+  padding: 40px 0;
+}
+
+.map-section .eyebrow,
+.map-section h2 {
+  color: #ffffff;
+}
+
+.province-map {
+  height: 460px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+  background: #e8eef7;
+}
+
+.province-map:not(.leaflet-container) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.leaflet-container {
+  font-family: "Encode Sans", Arial, sans-serif;
+}
+
 #comparatorProvinces {
   min-height: 62px;
   border: 1px solid #d1d5db;

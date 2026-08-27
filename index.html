@@ -9,7 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@400;600;700&display=swap">
-    <link rel="stylesheet" href="styles.css?v=11">
+    <link rel="stylesheet" href="https://mapa-ign.argentina.gob.ar/js/leaflet/leaflet.css">
+    <link rel="stylesheet" href="styles.css?v=12">
   </head>
   <body class="auth-locked">
     <div id="loginGate" class="login-gate">
@@ -52,6 +53,18 @@
         </header>
 
         <main id="summaryView">
+          <section id="mapSection" class="map-section">
+            <div class="section-inner">
+              <div class="section-heading">
+                <div>
+                  <p class="eyebrow">Monitor fiscal</p>
+                  <h2>Seleccione una provincia</h2>
+                </div>
+              </div>
+              <div id="provinceMap" class="province-map"></div>
+            </div>
+          </section>
+
           <section class="summary-band">
             <div class="section-inner">
               <div class="section-heading summary-heading">
@@ -251,8 +264,9 @@
     </div>
 
     <div id="chartError" class="chart-error" hidden>No se pudo cargar el motor de gráficos.</div>
+    <script src="https://mapa-ign.argentina.gob.ar/js/leaflet/leaflet.js"></script>
     <script src="vendor/chart.umd.min.js"></script>
     <script src="data/dashboard_data.js"></script>
-    <script src="app.js?v=11"></script>
+    <script src="app.js?v=12"></script>
   </body>
 </html>
