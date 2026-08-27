@@ -1073,13 +1073,18 @@
           polys.forEach((poly) => {
             const ring = poly && poly.length ? poly[0] : [];
             let minLat = Infinity;
+            let maxLat = -Infinity;
+            let minLon = Infinity;
             let maxLon = -Infinity;
             ring.forEach((pt) => {
               if (pt[1] < minLat) minLat = pt[1];
+              if (pt[1] > maxLat) maxLat = pt[1];
+              if (pt[0] < minLon) minLon = pt[0];
               if (pt[0] > maxLon) maxLon = pt[0];
             });
             const isContinentalFueguino = minLat >= -56 && maxLon <= -63.5;
-            if (isContinentalFueguino) continentalPolys.push(poly);
+            const isMalvinas = minLat >= -52.7 && maxLat <= -50.5 && minLon >= -61.6 && maxLon <= -57.4;
+            if (isContinentalFueguino || isMalvinas) continentalPolys.push(poly);
             else polarPolys.push(poly);
           });
           if (continentalPolys.length) {
@@ -1105,6 +1110,43 @@
     provinceLayer.addData({ type: "FeatureCollection", features: continental });
     const bounds = provinceLayer.getBounds();
     if (bounds.isValid()) map.fitBounds(bounds.pad(0.08));
+
+    const cabaFeature = data.features.find(
+      (f) => f.properties?.id === "02" || /Ciudad Aut/.test(f.properties?.nombre || "")
+    );
+    if (cabaFeature && L) {
+      try {
+        const cabaCenter = [cabaFeature.properties.centroide?.lat ?? -34.6037, cabaFeature.properties.centroide?.lon ?? -58.3816];
+        const scale = 9;
+        const offsetTarget = [-34.58, -57.35];
+        const enlarged = [];
+        const geom = cabaFeature.geometry;
+        const rings = geom.type === "Polygon" ? [geom.coordinates] : (geom.coordinates || []);
+        rings.forEach((poly) => {
+          const src = poly && poly.length ? poly[0] : [];
+          const scaled = src.map((pt) => {
+            const lon = offsetTarget[1] + (pt[0] - cabaCenter[1]) * scale;
+            const lat = offsetTarget[0] + (pt[1] - cabaCenter[0]) * scale;
+            return [lon, lat];
+          });
+          enlarged.push([scaled]);
+        });
+        L.polyline([offsetTarget, cabaCenter], {
+          color: "#ffffff",
+          weight: 1.5,
+          dashArray: "4 4",
+          opacity: 0.7,
+        }).addTo(map);
+        L.polygon(enlarged, {
+          color: "#ffffff",
+          weight: 1.5,
+          fillColor: "#d9dbe9",
+          fillOpacity: 0.6,
+        }).addTo(map);
+      } catch (calloutError) {
+        // CABA callout es opcional
+      }
+    }
 
     if (polar.length) {
       const insetEl = document.getElementById("polarInset");

@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@400;600;700&display=swap">
     <link rel="stylesheet" href="https://mapa-ign.argentina.gob.ar/js/leaflet/leaflet.css">
-    <link rel="stylesheet" href="styles.css?v=16">
+    <link rel="stylesheet" href="styles.css?v=17">
   </head>
   <body class="auth-locked">
     <div id="loginGate" class="login-gate">
@@ -55,9 +55,10 @@
         <main id="summaryView">
           <section id="mapSection" class="map-section">
             <div class="section-inner">
-              <div id="provinceMap" class="province-map"></div>
-              <div class="polar-inset" id="polarInset">
-                <div id="polarMap" class="polar-map"></div>
+              <div id="provinceMap" class="province-map">
+                <div class="polar-inset" id="polarInset">
+                  <div id="polarMap" class="polar-map"></div>
+                </div>
               </div>
             </div>
           </section>
@@ -265,6 +266,6 @@
     <script src="vendor/chart.umd.min.js"></script>
     <script src="data/provincias_geojson.js"></script>
     <script src="data/dashboard_data.js"></script>
-    <script src="app.js?v=18"></script>
+    <script src="app.js?v=19"></script>
   </body>
 </html>
