@@ -1,5 +1,19 @@
 # Metodología
 
+## Integración de Mendoza, Córdoba y Entre Ríos
+
+- Mendoza suma meses completos de AIF y usa el orden 57 para el resultado
+  financiero. El orden 62 incorpora operaciones de financiamiento. Las cuentas
+  previsionales y los desgloses de fuentes sin equivalencia quedan como `s/d`.
+- Córdoba publica amortizaciones e intereses devengados en la extracción
+  integrada. Se usan para el detalle de organismos internacionales. El
+  indicador de servicio pagado requiere flujos de caja. La deuda flotante
+  histórica se suma por separado al stock de deuda pública.
+- Entre Ríos usa los IDs fiscales compartidos entre APNOF y Seguridad Social.
+  Para el servicio se usan los flujos de caja publicados. La serie de intereses
+  de deuda incluye accesorios. El stock de flotante excluye la utilización
+  del FUCO, que figura como informativa en la fuente.
+
 ## Alcance y fuentes
 
 La versión consolida información fiscal base devengado, seguridad social, stock y servicio de deuda de Santa Fe y Neuquén. Los indicadores de flujo utilizan los últimos cuatro trimestres; los stocks corresponden al cierre de cada trimestre.

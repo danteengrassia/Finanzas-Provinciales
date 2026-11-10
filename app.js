@@ -980,13 +980,12 @@
 
   // === PROVINCE MAP ===
 
-  const provinceNameToId = {
-    "Santa Fe": "santa_fe",
-    "Neuquén": "neuquen",
-  };
+  const provinceNameToId = Object.fromEntries(
+    Object.entries(DATA.provinces).map(([id, province]) => [province.name, id]),
+  );
 
   function provinceHasData(provinceId) {
-    return Boolean(DATA.provinces[provinceId]);
+    return Boolean(DATA.provinces[provinceId]?.periods?.length);
   }
 
   function selectProvinceFromMap(provinceId) {

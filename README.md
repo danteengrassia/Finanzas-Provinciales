@@ -8,6 +8,15 @@ Abrir `index.html` con Chrome, Edge o Firefox. La página funciona offline porqu
 
 ## Reconstruir esta versión
 
+Los puentes de Mendoza, Córdoba y Entre Ríos se regeneran con
+`python scripts/generar_mendoza_puente.py`,
+`python scripts/generar_cordoba_puente.py` y
+`python scripts/generar_entre_rios_puente.py`. Leen las SQLite provinciales
+en modo de solo lectura. Córdoba también usa el CSV auxiliar de deuda flotante
+de su carpeta `database`. Cada comando admite `--source` y `--output` para
+trabajar con otra extracción. La configuración indica qué puente consume el
+consolidador.
+
 Ejecutar `actualizar_datos.bat`. El proceso lee la versión congelada indicada en `config/provincias.json` y regenera:
 
 - `data/base_consolidada.sqlite`: base común con indicadores, flujos nominales y reales, tendencias mensuales y deuda/liquidez.

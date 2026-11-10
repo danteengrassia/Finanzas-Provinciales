@@ -725,6 +725,9 @@ def load_santa_fe_debt(connection: sqlite3.Connection) -> tuple[dict[str, list[d
                row_key, orden
         FROM deuda_publica_long
     """
+    columns = {row[1] for row in connection.execute("PRAGMA table_info(deuda_publica_long)")}
+    if {"amort_dev_cum", "intereses_dev_cum"} <= columns:
+        query = query.replace("row_key, orden", "row_key, orden, amort_dev_cum, intereses_dev_cum")
     for source_row in connection.execute(query):
         converted = normalized_debt_period(str(source_row["period"]), source_row["frequency"])
         if not converted:
@@ -1084,8 +1087,8 @@ def load_debt(province_id: str, spec: dict[str, object], checks: list[dict[str, 
             "total_interest": as_float(total_row.get("intereses_pag_cum")),
             "intl_bond_use": sum_field(intl_bond_rows, "uso_credito_cum"),
             "ooii_use": sum_field(ooii_rows, "uso_credito_cum"),
-            "ooii_amort": sum_field(ooii_rows, "amort_pag_cum"),
-            "ooii_interest": sum_field(ooii_rows, "intereses_pag_cum"),
+            "ooii_amort": sum_field(ooii_rows, "amort_dev_cum" if province_id == "cordoba" else "amort_pag_cum"),
+            "ooii_interest": sum_field(ooii_rows, "intereses_dev_cum" if province_id == "cordoba" else "intereses_pag_cum"),
         }
         snapshots[period] = {
             "period": period,
@@ -1220,6 +1223,8 @@ def build_indicators(
 
     def financial_component(period: str, component: str) -> float | None:
         component_keys = spec.get("financial_keys", {}).get(component, [])
+        if not component_keys:
+            return None
         numbers = [values.get(("APNOF", period, item_key)) for item_key in component_keys]
         valid = [number for number in numbers if number is not None]
         return sum(float(number) for number in valid) if valid else 0.0
@@ -1792,6 +1797,10 @@ def atomic_write(path: Path, content: str) -> None:
 def main() -> int:
     with CONFIG_PATH.open("r", encoding="utf-8") as source:
         config = json.load(source)
+    for spec in config["provinces"].values():
+        for key in ("fiscal_db", "debt_db", "debt_stock_file", "debt_metrics_file", "floating_debt_file"):
+            if spec.get(key):
+                spec[key] = str(ROOT / Path(spec[key]))
     source_paths = [Path(config["macro_file"]), Path(config["monthly_macro_file"]), Path(config["ipc_file"]), Path(config["deposits_file"])]
     for spec in config["provinces"].values():
         source_paths.extend([Path(spec["fiscal_db"]), Path(spec["debt_db"])])

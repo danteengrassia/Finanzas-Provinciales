@@ -1,60 +1,90 @@
 {
-  "generated_at": "2026-08-25T17:10:27-03:00",
+  "generated_at": "2026-11-09T23:16:51-03:00",
   "schema_version": "1.2.0",
   "sources": [
     {
-      "path": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\20260814_130319\\macro_trimestral.csv",
+      "path": "E:\\bkpdante26\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\20260814_130319\\macro_trimestral.csv",
       "size": 5380,
       "modified": "2026-07-30T15:02:51",
       "sha256": "3f4dad95935a762765bd691a12b231c3acec236b7ab9c8fe4fa0c967741f6cbe"
     },
     {
-      "path": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\macro\\a3500_mensual.csv",
+      "path": "E:\\bkpdante26\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\macro\\a3500_mensual.csv",
       "size": 28828,
       "modified": "2026-06-20T00:22:03",
       "sha256": "5176ed433258ce53b70afda05f28021770329325a462b3416ce60b91735f05c1"
     },
     {
-      "path": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\macro\\ipc_nacional_mensual.json",
+      "path": "E:\\bkpdante26\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\macro\\ipc_nacional_mensual.json",
       "size": 8262,
       "modified": "2026-08-14T20:36:45",
       "sha256": "abda6786b0669dc6178c989dc927462f11404c698ab4bf9d6fe967e2a845a6a7"
     },
     {
-      "path": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\macro\\depositos_provinciales_mensual.json",
+      "path": "E:\\bkpdante26\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\macro\\depositos_provinciales_mensual.json",
       "size": 133661,
       "modified": "2026-08-14T20:36:45",
       "sha256": "d4fc5791ceab10b8f292b3cad251b49c6974506b6244955bfb3161ac7712af41"
     },
     {
-      "path": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\santa_fe_20260814_213940\\santa_fe_data.sqlite",
+      "path": "E:\\bkpdante26\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\santa_fe_20260814_213940\\santa_fe_data.sqlite",
       "size": 426143744,
       "modified": "2026-08-14T20:50:35",
       "sha256": "13e1f547a214cfba864799d9d020c3a773de4a7e0b361348f526dec871d35b91"
     },
     {
-      "path": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\20260823_222944\\neuquen_data.sqlite",
+      "path": "E:\\bkpdante26\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\20260823_222944\\neuquen_data.sqlite",
       "size": 407465984,
       "modified": "2026-08-23T21:30:44",
       "sha256": "3ec8d84adbf501aaba39377faf7c497e57cc1db9024fe7111286858328ddf15d"
     },
     {
-      "path": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\20260823_222944\\neuquen_deuda_stock_long_extraccion_limpia_datos_deuda.csv",
+      "path": "E:\\bkpdante26\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\20260823_222944\\neuquen_deuda_stock_long_extraccion_limpia_datos_deuda.csv",
       "size": 1835773,
       "modified": "2026-08-18T18:59:51",
       "sha256": "95f313c33f915f3683590d95a85eb26626f72c626132b4ed47c2df83d5b409a0"
     },
     {
-      "path": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\20260823_222944\\neuquen_deuda_metricas_long_extraccion_limpia_datos_deuda.csv",
+      "path": "E:\\bkpdante26\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\20260823_222944\\neuquen_deuda_metricas_long_extraccion_limpia_datos_deuda.csv",
       "size": 146455301,
       "modified": "2026-08-18T19:00:01",
       "sha256": "aafde1aea9257b89bda214df7fd30195625545683945997719fb4b0b61dcab22"
     },
     {
-      "path": "F:\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\20260823_222944\\deuda_tesoro_flotante.csv",
+      "path": "E:\\bkpdante26\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\20260823_222944\\deuda_tesoro_flotante.csv",
       "size": 70186,
       "modified": "2026-08-20T20:08:07",
       "sha256": "9c9773f5dff92b7190fc147b1d795cc2318ef37366de49942a9488e21f69e35d"
+    },
+    {
+      "path": "E:\\bkpdante26\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\mendoza_20261109\\mendoza_data.sqlite",
+      "size": 2682880,
+      "modified": "2026-11-09T23:16:37",
+      "sha256": "18d2c13a7040895a1486a4ace38aa9096f777c6802ab6774d3416660cb322cf6"
+    },
+    {
+      "path": "E:\\bkpdante26\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\cordoba_20261109\\cordoba_data.sqlite",
+      "size": 2891776,
+      "modified": "2026-11-09T23:16:43",
+      "sha256": "a5800c06b9291fdab59b7bb47652ecf92283b0505ae0c8ec7aa8169df8249023"
+    },
+    {
+      "path": "E:\\bkpdante26\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\cordoba_20261109\\deuda_flotante.csv",
+      "size": 27498,
+      "modified": "2026-11-09T23:16:43",
+      "sha256": "37d2f27954099ffb45db2abc7ebe226963f5c69138cd74e9243dca92616a218c"
+    },
+    {
+      "path": "E:\\bkpdante26\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\entre_rios_20261109\\entre_rios_data.sqlite",
+      "size": 4321280,
+      "modified": "2026-11-09T23:16:50",
+      "sha256": "63a1582a1897f87369d0c67cbe3af4bc5339e2a22c6dfedcdeab1b1f7d2f8ae6"
+    },
+    {
+      "path": "E:\\bkpdante26\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\entre_rios_20261109\\deuda_flotante.csv",
+      "size": 60026,
+      "modified": "2026-11-09T23:16:50",
+      "sha256": "dad0513ca3b080eb416d732a7a1b3428288931a6bb2d02c61dba1c5b2838f73e"
     }
   ],
   "province_summary": {
@@ -67,6 +97,21 @@
       "name": "Neuquén",
       "latest_period": "2026Q2",
       "period_count": 73
+    },
+    "mendoza": {
+      "name": "Mendoza",
+      "latest_period": "2026Q2",
+      "period_count": 99
+    },
+    "cordoba": {
+      "name": "Córdoba",
+      "latest_period": "2026Q2",
+      "period_count": 76
+    },
+    "entre_rios": {
+      "name": "Entre Ríos",
+      "latest_period": "2026Q3",
+      "period_count": 48
     }
   }
 }
