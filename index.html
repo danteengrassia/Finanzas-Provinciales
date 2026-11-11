@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@400;600;700&display=swap">
     <link rel="stylesheet" href="https://mapa-ign.argentina.gob.ar/js/leaflet/leaflet.css">
-    <link rel="stylesheet" href="styles.css?v=19">
+    <link rel="stylesheet" href="styles.css?v=20">
   </head>
   <body class="auth-locked">
     <div id="loginGate" class="login-gate">
@@ -55,6 +55,7 @@
           <button type="button" data-view="summary" aria-current="page">Resumen Crediticio</button>
           <button type="button" data-view="budget">Ejecución Presupuestaria</button>
           <button type="button" data-view="debt">Stock y Servicio de Deuda</button>
+          <button type="button" data-view="economy" hidden>Economía</button>
         </nav>
 
         <main id="summaryView">
@@ -243,6 +244,64 @@
           </div>
         </main>
 
+        <main id="economyView" class="content-band economy-view" hidden>
+          <div class="section-inner">
+            <div class="section-heading">
+              <h2>Actividad económica</h2>
+              <label>Período
+                <select id="economyRange">
+                  <option value="8">Últimos 8 años</option>
+                  <option value="all">Serie completa</option>
+                </select>
+              </label>
+            </div>
+            <div class="economy-charts">
+              <section class="economy-chart">
+                <div class="economy-chart-heading">
+                  <h3>PBG provincial y PIB nacional</h3>
+                  <select id="economyGrowthMode" aria-label="Medida de actividad">
+                    <option value="growth">Variación anual (%)</option>
+                    <option value="index">Índice real (base 100)</option>
+                  </select>
+                </div>
+                <div class="chart-frame"><canvas id="economyGrowthChart" role="img" aria-label="Actividad real provincial y nacional"></canvas></div>
+              </section>
+              <section class="economy-chart">
+                <div class="economy-chart-heading"><h3>Deuda y resultado financiero (% del PBG)</h3></div>
+                <div class="chart-frame"><canvas id="economyFiscalChart" role="img" aria-label="Deuda pública y resultado financiero en porcentaje del PBG"></canvas></div>
+              </section>
+            </div>
+            <details class="economy-history">
+              <summary>Series anuales</summary>
+              <div class="table-scroll">
+                <table aria-label="Series económicas anuales">
+                  <thead><tr><th>Año</th><th>PBG nominal ($ M)</th><th>PBG real (var. %)</th><th>PIB nacional real (var. %)</th><th>Participación nacional</th><th>Deuda / PBG</th><th>Resultado financiero / PBG</th></tr></thead>
+                  <tbody id="economyHistoryRows"></tbody>
+                </table>
+              </div>
+            </details>
+            <section class="economy-sectors">
+              <div class="section-heading">
+                <h2>Composición y crecimiento por sector</h2>
+                <label>Año <select id="economyYear"></select></label>
+              </div>
+              <dl id="economyFacts" class="economy-facts"></dl>
+              <div class="table-scroll">
+                <table class="economy-sector-table" aria-label="Composición y aportes sectoriales">
+                  <thead><tr><th>Actividad</th><th>PBG nominal ($ M)</th><th>% del PBG</th><th>Variación real (%)</th><th>Aporte al crecimiento (p.p.)</th></tr></thead>
+                  <tbody id="economySectorRows"></tbody>
+                </table>
+              </div>
+            </section>
+            <details class="economy-method">
+              <summary>Fuentes y metodología</summary>
+              <p>PBG provincial y agregado nacional de la base CEPAL a precios básicos. La variación anual usa pesos de 2004. El aporte sectorial mide la variación del valor agregado real del sector sobre el PBG real provincial del año previo.</p>
+              <p>La composición usa pesos corrientes y el PBG nominal total informado. La diferencia con la suma de subtotales se muestra sin redistribuirla entre sectores. La participación nacional compara el PBG provincial nominal con el agregado nacional de la misma base.</p>
+              <p>Deuda pública bruta al 31 de diciembre y resultado financiero APNOF devengado acumulado de enero a diciembre, ambos sobre el PBG nominal del año. Se muestran solo cierres de deuda informados y resultados con los cuatro trimestres disponibles. S/D indica ausencia de dato.</p>
+            </details>
+          </div>
+        </main>
+
         <main id="comparatorView" hidden>
           <section class="content-band">
             <div class="section-inner">
@@ -311,6 +370,7 @@
     <script src="vendor/chart.umd.min.js"></script>
     <script src="data/provincias_geojson.js"></script>
     <script src="data/dashboard_data.js?v=27"></script>
-    <script src="app.js?v=27"></script>
+    <script src="data/economia.js?v=1"></script>
+    <script src="app.js?v=28"></script>
   </body>
 </html>

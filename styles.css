@@ -982,6 +982,164 @@ body.map-open footer {
   display: none;
 }
 
+.economy-view {
+  font-family: Arial, sans-serif;
+}
+
+.economy-view label {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.economy-view select {
+  min-width: 0;
+  height: 34px;
+}
+
+.economy-charts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.economy-chart {
+  min-width: 0;
+  border-top: 1px solid var(--line);
+}
+
+.economy-chart-heading {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 52px;
+  padding: 8px 0;
+}
+
+.economy-chart-heading h3 {
+  color: var(--azul);
+  font-size: 14px;
+  margin: 0;
+}
+
+.economy-chart .chart-frame {
+  height: 280px;
+  overflow: hidden;
+}
+
+.economy-sectors {
+  margin-top: 36px;
+}
+
+.economy-facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 0 0 18px;
+}
+
+.economy-facts > div {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.economy-facts dt {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.economy-facts dd {
+  margin: 5px 0 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--azul);
+  overflow-wrap: anywhere;
+}
+
+.economy-view table {
+  font-variant-numeric: tabular-nums;
+}
+
+.economy-view th[scope="row"] {
+  text-align: left;
+  text-transform: none;
+  font-size: 12px;
+}
+
+.economy-sector-table th:first-child {
+  min-width: 190px;
+  width: 41%;
+}
+
+.economy-expand {
+  padding: 1px 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+
+.economy-expand span {
+  display: inline-block;
+  width: 1em;
+  color: #006d72;
+}
+
+.economy-subsector th:first-child {
+  padding-left: 28px;
+  font-weight: 400;
+}
+
+.economy-subsector[hidden], .province-views button[hidden] {
+  display: none;
+}
+
+.economy-total {
+  font-weight: 700;
+}
+
+.economy-residual {
+  color: var(--muted);
+}
+
+.economy-history, .economy-method {
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.economy-history summary, .economy-method summary {
+  color: var(--azul);
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 920px) {
+  .economy-charts {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .economy-view .section-heading {
+    flex-wrap: wrap;
+    align-items: start;
+    gap: 12px;
+  }
+
+  .economy-facts {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
+  }
+}
+
 .province-views {
   display: flex;
   flex-wrap: wrap;

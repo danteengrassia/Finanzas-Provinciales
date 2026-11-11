@@ -1151,6 +1151,136 @@
     }
   });
   const provinceViews = document.getElementById("provinceViews");
+  const economyData = window.PROVINCIAL_ECONOMY?.provinces ?? {};
+  const economyRange = document.getElementById("economyRange");
+  const economyGrowthMode = document.getElementById("economyGrowthMode");
+  const economyYear = document.getElementById("economyYear");
+  const economySectorRows = document.getElementById("economySectorRows");
+
+  function economyValue(value, unit = "") {
+    if (value == null) return "S/D";
+    const formatter = unit ? decimalFormatter : integerFormatter;
+    return formatter.format(value) + unit;
+  }
+
+  function economyChart(id, rows, series, unit) {
+    destroyChart(id);
+    if (typeof Chart === "undefined") return;
+    const options = baseLineOptions(unit);
+    options.scales.y.grid.color = (context) => context.tick?.value === 0 ? "#7b838a" : "#e0e0e0";
+    options.scales.y.border = { dash: (context) => context.tick?.value === 0 ? [4, 4] : [] };
+    charts[id] = new Chart(document.getElementById(id), {
+      type: "line",
+      data: {
+        labels: rows.map((row) => row.year),
+        datasets: series.map(([label, color, accessor, dash]) => ({
+          label,
+          data: rows.map(accessor),
+          borderColor: color,
+          backgroundColor: color,
+          borderDash: dash || [],
+          borderWidth: 2,
+          pointRadius: 2,
+          pointHoverRadius: 4,
+          spanGaps: false,
+        })),
+      },
+      options,
+    });
+  }
+
+  function renderEconomyHistory() {
+    const allRows = economyData[state.provinceId];
+    if (!allRows) return;
+    const rows = economyRange.value === "all" ? allRows : allRows.slice(-8);
+    const indexed = economyGrowthMode.value === "index";
+    const base = rows.find((row) => row.real > 0 && row.nationalReal > 0);
+    const indexValue = (value, denominator) => value == null || !denominator ? null : value * 100 / denominator;
+    economyChart("economyGrowthChart", rows, [
+      [DATA.provinces[state.provinceId].name, "#006d72", (r) => indexed ? indexValue(r.real, base?.real) : r.growth],
+      ["Nacional", "#a24d17", (r) => indexed ? indexValue(r.nationalReal, base?.nationalReal) : r.nationalGrowth, [5, 4]],
+    ], indexed ? "index" : "percent");
+    economyChart("economyFiscalChart", rows, [
+      ["Deuda bruta al cierre", "#174785", (r) => r.debtRatio],
+      ["Resultado financiero devengado", "#8b3f63", (r) => r.balanceRatio, [5, 4]],
+    ], "percent");
+    document.getElementById("economyHistoryRows").innerHTML = [...rows].reverse().map((r) =>
+      `<tr><th scope="row">${r.year}</th><td>${economyValue(r.nominal)}</td>${
+        [r.growth, r.nationalGrowth, r.nationalShare, r.debtRatio, r.balanceRatio]
+          .map((value) => `<td>${economyValue(value, "%")}</td>`).join("")
+      }</tr>`
+    ).join("");
+  }
+
+  function renderEconomySectors() {
+    const row = economyData[state.provinceId]?.find((r) => r.year === Number(economyYear.value));
+    if (!row) return;
+    const sectors = [...row.sectors].sort((a, b) => (b.share ?? -Infinity) - (a.share ?? -Infinity));
+    const largest = sectors.find((sector) => sector.share != null);
+    const leader = sectors.reduce((best, sector) =>
+      sector.contribution != null && (!best || sector.contribution > best.contribution) ? sector : best, null);
+    const facts = [
+      ["Participación en la economía nacional", economyValue(row.nationalShare, "%")],
+      ["Sector de mayor peso", largest ? `${largest.name} · ${economyValue(largest.share, "%")}` : "S/D"],
+      ["Mayor aporte al crecimiento", leader ? `${leader.name} · ${economyValue(leader.contribution, " p.p.")}` : "S/D"],
+    ];
+    document.getElementById("economyFacts").innerHTML = facts.map(([label, value]) =>
+      `<div><dt>${label}</dt><dd>${escapeHtml(value)}</dd></div>`
+    ).join("");
+
+    function cells(r) {
+      const contribution = r.contribution;
+      const sign = contribution > 0 ? "value-positive" : contribution < 0 ? "value-negative" : "";
+      return `<td>${economyValue(r.nominal)}</td><td>${economyValue(r.share, "%")}</td>
+        <td>${economyValue(r.growth, "%")}</td><td class="${sign}">${economyValue(contribution, " p.p.")}</td>`;
+    }
+
+    const body = sectors.map((sector, i) => {
+      const detail = sector.detail.map((item, j) =>
+        `<tr class="economy-subsector" data-sector="${i}" id="economy-sector-${i}-${j}" hidden><th scope="row">${escapeHtml(item.name)}</th>${cells(item)}</tr>`
+      );
+      const controls = detail.map((_, j) => `economy-sector-${i}-${j}`).join(" ");
+      const name = detail.length
+        ? `<button type="button" class="economy-expand" data-expand="${i}" aria-controls="${controls}" aria-expanded="false"><span aria-hidden="true">+</span> ${escapeHtml(sector.name)}</button>`
+        : escapeHtml(sector.name);
+      return `<tr><th scope="row">${name}</th>${cells(sector)}</tr>${detail.join("")}`;
+    });
+    if (Math.abs(row.nominalResidual ?? 0) > 0.005 || Math.abs(row.contributionResidual ?? 0) > 0.0001) {
+      body.push(`<tr class="economy-residual"><th scope="row">Diferencia con el total informado</th>${cells({
+        nominal: row.nominalResidual,
+        share: row.nominal && row.nominalResidual != null ? row.nominalResidual * 100 / row.nominal : null,
+        contribution: Math.abs(row.contributionResidual ?? 0) > 0.0001 ? row.contributionResidual : null,
+      })}</tr>`);
+    }
+    body.push(`<tr class="economy-total"><th scope="row">PBG total</th>${cells({
+      nominal: row.nominal, share: row.nominal == null ? null : 100, growth: row.growth, contribution: row.growth,
+    })}</tr>`);
+    economySectorRows.innerHTML = body.join("");
+  }
+
+  function renderEconomy() {
+    const rows = economyData[state.provinceId];
+    const selected = Number(economyYear.value);
+    economyYear.replaceChildren(...[...rows].reverse().map((row) => new Option(row.year, row.year)));
+    economyYear.value = rows.some((row) => row.year === selected) ? selected : rows.at(-1).year;
+    renderEconomyHistory();
+    renderEconomySectors();
+  }
+
+  economyRange.addEventListener("change", renderEconomyHistory);
+  economyGrowthMode.addEventListener("change", renderEconomyHistory);
+  economyYear.addEventListener("change", renderEconomySectors);
+  economySectorRows.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-expand]");
+    if (!button) return;
+    const expanded = button.getAttribute("aria-expanded") !== "true";
+    button.setAttribute("aria-expanded", String(expanded));
+    button.firstElementChild.textContent = expanded ? "−" : "+";
+    economySectorRows.querySelectorAll(`[data-sector="${button.dataset.expand}"]`).forEach((row) => {
+      row.hidden = !expanded;
+    });
+  });
+
   provinceViews.addEventListener("click", (event) => {
     const button = event.target.closest("button[data-view]");
     if (button && state.provinceId) switchView(button.dataset.view);
@@ -1162,6 +1292,7 @@
     document.getElementById("summaryView").hidden = view !== "summary";
     document.getElementById("comparatorView").hidden = view !== "comparator";
     document.getElementById("detailView").hidden = view !== "budget" && view !== "debt";
+    document.getElementById("economyView").hidden = view !== "economy";
     provinceViews.hidden = !state.provinceId || view === "comparator";
     provinceViews.querySelectorAll("[data-view]").forEach((button) => {
       button.setAttribute("aria-current", button.dataset.view === view ? "page" : "false");
@@ -1185,7 +1316,12 @@
     renderTabs();
     renderHeader(province);
     provinceViews.hidden = !province || state.view === "comparator";
+    provinceViews.querySelector('[data-view="economy"]').hidden = !economyData[state.provinceId]?.length;
     if (!province) return;
+    if (state.view === "economy") {
+      renderEconomy();
+      return;
+    }
     if (state.view === "budget" || state.view === "debt") {
       renderDetail();
       return;
