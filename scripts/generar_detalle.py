@@ -2,12 +2,13 @@
 
 import csv
 import json
+import re
 from collections import defaultdict
 from pathlib import Path
 
 from actualizar_datos import (
     CONFIG_PATH, ROOT, as_float, atomic_write, load_ipc, load_macro, load_reported_debt_fx,
-    load_santa_fe_debt, norm_text, period_month_key, readonly_connection, trailing_periods,
+    load_santa_fe_debt, load_monthly_macro, norm_text, period_month_key, readonly_connection, trailing_periods,
 )
 from puente_provincial import BASE, quarter
 
@@ -28,26 +29,36 @@ def paths_by_level(rows, label_key, level_key, root_level=1):
         yield tuple(trail), row
 
 
-def put(output, series, period, path, value):
+def put(output, series, period, path, value, construction="trimestral"):
     value = as_float(value)
     if period and path and value is not None:
-        output[series][period].setdefault(path, value)
+        key = series if construction == "trimestral" else construction + "|" + series
+        existing = output[key][period].get(path)
+        if existing is not None and abs(existing - value) > max(0.01, abs(value) * 1e-8):
+            raise ValueError(f"Detalle duplicado con valores distintos: {key} {period} {path}")
+        output[key][period].setdefault(path, value)
+
+
+def closing_month(period):
+    return period_month_key(period)[:7] if re.fullmatch(r"\d{4}Q[1-4]", period) else period[:7]
 
 
 def old_fiscal(db, output):
     sql = """
-        SELECT entity, basis, period, item, nivel, value
+        SELECT entity, basis, construction, period, item, nivel, value
         FROM fiscal_aif_metrics_long
-        WHERE construction='trimestral' AND entity IN ('APNOF','SS')
-        ORDER BY entity, basis, period, CAST([order] AS INTEGER), rowid
+        WHERE construction IN ('trimestral','mensual','reportado') AND entity IN ('APNOF','SS')
+        ORDER BY entity, basis, construction, period, CAST([order] AS INTEGER), rowid
     """
     grouped = defaultdict(list)
     for row in db.execute(sql):
         basis = "dev" if row["basis"] == "Dev" else "caja"
-        grouped[f"{row['entity']}_{basis}", row["period"]].append(row)
-    for (series, period), rows in grouped.items():
+        construction = {"reportado": "acumulado", "mensual": "mensual", "trimestral": "trimestral"}[row["construction"]]
+        period = closing_month(row["period"]) if construction == "acumulado" else row["period"]
+        grouped[f"{row['entity']}_{basis}", construction, period].append(row)
+    for (series, construction, period), rows in grouped.items():
         for path, row in paths_by_level(rows, "item", "nivel"):
-            put(output, series, period, path, row["value"])
+            put(output, series, period, path, row["value"], construction)
 
 
 def native_hierarchy(db, output, province):
@@ -65,23 +76,43 @@ def native_hierarchy(db, output, province):
             "APNOF Caja Trim": "APNOF_caja", "Seguridad Social Caja Trim": "SS_caja",
             "Amort Caja Trim": "amort_caja", "Int y acc Caja Trim": "interest_caja",
         })
-    params = ",".join("?" for _ in table_map)
+    table_options = {table: (series, "trimestral") for table, series in table_map.items()}
+    for table, series in table_map.items():
+        if table.endswith(" Trim"):
+            base = table.removesuffix(" Trim")
+            table_options[base + " Periodo"] = series, "mensual"
+            table_options[base] = series, "acumulado"
+        elif series == "stock":
+            table_options[table] = series, "stock"
+    params = ",".join("?" for _ in table_options)
     for row in db.execute(
         f"SELECT * FROM series WHERE table_name IN ({params}) AND value IS NOT NULL "
-        "ORDER BY table_name, period, excel_row", tuple(table_map)
+        "ORDER BY table_name, period, excel_row", tuple(table_options)
     ):
-        series = table_map[row["table_name"]]
+        series, construction = table_options[row["table_name"]]
         if str(row["concept_id"]).startswith("ER_FLOT"):
             continue
         label = clean(row["concept"])
         if cordoba:
             path = tuple(clean(part) for part in row["full_path"].split(" > "))
             if series not in {"APNOF_dev", "SS_dev"}:
+                if any(norm_text(part) == "DEUDA FLOTANTE" for part in path):
+                    continue
                 path = path[1:] if row["level"] else (label,)
             path = path or (label,)
         else:
             path = (*filter(None, map(clean, (row["parent_path"] or "").split(" > "))), label)
-        put(output, series, quarter(row["period"]), path, row["value"])
+        if construction == "mensual":
+            is_month = row["interval_months"] == 1 if cordoba else row["interval_start"] == row["period"][:7] + "-01"
+            if is_month:
+                put(output, series, row["period"][:7], path, row["value"], "mensual")
+        elif construction == "acumulado":
+            put(output, series, closing_month(row["period"]), path, row["value"], construction)
+        elif construction == "stock":
+            put(output, series, quarter(row["period"]), path, row["value"])
+            put(output, series, row["period"][:7], path, row["value"], "mensual")
+        else:
+            put(output, series, quarter(row["period"]), path, row["value"])
 
 
 def mendoza_detail(db, output):
@@ -96,6 +127,7 @@ def mendoza_detail(db, output):
                 value = as_float(row["value"])
                 if period and value is not None:
                     fiscal[period, path][month] = value
+                    put(output, f"APNOF_{basis}", month, path, value, "mensual")
         for (period, path), values in fiscal.items():
             if len(values) != 3:
                 continue
@@ -127,13 +159,58 @@ def mendoza_detail(db, output):
                 put(output, "interest_dev", period, path, value)
             if label == "USO DEL CREDITO":
                 put(output, "use", period, path, value)
+    for month, rows in output["mensual|APNOF_dev"].items():
+        for path, value in rows.items():
+            series = {
+                "AMORTIZACION DE LA DEUDA CONSOLIDADA": "amort_dev",
+                "INTERESES Y GASTOS DE LA DEUDA": "interest_dev",
+                "USO DEL CREDITO": "use",
+            }.get(norm_text(path[-1]))
+            if series:
+                put(output, series, month, path, value, "mensual")
 
 
-def emit_debt_flows(output, accumulated):
+def emit_debt_flows(output, accumulated, monthly=False):
     for (series, period, path), current in accumulated.items():
-        previous = accumulated.get((series, trailing_periods(period, 2)[0], path))
-        value = current if period.endswith("Q1") else current - previous if previous is not None else None
-        put(output, series, period, path, value)
+        month = closing_month(period)
+        put(output, series, month, path, current, "acumulado")
+        if monthly:
+            year, number = map(int, month.split("-"))
+            previous_period = f"{year}-{number-1:02d}"
+            first = number == 1
+        else:
+            previous_period = trailing_periods(period, 2)[0]
+            first = period.endswith("Q1")
+        previous = accumulated.get((series, previous_period, path))
+        value = current if first else current - previous if previous is not None else None
+        put(output, series, period, path, value, "mensual" if monthly else "trimestral")
+
+
+def santa_fe_paths(rows):
+    intermediate = {}
+    currencies = defaultdict(set)
+    for row in rows:
+        key = tuple(clean(row[k]) for k in ("acreedor", "subgrupo", "instrumento"))
+        currencies[key].add(clean(row.get("moneda_instrumento")))
+    for row in rows:
+        category, group, instrument = (clean(row[key]) for key in ("acreedor", "subgrupo", "instrumento"))
+        level = int(row["nivel"] or 0)
+        if level == 0:
+            path = (instrument or category,)
+        elif level == 1:
+            path = (category,)
+        elif level == 2:
+            base = tuple(filter(None, (category, group)))
+            path = base if instrument == group else (*base, instrument)
+            if len(currencies[category, group, instrument]) > 1:
+                path = (*path[:-1], path[-1] + " · " + clean(row.get("moneda_instrumento")))
+            intermediate[category, group] = path
+        else:
+            base = intermediate.get((category, group), tuple(filter(None, (category, group))))
+            currency = clean(row.get("moneda_instrumento"))
+            label = instrument + (f" · {currency}" if currency else "")
+            path = (*base, label)
+        yield path, row
 
 
 def santa_fe_debt(db, output):
@@ -144,13 +221,30 @@ def santa_fe_debt(db, output):
               "interest_caja": "intereses_pag_cum"}
     for period, rows in groups.items():
         ordered = sorted(rows, key=lambda row: as_float(row["orden"]) or 0)
-        for path, row in paths_by_level(ordered, "instrument_raw", "level"):
+        for path, row in santa_fe_paths(ordered):
             put(output, "stock", period, path, row["stock_pesos"])
             for series, field in fields.items():
                 value = as_float(row[field])
                 if value is not None:
                     accumulated[series, period, path] = value
     emit_debt_flows(output, accumulated)
+    monthly = {}
+    query = """
+        SELECT * FROM deuda_publica_long
+        WHERE frequency='monthly'
+        ORDER BY period, CAST(orden AS INTEGER), rowid
+    """
+    groups = defaultdict(list)
+    for row in db.execute(query):
+        groups[row["period"]].append(dict(row))
+    for period, rows in groups.items():
+        for path, row in santa_fe_paths(rows):
+            put(output, "stock", period, path, row["stock_pesos"], "mensual")
+            for series, field in fields.items():
+                value = as_float(row[field])
+                if value is not None:
+                    monthly[series, period, path] = value
+    emit_debt_flows(output, monthly, monthly=True)
 
 
 def neuquen_debt(spec, output):
@@ -182,7 +276,57 @@ def neuquen_debt(spec, output):
     emit_debt_flows(output, accumulated)
 
 
+def add_accumulated(output):
+    monthly_keys = [key for key in output if key.startswith("mensual|") and key != "mensual|stock"]
+    for key in monthly_keys:
+        series = key.split("|", 1)[1]
+        points = output[key]
+        for month, rows in list(points.items()):
+            year, number = month.split("-")
+            months = [f"{year}-{m:02d}" for m in range(1, int(number)+1)]
+            for path in rows:
+                values = [points.get(p, {}).get(path) for p in months]
+                if all(v is not None for v in values):
+                    target = output["acumulado|" + series][month]
+                    target.setdefault(path, sum(values))
+    for series in list(output):
+        if "|" in series or series == "stock":
+            continue
+        points = output[series]
+        for period, rows in list(points.items()):
+            quarters = [f"{period[:4]}Q{q}" for q in range(1, int(period[-1])+1)]
+            for path in rows:
+                values = [points.get(p, {}).get(path) for p in quarters]
+                if all(v is not None for v in values):
+                    output["acumulado|" + series][closing_month(period)].setdefault(path, sum(values))
+
+
+def export_series(output):
+    paths = []
+    ids = {}
+    constructions = defaultdict(dict)
+    for key, series in output.items():
+        construction, measure = key.split("|", 1) if "|" in key else ("trimestral", key)
+        periods = {}
+        for period, rows in sorted(series.items()):
+            if not rows:
+                continue
+            encoded = []
+            for path, value in rows.items():
+                if path not in ids:
+                    ids[path] = len(paths)
+                    paths.append(path)
+                encoded.append([ids[path], value])
+            periods[period] = encoded
+        if periods:
+            constructions[construction][measure] = periods
+    return paths, dict(constructions)
+
+
 def build_details(config, macro, ipc):
+    monthly_macro = load_monthly_macro(ROOT/config["monthly_macro_file"])
+    with (ROOT/config["monthly_macro_file"]).open(encoding="utf-8-sig", newline="") as file:
+        weights = {r["mes"][:7]: max(1, int(r.get("observaciones_diarias") or 1)) for r in csv.DictReader(file)}
     for province, spec in config["provinces"].items():
         output = defaultdict(lambda: defaultdict(dict))
         fx = {}
@@ -203,26 +347,47 @@ def build_details(config, macro, ipc):
                 with readonly_connection(ROOT/spec["debt_db"]) as db:
                     santa_fe_debt(db, output)
                     fx = load_reported_debt_fx(db)
+                    for row in db.execute("SELECT period, rate FROM tipo_cambio_deuda WHERE currency_from='USD' AND currency_to='ARS' AND reported_rate_available=1 AND rate>0"):
+                        fx[row["period"]] = row["rate"]
             else:
                 neuquen_debt(spec, output)
+        add_accumulated(output)
+        paths, constructions = export_series(output)
+        periods = sorted({p for series in output.values() for p in series})
+        rates = {}
+        accumulated_rates = {}
+        for period in periods:
+            month = closing_month(period)
+            is_monthly = bool(re.fullmatch(r"\d{4}-\d{2}", period))
+            currency = monthly_macro.get(month, {}) if is_monthly else macro.get(period, {})
+            rates[period] = [
+                currency.get("average"), fx.get(period) or currency.get("end"),
+                ipc["monthly"].get(month) if is_monthly else ipc["quarterly"].get(period),
+                ipc["monthly"].get(month),
+            ]
+            months = [f"{month[:4]}-{m:02d}" for m in range(1, int(month[-2:])+1)]
+            fx_values = [monthly_macro.get(m, {}).get("average") for m in months]
+            ipc_values = [ipc["monthly"].get(m) for m in months]
+            fx_average = None
+            if all(v is not None for v in fx_values):
+                fx_average = sum(v * weights.get(m, 1) for m, v in zip(months, fx_values)) / sum(weights.get(m, 1) for m in months)
+            ipc_average = sum(ipc_values)/len(months) if all(v is not None for v in ipc_values) else None
+            accumulated_rates[month] = [fx_average, ipc_average]
         data = {
+            "format": 2,
+            "paths": paths,
             "reference": ipc["reference"],
             "referenceDate": ipc["reference_date"],
-            "rates": {
-                p: [macro.get(p, {}).get("average"), fx.get(p) or macro.get(p, {}).get("end"),
-                    ipc["quarterly"].get(p), ipc["monthly"].get(period_month_key(p)[:7])]
-                for p in sorted({p for series in output.values() for p in series})
-            },
-            "series": {
-                key: {period: [[*path, value] for path, value in rows.items()]
-                      for period, rows in sorted(series.items()) if rows}
-                for key, series in output.items() if series
-            },
+            "rates": rates,
+            "accumulatedRates": accumulated_rates,
+            "series": constructions.get("trimestral", {}),
+            "constructions": constructions,
         }
         payload = json.dumps(data, ensure_ascii=False, separators=(",", ":"), allow_nan=False)
         atomic_write(ROOT/"data"/"detalle"/f"{province}.js",
                      f"window.PROVINCIAS_DETALLE ??= {{}};\nwindow.PROVINCIAS_DETALLE[{json.dumps(province)}] = {payload};\n")
-        print(province, {key: len(series) for key, series in data["series"].items()})
+        print(province, {construction: {key: len(series) for key, series in grouped.items()}
+                         for construction, grouped in constructions.items()})
 
 
 if __name__ == "__main__":

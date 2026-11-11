@@ -23,8 +23,14 @@ cuando está identificada, o sus componentes explícitos. Los préstamos
 genéricos quedan en el residual. Otras amortizaciones y otros endeudamientos
 son el total menos el tramo comercial y el multilateral.
 
-Las pestañas de detalle muestran flujos del trimestre y stocks de cierre.
-Los flujos usan el A3500 promedio o el IPC promedio del trimestre. Los stocks
+Las pestañas de detalle permiten comparar varios períodos en columnas. Para
+flujos se puede elegir mensual, trimestral o acumulado desde enero hasta cada
+cierre, según la frecuencia disponible en la fuente. Los flujos mensuales se
+habilitan únicamente si corresponden a un mes completo. Los flujos usan el
+A3500 promedio o el IPC promedio del período. Para acumulados, el promedio de
+A3500 se pondera por la cantidad de observaciones diarias de cada mes y el IPC
+es el promedio de los meses comprendidos. Los stocks muestran cierres mensuales
+o trimestrales disponibles y
 usan el tipo provincial informado o el A3500 de cierre y el IPC del mes final.
 La reexpresión usa el último IPC nacional disponible. La vista Caja conserva
 el alcance de la fuente. En Santa Fe, el AIF pagado cubre el ejercicio corriente.

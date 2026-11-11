@@ -1008,23 +1008,118 @@ body.map-open footer {
 .detail-controls {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 8px 12px;
+  align-items: end;
 }
 
 .detail-controls label {
   display: grid;
   gap: 4px;
-  font-size: 13px;
+  font-size: 12px;
+}
+
+.detail-caption {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  padding: 8px 0;
+  font-size: 11px;
 }
 
 .detail-status {
-  min-height: 1.4em;
   color: #555;
-  font-size: 13px;
+}
+
+#detailView {
+  padding-top: 16px;
+  padding-bottom: 20px;
+}
+
+.detail-view .app-header {
+  padding: 12px 32px;
+}
+
+.detail-view .selected-province h1 {
+  font-size: 24px;
+}
+
+.detail-view .selected-province .eyebrow {
+  margin-bottom: 3px;
+  font-size: 11px;
+}
+
+#detailView .section-heading {
+  margin-bottom: 12px;
+}
+
+.detail-controls select {
+  height: 32px;
+}
+
+.detail-scroll {
+  max-height: calc(100vh - 340px);
+  min-height: 250px;
+  border: 1px solid #d9e0df;
+}
+
+.detail-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+.detail-table th,
+.detail-table td {
+  height: 27px;
+  padding: 3px 10px;
+  vertical-align: middle;
+}
+
+.detail-table th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  height: 30px;
+  background: #e9efed;
+  border-bottom: 1px solid #c4cfca;
+  white-space: nowrap;
+  font-size: 11px;
+  text-transform: none;
+}
+
+.detail-table th:not(:first-child),
+.detail-table td:not(:first-child) {
+  min-width: 126px;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.detail-table th:first-child,
+.detail-table td:first-child {
+  position: sticky;
+  left: 0;
+  min-width: 340px;
+  width: 340px;
+  max-width: 480px;
+  z-index: 1;
+  background: #ffffff;
+  border-right: 1px solid #d9e0df;
 }
 
 .detail-table th:first-child {
-  width: 70%;
+  z-index: 3;
+  background: #e9efed;
+}
+
+.detail-concept-label {
+  display: inline-block;
+  max-width: 330px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: middle;
 }
 
 .detail-table td:last-child {
@@ -1037,12 +1132,20 @@ body.map-open footer {
   font-weight: bold;
 }
 
+.detail-table .detail-root td {
+  background: #edf4f3;
+}
+
+.detail-table tbody tr:hover td {
+  background: #f2f7f6;
+}
+
 .detail-toggle, .detail-spacer {
   display: inline-grid;
-  width: 26px;
-  height: 26px;
+  width: 19px;
+  height: 19px;
   place-items: center;
-  margin-right: 5px;
+  margin-right: 4px;
   vertical-align: middle;
 }
 
@@ -1051,4 +1154,133 @@ body.map-open footer {
   border-radius: 4px;
   background: white;
   cursor: pointer;
+}
+
+.detail-period-control {
+  display: grid;
+  gap: 4px;
+  font-size: 12px;
+}
+
+.detail-period-menu {
+  position: relative;
+  min-width: 204px;
+}
+
+.detail-period-menu summary {
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 10px;
+  border: 1px solid #aeb9b4;
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+  list-style: none;
+}
+
+.detail-period-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.detail-period-menu summary::after {
+  content: "▾";
+}
+
+.detail-period-menu[open] summary {
+  outline: 2px solid #86b8b3;
+  outline-offset: 1px;
+}
+
+.detail-period-menu fieldset {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  max-height: 320px;
+  overflow-y: auto;
+  margin: 0;
+  padding: 6px 8px;
+  border: 1px solid #becdca;
+  border-radius: 4px;
+  background: white;
+  box-shadow: 0 4px 14px #00000016;
+}
+
+.detail-controls fieldset label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 28px;
+  padding: 2px 6px;
+  cursor: pointer;
+}
+
+.detail-controls fieldset label:hover {
+  background: #edf4f3;
+}
+
+.detail-controls input[type="checkbox"] {
+  accent-color: #167c77;
+}
+
+.detail-period-year {
+  padding: 5px 6px 2px;
+  color: #56635f;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .detail-view .app-header {
+    padding: 12px 16px;
+  }
+
+  .detail-view .province-views {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 12px;
+    padding: 0 14px;
+  }
+
+  .detail-view .province-views button {
+    flex-shrink: 0;
+    white-space: nowrap;
+    font-size: 12px;
+  }
+
+  .detail-controls {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .detail-controls label,
+  .detail-period-control,
+  .detail-period-menu,
+  .detail-controls select {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .detail-controls > label:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .detail-scroll {
+    max-height: 65vh;
+  }
+
+  .detail-table td:first-child,
+  .detail-table th:first-child {
+    min-width: 220px;
+    width: 220px;
+  }
+
+  .detail-concept-label {
+    max-width: 190px;
+  }
 }

@@ -880,11 +880,14 @@
     province: null,
     view: null,
     expanded: new Map(),
+    periods: new Set(),
+    availablePeriods: [],
+    seriesKey: null,
     data: null,
     loads: new Map(),
   };
   const detailControls = Object.fromEntries(
-    ["Measure", "Basis", "Period", "Currency"].map((name) => [name, document.getElementById("detail" + name)]),
+    ["Measure", "Basis", "Construction", "Currency"].map((name) => [name, document.getElementById("detail" + name)]),
   );
   const detailTables = {
     budget: { APNOF: "APNOF", SS: "Seguridad Social" },
@@ -895,7 +898,7 @@
     if (!detail.loads.has(id)) {
       const loading = new Promise((resolve, reject) => {
         const script = document.createElement("script");
-        script.src = `data/detalle/${encodeURIComponent(id)}.js?v=26`;
+        script.src = `data/detalle/${encodeURIComponent(id)}.js?v=27`;
         script.onload = () => {
           const data = window.PROVINCIAS_DETALLE?.[id];
           if (data) resolve(data);
@@ -918,15 +921,24 @@
     if (options.some(([value]) => value === selected)) select.value = selected;
   }
 
-  function renderDetailControls(preferredPeriod) {
-    const series = detail.data.series;
+  function detailConstruction(construction) {
+    return detail.data.constructions?.[construction] || (construction === "trimestral" ? detail.data.series : {});
+  }
+
+  function detailClosingMonth(period) {
+    const match = /^(\d{4})Q([1-4])$/.exec(period);
+    return match ? `${match[1]}-${String(Number(match[2]) * 3).padStart(2, "0")}` : period;
+  }
+
+  function renderDetailControls() {
+    const allSeries = Object.assign({}, ...Object.values(detail.data.constructions || { trimestral: detail.data.series }));
     const entries = Object.entries(detailTables[detail.view]);
-    fillSelect(detailControls.Measure, entries.filter(([key]) => series[key] || series[key + "_dev"] || series[key + "_caja"]));
+    fillSelect(detailControls.Measure, entries.filter(([key]) => allSeries[key] || allSeries[key + "_dev"] || allSeries[key + "_caja"]));
     const key = detailControls.Measure.value;
-    const hasBasis = !series[key];
+    const hasBasis = key !== "stock" && key !== "use";
     document.getElementById("detailBasisLabel").hidden = !hasBasis;
     for (const option of detailControls.Basis.options) {
-      option.disabled = !series[key + "_" + option.value];
+      option.disabled = !allSeries[key + "_" + option.value];
       if (option.value === "caja") {
         option.textContent = option.disabled ? "Caja (sin datos)"
           : detail.province === "santa_fe" && detail.view === "budget" ? "Pagado del ejercicio" : "Caja";
@@ -935,38 +947,85 @@
     if (hasBasis && detailControls.Basis.selectedOptions[0]?.disabled) {
       detailControls.Basis.value = [...detailControls.Basis.options].find((option) => !option.disabled)?.value || "dev";
     }
-    const selected = series[hasBasis ? key + "_" + detailControls.Basis.value : key] || {};
-    fillSelect(detailControls.Period, Object.keys(selected).sort().reverse().map((p) => [p, formatPeriod(p)]), preferredPeriod);
+    detail.seriesKey = hasBasis ? key + "_" + detailControls.Basis.value : key;
+    for (const option of detailControls.Construction.options) {
+      option.disabled = !detailConstruction(option.value)[detail.seriesKey];
+    }
+    if (detailControls.Construction.selectedOptions[0]?.disabled) {
+      detailControls.Construction.value = [...detailControls.Construction.options].find((option) => !option.disabled)?.value || "trimestral";
+    }
+    const selected = detailConstruction(detailControls.Construction.value)[detail.seriesKey] || {};
+    const available = Object.keys(selected).sort().reverse();
+    const previous = new Set([...detail.periods].map(detailClosingMonth));
+    detail.periods = new Set(available.filter((period) => previous.has(detailClosingMonth(period))));
+    if (!detail.periods.size) detail.periods = new Set(available.slice(0, 4));
+    detail.availablePeriods = available;
+    renderDetailPeriods();
     renderDetailRows();
   }
 
-  function detailTree(rows) {
-    const root = new Map();
-    for (const row of rows) {
-      let siblings = root;
-      let node;
-      for (const label of row.slice(0, -1)) {
-        if (!siblings.has(label)) siblings.set(label, { label, value: null, children: new Map() });
-        node = siblings.get(label);
-        siblings = node.children;
+  function renderDetailPeriods() {
+    const fieldset = document.getElementById("detailPeriods");
+    const fragment = document.createDocumentFragment();
+    let year = null;
+    for (const period of detail.availablePeriods) {
+      if (period.slice(0, 4) !== year) {
+        year = period.slice(0, 4);
+        const heading = document.createElement("div");
+        heading.className = "detail-period-year";
+        heading.textContent = year;
+        fragment.append(heading);
       }
-      if (node) node.value = row.at(-1);
+      const label = document.createElement("label");
+      const input = document.createElement("input");
+      input.type = "checkbox";
+      input.value = period;
+      input.checked = detail.periods.has(period);
+      input.addEventListener("change", () => {
+        if (input.checked) detail.periods.add(period);
+        else detail.periods.delete(period);
+        renderDetailRows();
+      });
+      label.append(input, formatPeriod(period));
+      fragment.append(label);
+    }
+    fieldset.replaceChildren(fragment);
+  }
+
+  function detailTree(periods, series) {
+    const root = new Map();
+    for (const period of [...periods].reverse()) {
+      for (const row of series[period] || []) {
+        let siblings = root;
+        let node;
+        const path = detail.data.format === 2 ? detail.data.paths[row[0]] : row.slice(0, -1);
+        for (const label of path) {
+          if (!siblings.has(label)) siblings.set(label, { label, values: new Map(), children: new Map() });
+          node = siblings.get(label);
+          siblings = node.children;
+        }
+        if (node) node.values.set(period, row.at(-1));
+      }
     }
     return root;
   }
 
   function renderDetailRows() {
-    const { Measure, Basis, Period, Currency } = detailControls;
+    const { Measure, Basis, Construction, Currency } = detailControls;
     const key = Measure.value;
-    const period = Period.value;
+    const periods = [...detail.periods].sort((a, b) => detailClosingMonth(a).localeCompare(detailClosingMonth(b)));
+    const construction = Construction.value;
     const currency = Currency.value;
     const stock = key === "stock";
-    const series = detail.data.series;
-    const records = (series[key] || series[key + "_" + Basis.value])?.[period] || [];
-    const rates = detail.data.rates[period] || [];
-    const fx = rates[stock ? 1 : 0];
-    const ipc = rates[stock ? 3 : 2];
-    const factor = currency === "ars" ? 1 : currency === "usd" ? (fx ? 1 / fx : null) : (ipc ? detail.data.reference / ipc : null);
+    const series = detailConstruction(construction)[detail.seriesKey] || {};
+    const factors = new Map(periods.map((period) => {
+      const rates = detail.data.rates[period] || [];
+      const accumulated = detail.data.accumulatedRates?.[detailClosingMonth(period)] || [];
+      const fx = construction === "acumulado" ? accumulated[0] : rates[stock ? 1 : 0];
+      const ipc = construction === "acumulado" ? accumulated[1] : rates[stock ? 3 : 2];
+      const factor = currency === "ars" ? 1 : currency === "usd" ? (fx ? 1 / fx : null) : (ipc ? detail.data.reference / ipc : null);
+      return [period, factor];
+    }));
     document.getElementById("detailUnit").textContent = {
       ars: "Millones de pesos", usd: "Millones de USD",
       real: `Millones de pesos de ${detail.data.referenceDate?.slice(0, 7) || ""}`,
@@ -976,9 +1035,23 @@
       ? "Pagado del ejercicio corriente."
       : detail.province === "entre_rios" ? "Caja · ejercicio corriente y anteriores."
         : "Base caja según la publicación de origen.";
-    status.textContent = !records.length ? "Sin datos para esta selección."
-      : factor === null ? "Sin índice de conversión para este período."
-      : !stock && key !== "use" && Basis.value === "caja" ? cashLabel : "";
+    const notes = [];
+    if (!periods.length) notes.push("Seleccione uno o más períodos.");
+    if ([...factors.values()].some((factor) => factor === null)) notes.push("s/d en períodos sin índice de conversión.");
+    if (construction === "acumulado") notes.push("Acumulado desde enero hasta cada cierre.");
+    if (!stock && key !== "use" && Basis.value === "caja") notes.push(cashLabel);
+    status.textContent = notes.join(" ");
+    document.getElementById("detailPeriodsSummary").textContent = periods.length
+      ? `${periods.length} período${periods.length === 1 ? "" : "s"} seleccionado${periods.length === 1 ? "" : "s"}`
+      : "Seleccionar períodos";
+    const headerRow = document.createElement("tr");
+    for (const title of ["Concepto", ...periods.map(formatPeriod)]) {
+      const th = document.createElement("th");
+      th.scope = "col";
+      th.textContent = title;
+      headerRow.append(th);
+    }
+    document.getElementById("detailHead").replaceChildren(headerRow);
     const tbody = document.getElementById("detailRows");
     const fragment = document.createDocumentFragment();
 
@@ -991,7 +1064,7 @@
         const tr = document.createElement("tr");
         if (!depth) tr.className = "detail-root";
         const name = tr.insertCell();
-        name.style.paddingInlineStart = `${12 + depth * 18}px`;
+        name.style.paddingInlineStart = `${8 + depth * 14}px`;
         if (node.children.size) {
           const button = document.createElement("button");
           button.type = "button";
@@ -1011,14 +1084,22 @@
           spacer.className = "detail-spacer";
           name.append(spacer);
         }
-        name.append(label);
-        const amount = tr.insertCell();
-        amount.textContent = factor === null || node.value === null ? "s/d" : decimalFormatter.format(node.value * factor);
+        const text = document.createElement("span");
+        text.className = "detail-concept-label";
+        text.textContent = label;
+        name.title = label;
+        name.append(text);
+        for (const period of periods) {
+          const value = node.values.get(period);
+          const factor = factors.get(period);
+          const amount = tr.insertCell();
+          amount.textContent = factor === null || value === undefined ? "s/d" : decimalFormatter.format(value * factor);
+        }
         fragment.append(tr);
         if (open) append(node.children, path);
       }
     }
-    append(detailTree(records));
+    append(detailTree(periods, series));
     tbody.replaceChildren(fragment);
   }
 
@@ -1030,7 +1111,9 @@
       detail.province = id;
       detail.view = view;
       detail.expanded.clear();
+      detail.periods.clear();
       detailControls.Basis.value = "dev";
+      detailControls.Construction.value = "trimestral";
       detailControls.Measure.replaceChildren();
     }
     detail.data = null;
@@ -1040,7 +1123,7 @@
       const data = await loadProvinceDetail(id);
       if (state.provinceId !== id || state.view !== view) return;
       detail.data = data;
-      renderDetailControls(state.period);
+      renderDetailControls();
     } catch {
       if (state.provinceId === id && state.view === view) {
         document.getElementById("detailStatus").textContent = "No se pudo cargar el detalle de esta provincia.";
@@ -1051,12 +1134,22 @@
   for (const [name, select] of Object.entries(detailControls)) {
     select.addEventListener("change", () => {
       if (!detail.data) return;
-      if (name === "Measure" || name === "Basis") {
+      if (name === "Measure" || name === "Basis" || name === "Construction") {
         detail.expanded.clear();
         renderDetailControls();
       } else renderDetailRows();
     });
   }
+  const detailPeriodsMenu = document.getElementById("detailPeriodsMenu");
+  document.addEventListener("click", (event) => {
+    if (!detailPeriodsMenu.contains(event.target)) detailPeriodsMenu.open = false;
+  });
+  detailPeriodsMenu.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      detailPeriodsMenu.open = false;
+      document.getElementById("detailPeriodsSummary").focus();
+    }
+  });
   const provinceViews = document.getElementById("provinceViews");
   provinceViews.addEventListener("click", (event) => {
     const button = event.target.closest("button[data-view]");
@@ -1065,6 +1158,7 @@
 
   function switchView(view) {
     state.view = view;
+    document.body.classList.toggle("detail-view", view === "budget" || view === "debt");
     document.getElementById("summaryView").hidden = view !== "summary";
     document.getElementById("comparatorView").hidden = view !== "comparator";
     document.getElementById("detailView").hidden = view !== "budget" && view !== "debt";
