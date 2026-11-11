@@ -876,10 +876,202 @@
     renderComparisonTable();
   }
 
+  const detail = {
+    province: null,
+    view: null,
+    expanded: new Map(),
+    data: null,
+    loads: new Map(),
+  };
+  const detailControls = Object.fromEntries(
+    ["Measure", "Basis", "Period", "Currency"].map((name) => [name, document.getElementById("detail" + name)]),
+  );
+  const detailTables = {
+    budget: { APNOF: "APNOF", SS: "Seguridad Social" },
+    debt: { stock: "Stock al cierre", amort: "Amortizaciones", interest: "Intereses", use: "Uso del crédito" },
+  };
+
+  function loadProvinceDetail(id) {
+    if (!detail.loads.has(id)) {
+      const loading = new Promise((resolve, reject) => {
+        const script = document.createElement("script");
+        script.src = `data/detalle/${encodeURIComponent(id)}.js?v=26`;
+        script.onload = () => {
+          const data = window.PROVINCIAS_DETALLE?.[id];
+          if (data) resolve(data);
+          else reject(new Error("Detalle no disponible"));
+        };
+        script.onerror = reject;
+        document.head.append(script);
+      }).catch((error) => {
+        detail.loads.delete(id);
+        throw error;
+      });
+      detail.loads.set(id, loading);
+    }
+    return detail.loads.get(id);
+  }
+
+  function fillSelect(select, options, preferred) {
+    const selected = preferred || select.value;
+    select.replaceChildren(...options.map(([value, label]) => new Option(label, value)));
+    if (options.some(([value]) => value === selected)) select.value = selected;
+  }
+
+  function renderDetailControls(preferredPeriod) {
+    const series = detail.data.series;
+    const entries = Object.entries(detailTables[detail.view]);
+    fillSelect(detailControls.Measure, entries.filter(([key]) => series[key] || series[key + "_dev"] || series[key + "_caja"]));
+    const key = detailControls.Measure.value;
+    const hasBasis = !series[key];
+    document.getElementById("detailBasisLabel").hidden = !hasBasis;
+    for (const option of detailControls.Basis.options) {
+      option.disabled = !series[key + "_" + option.value];
+      if (option.value === "caja") {
+        option.textContent = option.disabled ? "Caja (sin datos)"
+          : detail.province === "santa_fe" && detail.view === "budget" ? "Pagado del ejercicio" : "Caja";
+      }
+    }
+    if (hasBasis && detailControls.Basis.selectedOptions[0]?.disabled) {
+      detailControls.Basis.value = [...detailControls.Basis.options].find((option) => !option.disabled)?.value || "dev";
+    }
+    const selected = series[hasBasis ? key + "_" + detailControls.Basis.value : key] || {};
+    fillSelect(detailControls.Period, Object.keys(selected).sort().reverse().map((p) => [p, formatPeriod(p)]), preferredPeriod);
+    renderDetailRows();
+  }
+
+  function detailTree(rows) {
+    const root = new Map();
+    for (const row of rows) {
+      let siblings = root;
+      let node;
+      for (const label of row.slice(0, -1)) {
+        if (!siblings.has(label)) siblings.set(label, { label, value: null, children: new Map() });
+        node = siblings.get(label);
+        siblings = node.children;
+      }
+      if (node) node.value = row.at(-1);
+    }
+    return root;
+  }
+
+  function renderDetailRows() {
+    const { Measure, Basis, Period, Currency } = detailControls;
+    const key = Measure.value;
+    const period = Period.value;
+    const currency = Currency.value;
+    const stock = key === "stock";
+    const series = detail.data.series;
+    const records = (series[key] || series[key + "_" + Basis.value])?.[period] || [];
+    const rates = detail.data.rates[period] || [];
+    const fx = rates[stock ? 1 : 0];
+    const ipc = rates[stock ? 3 : 2];
+    const factor = currency === "ars" ? 1 : currency === "usd" ? (fx ? 1 / fx : null) : (ipc ? detail.data.reference / ipc : null);
+    document.getElementById("detailUnit").textContent = {
+      ars: "Millones de pesos", usd: "Millones de USD",
+      real: `Millones de pesos de ${detail.data.referenceDate?.slice(0, 7) || ""}`,
+    }[currency];
+    const status = document.getElementById("detailStatus");
+    const cashLabel = detail.province === "santa_fe" && detail.view === "budget"
+      ? "Pagado del ejercicio corriente."
+      : detail.province === "entre_rios" ? "Caja · ejercicio corriente y anteriores."
+        : "Base caja según la publicación de origen.";
+    status.textContent = !records.length ? "Sin datos para esta selección."
+      : factor === null ? "Sin índice de conversión para este período."
+      : !stock && key !== "use" && Basis.value === "caja" ? cashLabel : "";
+    const tbody = document.getElementById("detailRows");
+    const fragment = document.createDocumentFragment();
+
+    function append(nodes, ancestors = []) {
+      for (const [label, node] of nodes) {
+        const path = [...ancestors, label];
+        const depth = ancestors.length;
+        const id = JSON.stringify(path);
+        const open = detail.expanded.get(id) ?? depth === 0;
+        const tr = document.createElement("tr");
+        if (!depth) tr.className = "detail-root";
+        const name = tr.insertCell();
+        name.style.paddingInlineStart = `${12 + depth * 18}px`;
+        if (node.children.size) {
+          const button = document.createElement("button");
+          button.type = "button";
+          button.className = "detail-toggle";
+          button.dataset.path = id;
+          button.setAttribute("aria-label", (open ? "Contraer " : "Expandir ") + label);
+          button.setAttribute("aria-expanded", String(open));
+          button.textContent = open ? "−" : "+";
+          button.addEventListener("click", () => {
+            detail.expanded.set(id, !open);
+            renderDetailRows();
+            [...tbody.querySelectorAll("button[data-path]")].find((item) => item.dataset.path === id)?.focus();
+          });
+          name.append(button);
+        } else {
+          const spacer = document.createElement("span");
+          spacer.className = "detail-spacer";
+          name.append(spacer);
+        }
+        name.append(label);
+        const amount = tr.insertCell();
+        amount.textContent = factor === null || node.value === null ? "s/d" : decimalFormatter.format(node.value * factor);
+        fragment.append(tr);
+        if (open) append(node.children, path);
+      }
+    }
+    append(detailTree(records));
+    tbody.replaceChildren(fragment);
+  }
+
+  async function renderDetail() {
+    const id = state.provinceId;
+    const view = state.view;
+    document.getElementById("detailTitle").textContent = view === "budget" ? "Ejecución Presupuestaria" : "Stock y Servicio de Deuda";
+    if (detail.province !== id || detail.view !== view) {
+      detail.province = id;
+      detail.view = view;
+      detail.expanded.clear();
+      detailControls.Basis.value = "dev";
+      detailControls.Measure.replaceChildren();
+    }
+    detail.data = null;
+    document.getElementById("detailRows").replaceChildren();
+    document.getElementById("detailStatus").textContent = "Cargando datos…";
+    try {
+      const data = await loadProvinceDetail(id);
+      if (state.provinceId !== id || state.view !== view) return;
+      detail.data = data;
+      renderDetailControls(state.period);
+    } catch {
+      if (state.provinceId === id && state.view === view) {
+        document.getElementById("detailStatus").textContent = "No se pudo cargar el detalle de esta provincia.";
+      }
+    }
+  }
+
+  for (const [name, select] of Object.entries(detailControls)) {
+    select.addEventListener("change", () => {
+      if (!detail.data) return;
+      if (name === "Measure" || name === "Basis") {
+        detail.expanded.clear();
+        renderDetailControls();
+      } else renderDetailRows();
+    });
+  }
+  const provinceViews = document.getElementById("provinceViews");
+  provinceViews.addEventListener("click", (event) => {
+    const button = event.target.closest("button[data-view]");
+    if (button && state.provinceId) switchView(button.dataset.view);
+  });
+
   function switchView(view) {
     state.view = view;
     document.getElementById("summaryView").hidden = view !== "summary";
     document.getElementById("comparatorView").hidden = view !== "comparator";
+    document.getElementById("detailView").hidden = view !== "budget" && view !== "debt";
+    provinceViews.hidden = !state.provinceId || view === "comparator";
+    provinceViews.querySelectorAll("[data-view]").forEach((button) => {
+      button.setAttribute("aria-current", button.dataset.view === view ? "page" : "false");
+    });
     document.body.classList.toggle("comparator-view", view === "comparator");
     const toggle = document.getElementById("comparatorToggle");
     toggle.setAttribute("aria-current", view === "comparator" ? "page" : "false");
@@ -898,7 +1090,12 @@
     const province = state.provinceId ? DATA.provinces[state.provinceId] : null;
     renderTabs();
     renderHeader(province);
+    provinceViews.hidden = !province || state.view === "comparator";
     if (!province) return;
+    if (state.view === "budget" || state.view === "debt") {
+      renderDetail();
+      return;
+    }
     renderKpis(province);
     renderTrendCharts(province);
     renderCompositionCharts(province);
@@ -1017,6 +1214,7 @@
     const eyebrow = document.getElementById("provinceEyebrow");
     if (eyebrow) eyebrow.textContent = "";
     state.provinceId = null;
+    provinceViews.hidden = true;
     renderTabs();
   }
 

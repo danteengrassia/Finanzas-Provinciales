@@ -978,3 +978,77 @@ body.map-open footer {
   background: #35618f;
   color: #ffffff;
 }
+#provinceViews[hidden], #detailView[hidden], #detailBasisLabel[hidden] {
+  display: none;
+}
+
+.province-views {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  padding: 0 24px;
+  border-bottom: 1px solid #dedede;
+  background: white;
+}
+
+.province-views button {
+  font: inherit;
+  padding: 10px 4px;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: none;
+  cursor: pointer;
+}
+
+.province-views button[aria-current="page"] {
+  border-bottom-color: #167c77;
+  font-weight: bold;
+}
+
+.detail-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.detail-controls label {
+  display: grid;
+  gap: 4px;
+  font-size: 13px;
+}
+
+.detail-status {
+  min-height: 1.4em;
+  color: #555;
+  font-size: 13px;
+}
+
+.detail-table th:first-child {
+  width: 70%;
+}
+
+.detail-table td:last-child {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.detail-table .detail-root {
+  background: #edf4f3;
+  font-weight: bold;
+}
+
+.detail-toggle, .detail-spacer {
+  display: inline-grid;
+  width: 26px;
+  height: 26px;
+  place-items: center;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.detail-toggle {
+  border: 1px solid #c9d2d1;
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+}

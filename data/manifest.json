@@ -1,30 +1,30 @@
 {
-  "generated_at": "2026-11-09T23:16:51-03:00",
+  "generated_at": "2026-11-10T21:46:32-03:00",
   "schema_version": "1.2.0",
   "sources": [
     {
-      "path": "E:\\bkpdante26\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\20260814_130319\\macro_trimestral.csv",
-      "size": 5380,
-      "modified": "2026-07-30T15:02:51",
-      "sha256": "3f4dad95935a762765bd691a12b231c3acec236b7ab9c8fe4fa0c967741f6cbe"
+      "path": "E:\\bkpdante26\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\macro\\a3500_trimestral.csv",
+      "size": 3850,
+      "modified": "2026-11-10T21:36:26",
+      "sha256": "2e6d0ad4bf6f373a2be97397675b93d4f755348b3fc7e7ad1f25f524f24d7351"
     },
     {
       "path": "E:\\bkpdante26\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\macro\\a3500_mensual.csv",
-      "size": 28828,
-      "modified": "2026-06-20T00:22:03",
-      "sha256": "5176ed433258ce53b70afda05f28021770329325a462b3416ce60b91735f05c1"
+      "size": 29061,
+      "modified": "2026-11-10T21:36:26",
+      "sha256": "89c7a8208ce399f72d6f4dcdc7b2e479932ddec236c36cc8af112020e1775185"
     },
     {
       "path": "E:\\bkpdante26\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\macro\\ipc_nacional_mensual.json",
-      "size": 8262,
-      "modified": "2026-08-14T20:36:45",
-      "sha256": "abda6786b0669dc6178c989dc927462f11404c698ab4bf9d6fe967e2a845a6a7"
+      "size": 8356,
+      "modified": "2026-11-10T21:36:26",
+      "sha256": "ddd944c2379d6424011fd35714f9e9c258ad564b5b2fdd37936ea499f67dd90f"
     },
     {
       "path": "E:\\bkpdante26\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\macro\\depositos_provinciales_mensual.json",
-      "size": 133661,
-      "modified": "2026-08-14T20:36:45",
-      "sha256": "d4fc5791ceab10b8f292b3cad251b49c6974506b6244955bfb3161ac7712af41"
+      "size": 335171,
+      "modified": "2026-11-10T21:36:26",
+      "sha256": "c9a5fdd035c460bf906b6f9b9346229666c6a88e979c3bf38eee023539a080bd"
     },
     {
       "path": "E:\\bkpdante26\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\santa_fe_20260814_213940\\santa_fe_data.sqlite",

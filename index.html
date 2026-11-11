@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@400;600;700&display=swap">
     <link rel="stylesheet" href="https://mapa-ign.argentina.gob.ar/js/leaflet/leaflet.css">
-    <link rel="stylesheet" href="styles.css?v=17">
+    <link rel="stylesheet" href="styles.css?v=18">
   </head>
   <body class="auth-locked">
     <div id="loginGate" class="login-gate">
@@ -51,6 +51,11 @@
             <h1 id="provinceTitle">Santa Fe</h1>
           </div>
         </header>
+        <nav id="provinceViews" class="province-views" aria-label="Vistas de la provincia" hidden>
+          <button type="button" data-view="summary" aria-current="page">Resumen Crediticio</button>
+          <button type="button" data-view="budget">Ejecución Presupuestaria</button>
+          <button type="button" data-view="debt">Stock y Servicio de Deuda</button>
+        </nav>
 
         <main id="summaryView">
           <section id="mapSection" class="map-section">
@@ -94,7 +99,7 @@
                 </article>
                 <article class="chart-panel">
                   <div class="panel-heading">
-                    <h3>Servicio de deuda / ingresos operativos netos de coparticipación a municipios</h3>
+                    <h3>Servicio de deuda devengado / ingresos operativos netos de coparticipación a municipios</h3>
                     <span class="threshold-key">Límite 15% Ley de Disciplina Financiera</span>
                   </div>
                   <div class="chart-frame"><canvas id="serviceChart" aria-label="Amortizaciones, intereses y servicio de deuda sobre ingresos operativos netos"></canvas></div>
@@ -198,6 +203,32 @@
           </section>
         </main>
 
+        <main id="detailView" class="content-band" hidden>
+          <div class="section-inner">
+            <div class="section-heading"><h2 id="detailTitle"></h2></div>
+            <div class="detail-controls">
+              <label id="detailMeasureLabel">Serie <select id="detailMeasure"></select></label>
+              <label id="detailBasisLabel">Criterio <select id="detailBasis">
+                <option value="dev">Devengado</option>
+                <option value="caja">Caja</option>
+              </select></label>
+              <label>Período <select id="detailPeriod"></select></label>
+              <label>Moneda <select id="detailCurrency">
+                <option value="ars">Pesos corrientes</option>
+                <option value="usd">USD corrientes</option>
+                <option value="real">Pesos reales actuales</option>
+              </select></label>
+            </div>
+            <p id="detailStatus" class="detail-status" role="status"></p>
+            <div class="table-scroll">
+              <table class="detail-table">
+                <thead><tr><th scope="col">Concepto</th><th scope="col" id="detailUnit">Millones de pesos</th></tr></thead>
+                <tbody id="detailRows"></tbody>
+              </table>
+            </div>
+          </div>
+        </main>
+
         <main id="comparatorView" hidden>
           <section class="content-band">
             <div class="section-inner">
@@ -265,7 +296,7 @@
     <script src="https://mapa-ign.argentina.gob.ar/js/leaflet/leaflet.js"></script>
     <script src="vendor/chart.umd.min.js"></script>
     <script src="data/provincias_geojson.js"></script>
-    <script src="data/dashboard_data.js?v=25"></script>
-    <script src="app.js?v=25"></script>
+    <script src="data/dashboard_data.js?v=26"></script>
+    <script src="app.js?v=26"></script>
   </body>
 </html>

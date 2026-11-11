@@ -1,10 +1,10 @@
 {
   "schema_version": "1.2.0",
   "frozen_source_version": "Santa Fe 20260814_213940; Neuquén 20260823_222944; Mendoza, Córdoba y Entre Ríos 20261109",
-  "macro_file": "E:\\bkpdante26\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\20260814_130319\\macro_trimestral.csv",
-  "monthly_macro_file": "E:\\bkpdante26\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\macro\\a3500_mensual.csv",
-  "ipc_file": "E:\\bkpdante26\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\macro\\ipc_nacional_mensual.json",
-  "deposits_file": "E:\\bkpdante26\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\macro\\depositos_provinciales_mensual.json",
+  "macro_file": "data/macro/a3500_trimestral.csv",
+  "monthly_macro_file": "data/macro/a3500_mensual.csv",
+  "ipc_file": "data/macro/ipc_nacional_mensual.json",
+  "deposits_file": "data/macro/depositos_provinciales_mensual.json",
   "provinces": {
     "santa_fe": {
       "name": "Santa Fe",
@@ -13,15 +13,13 @@
       "floating_debt_file": null,
       "financial_keys": {
         "amortization_commercial": [
-          "sf_apnof_dev_r232_amortizacion_de_titulos_publicaicos",
-          "sf_apnof_dev_r234_devolucion_de_otros_prestamos"
+          "sf_apnof_dev_r232_amortizacion_de_titulos_publicaicos"
         ],
         "amortization_multilateral": [
           "sf_apnof_dev_r233_devolucion_de_prestamos_de_organismos_internac"
         ],
         "borrowing_commercial": [
-          "sf_apnof_dev_r219_colocacion_titulos_publicaicos",
-          "sf_apnof_dev_r221_obtencion_de_otros_prestamos"
+          "sf_apnof_dev_r219_colocacion_titulos_publicaicos"
         ],
         "borrowing_multilateral": [
           "sf_apnof_dev_r220_obtencion_de_prestamos_de_organismos_internac"
@@ -100,6 +98,7 @@
         "resultado_primario": "RESULTADO PRIMARIO|XII RESULTADO PRIMARIO",
         "resultado_financiero": "RESULTADO FINANCIERO|XIII RESULTADO FINANCIERO",
         "endeudamiento_publico_pasivos": "FUENTES FINANCIERAS|ENDEUDAMIENTO PUBLICO E INCREMENTO DE OTROS PASIVOS",
+        "endeudamiento_publico_pasivos_fallback": "FUENTES FINANCIERAS|ENDEUDAMIENTO PUBLICO E INCREMENTO OTROS PASIVOS",
         "amortizacion_deuda_pasivos": "APLICACIONES FINANCIERAS|AMORTIZACION DE LA DEUDA Y DISMINUCION OTROS PASIVOS"
       }
     },
@@ -126,7 +125,8 @@
         "resultado_primario": "mza_deriv_resultado_primario",
         "resultado_financiero": "mza_o57",
         "endeudamiento_publico_pasivos": "mza_o58",
-        "amortizacion_deuda_pasivos": "mza_o60"
+        "amortizacion_deuda_pasivos": "mza_o60",
+        "intereses_deuda": "mza_o25"
       }
     },
     "cordoba": {
@@ -156,15 +156,13 @@
       },
       "financial_keys": {
         "amortization_commercial": [
-          "806f8151ca75c98316602973",
-          "a7949a9436ef87e061692139"
+          "806f8151ca75c98316602973"
         ],
         "amortization_multilateral": [
           "de2dcad664f84754fd72f73c"
         ],
         "borrowing_commercial": [
-          "db95d2ea34021e5acb32f9d8",
-          "764a85f60a9b3b30393625cf"
+          "db95d2ea34021e5acb32f9d8"
         ],
         "borrowing_multilateral": [
           "fd54b76b848a4dc0316a4b2a"
@@ -205,15 +203,13 @@
       },
       "financial_keys": {
         "amortization_commercial": [
-          "ER_APNOF_148",
-          "ER_APNOF_151"
+          "ER_APNOF_148"
         ],
         "amortization_multilateral": [
           "ER_APNOF_149"
         ],
         "borrowing_commercial": [
-          "ER_APNOF_136",
-          "ER_APNOF_138"
+          "ER_APNOF_136"
         ],
         "borrowing_multilateral": [
           "ER_APNOF_137"

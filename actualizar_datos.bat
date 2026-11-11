@@ -6,18 +6,18 @@ set "CODEX_PYTHON=%USERPROFILE%\.cache\codex-runtimes\codex-primary-runtime\depe
 
 where py >nul 2>nul
 if %errorlevel% equ 0 (
-  py -3 scripts\actualizar_datos.py
+  py -3 scripts\actualizar_datos.py && py -3 scripts\generar_detalle.py
   goto :resultado
 )
 
 where python >nul 2>nul
 if %errorlevel% equ 0 (
-  python scripts\actualizar_datos.py
+  python scripts\actualizar_datos.py && python scripts\generar_detalle.py
   goto :resultado
 )
 
 if exist "%CODEX_PYTHON%" (
-  "%CODEX_PYTHON%" scripts\actualizar_datos.py
+  "%CODEX_PYTHON%" scripts\actualizar_datos.py && "%CODEX_PYTHON%" scripts\generar_detalle.py
   goto :resultado
 )
 

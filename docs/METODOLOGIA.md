@@ -6,13 +6,28 @@
   financiero. El orden 62 incorpora operaciones de financiamiento. Las cuentas
   previsionales y los desgloses de fuentes sin equivalencia quedan como `s/d`.
 - Córdoba publica amortizaciones e intereses devengados en la extracción
-  integrada. Se usan para el detalle de organismos internacionales. El
-  indicador de servicio pagado requiere flujos de caja. La deuda flotante
+  integrada. Se usan para el servicio del resumen y para organismos
+  internacionales. La deuda flotante
   histórica se suma por separado al stock de deuda pública.
 - Entre Ríos usa los IDs fiscales compartidos entre APNOF y Seguridad Social.
-  Para el servicio se usan los flujos de caja publicados. La serie de intereses
+  El resumen usa los flujos devengados. La serie de intereses
   de deuda incluye accesorios. El stock de flotante excluye la utilización
   del FUCO, que figura como informativa en la fuente.
+
+## Resumen y detalle
+
+El resumen usa base devengado. Para Mendoza, el servicio se obtiene del AIF
+devengado con las cuentas de amortización consolidada e intereses y gastos de
+la deuda. Para las fuentes y aplicaciones se toma la cuenta comercial combinada
+cuando está identificada, o sus componentes explícitos. Los préstamos
+genéricos quedan en el residual. Otras amortizaciones y otros endeudamientos
+son el total menos el tramo comercial y el multilateral.
+
+Las pestañas de detalle muestran flujos del trimestre y stocks de cierre.
+Los flujos usan el A3500 promedio o el IPC promedio del trimestre. Los stocks
+usan el tipo provincial informado o el A3500 de cierre y el IPC del mes final.
+La reexpresión usa el último IPC nacional disponible. La vista Caja conserva
+el alcance de la fuente. En Santa Fe, el AIF pagado cubre el ejercicio corriente.
 
 ## Alcance y fuentes
 
@@ -36,7 +51,7 @@ Los balances operativo, primario y financiero se calculan con numeradores y deno
 
 Los ingresos operativos netos son ingresos corrientes menos coparticipación y otras transferencias automáticas a municipios. En Neuquén la cuenta específica comienza en 2022; para la historia anterior se utiliza la cuenta más amplia `GASTOS CORRIENTES|MUNICIPIOS`. Este empalme recupera la serie histórica, pero antes de 2022 su alcance puede ser algo más amplio.
 
-El servicio mostrado apila amortizaciones e intereses pagados de los últimos cuatro trimestres, divididos por ingresos operativos netos de coparticipación municipal. Las comisiones no se incorporan. La línea del 15% identifica el límite de la Ley de Disciplina Financiera usado como referencia en el análisis.
+El servicio del resumen apila amortizaciones e intereses devengados de los últimos cuatro trimestres, divididos por ingresos operativos netos de coparticipación municipal. Entre Ríos informa intereses y accesorios de forma conjunta. La línea del 15% identifica la referencia del análisis.
 
 ## Inversión en infraestructura
 

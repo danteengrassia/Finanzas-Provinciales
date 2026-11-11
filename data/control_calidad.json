@@ -1250,8 +1250,8 @@
   {
     "province_id": "neuquen",
     "check_id": "latest_indicator_coverage",
-    "status": "warn",
-    "detail": "25/45 indicadores disponibles en 2026Q2."
+    "status": "pass",
+    "detail": "45/45 indicadores disponibles en 2026Q2."
   },
   {
     "province_id": "mendoza",
@@ -1521,7 +1521,7 @@
     "province_id": "mendoza",
     "check_id": "latest_indicator_coverage",
     "status": "warn",
-    "detail": "20/45 indicadores disponibles en 2026Q2."
+    "detail": "29/45 indicadores disponibles en 2026Q2."
   },
   {
     "province_id": "cordoba",
@@ -2181,7 +2181,7 @@
     "province_id": "cordoba",
     "check_id": "latest_indicator_coverage",
     "status": "warn",
-    "detail": "19/45 indicadores disponibles en 2026Q2."
+    "detail": "44/45 indicadores disponibles en 2026Q2."
   },
   {
     "province_id": "entre_rios",
@@ -2787,6 +2787,6 @@
     "province_id": "entre_rios",
     "check_id": "latest_indicator_coverage",
     "status": "warn",
-    "detail": "8/45 indicadores disponibles en 2026Q3."
+    "detail": "41/45 indicadores disponibles en 2026Q3."
   }
 ]

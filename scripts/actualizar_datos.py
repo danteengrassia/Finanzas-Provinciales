@@ -168,7 +168,7 @@ INDICATOR_DEFINITIONS = [
         "id": "servicio_deuda_pct_ingresos_operativos",
         "label": "Servicio de deuda / ingresos operativos netos",
         "section": "Deuda y servicio",
-        "description": "Amortizaciones más intereses pagados en los últimos cuatro trimestres / ingresos corrientes netos de coparticipación automática a municipios.",
+        "description": "Amortizaciones más intereses devengados en los últimos cuatro trimestres / ingresos corrientes netos de coparticipación automática a municipios.",
         "unit": "percent",
         "direction": "lower",
         "source_scope": "Deuda + APNOF",
@@ -204,7 +204,7 @@ INDICATOR_DEFINITIONS = [
         "id": "saldo_neto_endeudamiento_ooii_usd_m",
         "label": "Saldo neto con organismos internacionales",
         "section": "Financiamiento",
-        "description": "Desembolsos de organismos internacionales LTM menos amortizaciones pagadas LTM, convertidos trimestre a trimestre.",
+        "description": "Desembolsos de organismos internacionales LTM menos amortizaciones devengadas LTM, convertidos trimestre a trimestre.",
         "unit": "usd_millions",
         "direction": "neutral",
         "source_scope": "Deuda + A3500",
@@ -258,7 +258,7 @@ INDICATOR_DEFINITIONS = [
         "id": "amortizacion_ooii_usd_m",
         "label": "Amortizaciones a organismos internacionales",
         "section": "Financiamiento",
-        "description": "Amortizaciones pagadas a organismos internacionales LTM, convertidas trimestre a trimestre.",
+        "description": "Amortizaciones devengadas a organismos internacionales LTM, convertidas trimestre a trimestre.",
         "unit": "usd_millions",
         "direction": "neutral",
         "source_scope": "Deuda + A3500",
@@ -267,7 +267,7 @@ INDICATOR_DEFINITIONS = [
         "id": "intereses_ooii_usd_m",
         "label": "Intereses y comisiones a organismos internacionales",
         "section": "Financiamiento",
-        "description": "Intereses, comisiones y gastos pagados a organismos internacionales LTM, convertidos trimestre a trimestre.",
+        "description": "Intereses, comisiones y gastos devengados a organismos internacionales LTM, convertidos trimestre a trimestre.",
         "unit": "usd_millions",
         "direction": "neutral",
         "source_scope": "Deuda + A3500",
@@ -303,7 +303,7 @@ INDICATOR_DEFINITIONS = [
         "id": "amortizaciones_pct_ingresos_operativos",
         "label": "Amortizaciones / ingresos operativos netos",
         "section": "Deuda y servicio",
-        "description": "Amortizaciones pagadas en los últimos cuatro trimestres / ingresos corrientes netos de coparticipación automática a municipios.",
+        "description": "Amortizaciones devengadas en los últimos cuatro trimestres / ingresos corrientes netos de coparticipación automática a municipios.",
         "unit": "percent",
         "direction": "lower",
         "source_scope": "Deuda + APNOF",
@@ -312,7 +312,7 @@ INDICATOR_DEFINITIONS = [
         "id": "intereses_pct_ingresos_operativos",
         "label": "Intereses / ingresos operativos netos",
         "section": "Deuda y servicio",
-        "description": "Intereses pagados en los últimos cuatro trimestres / ingresos corrientes netos de coparticipación automática a municipios.",
+        "description": "Intereses devengados en los últimos cuatro trimestres / ingresos corrientes netos de coparticipación automática a municipios.",
         "unit": "percent",
         "direction": "lower",
         "source_scope": "Deuda + APNOF",
@@ -881,7 +881,7 @@ def load_neuquen_metric_cumulative(path: Path) -> dict[str, dict[str, float | No
             if not PERIOD_RE.match(period) or row.get("construction") != "reportado":
                 continue
             metric = row.get("metric", "")
-            if metric not in {"uso_credito", "amortizacion_base_caja", "intereses_base_caja", "comisiones_base_caja"}:
+            if metric not in {"uso_credito", "amortizacion_devengado", "intereses_devengados", "comisiones_devengadas"}:
                 continue
             value = as_float(row.get("value"))
             if value is None:
@@ -905,17 +905,17 @@ def load_neuquen_metric_cumulative(path: Path) -> dict[str, dict[str, float | No
             rows = metric_values.get((period, metric, scope), [])
             return sum(rows) if rows else None
 
-        total_interest = total("intereses_base_caja", "total")
-        total_commissions = total("comisiones_base_caja", "total")
-        ooii_interest = add_numbers(total("intereses_base_caja", "ooii"), total("comisiones_base_caja", "ooii"))
+        total_interest = total("intereses_devengados", "total")
+        total_commissions = total("comisiones_devengadas", "total")
+        ooii_interest = add_numbers(total("intereses_devengados", "ooii"), total("comisiones_devengadas", "ooii"))
         output[period] = {
             "total_use": total("uso_credito", "total"),
-            "total_amort": total("amortizacion_base_caja", "total"),
+            "total_amort": total("amortizacion_devengado", "total"),
             "total_interest": total_interest,
             "total_commissions": total_commissions,
             "intl_bond_use": total("uso_credito", "international_bonds"),
             "ooii_use": total("uso_credito", "ooii"),
-            "ooii_amort": total("amortizacion_base_caja", "ooii"),
+            "ooii_amort": total("amortizacion_devengado", "ooii"),
             "ooii_interest": ooii_interest,
         }
     return output
@@ -1083,12 +1083,12 @@ def load_debt(province_id: str, spec: dict[str, object], checks: list[dict[str, 
         ooii_rows = debt_special_rows(province_id, rows, "ooii")
         cumulative[period] = {
             "total_use": as_float(total_row.get("uso_credito_cum")),
-            "total_amort": as_float(total_row.get("amort_pag_cum")),
-            "total_interest": as_float(total_row.get("intereses_pag_cum")),
+            "total_amort": as_float(total_row.get("amort_dev_cum")),
+            "total_interest": as_float(total_row.get("intereses_dev_cum")),
             "intl_bond_use": sum_field(intl_bond_rows, "uso_credito_cum"),
             "ooii_use": sum_field(ooii_rows, "uso_credito_cum"),
-            "ooii_amort": sum_field(ooii_rows, "amort_dev_cum" if province_id == "cordoba" else "amort_pag_cum"),
-            "ooii_interest": sum_field(ooii_rows, "intereses_dev_cum" if province_id == "cordoba" else "intereses_pag_cum"),
+            "ooii_amort": sum_field(ooii_rows, "amort_dev_cum"),
+            "ooii_interest": sum_field(ooii_rows, "intereses_dev_cum"),
         }
         snapshots[period] = {
             "period": period,
@@ -1359,6 +1359,9 @@ def build_indicators(
         stock_fx_source = "Tipo de cambio de valuación informado por la provincia." if reported_stock_fx else "A3500 de cierre por falta de tipo de cambio provincial informado."
         debt_amortization = ltm_debt_ars(period, "total_amort")
         debt_interest = ltm_debt_ars(period, "total_interest")
+        if province_id == "mendoza":
+            debt_amortization = fiscal_ltm("APNOF", period, "amortizacion_deuda_pasivos")
+            debt_interest = fiscal_ltm("APNOF", period, "intereses_deuda")
         debt_service = add_numbers(debt_amortization, debt_interest)
         add_metric(period, "amortizaciones_pct_ingresos_operativos", ratio(debt_amortization, net_operating_income), debt_amortization, net_operating_income)
         add_metric(period, "intereses_pct_ingresos_operativos", ratio(debt_interest, net_operating_income), debt_interest, net_operating_income)
@@ -1797,6 +1800,8 @@ def atomic_write(path: Path, content: str) -> None:
 def main() -> int:
     with CONFIG_PATH.open("r", encoding="utf-8") as source:
         config = json.load(source)
+    for key in ("macro_file", "monthly_macro_file", "ipc_file", "deposits_file"):
+        config[key] = str(ROOT / config[key])
     for spec in config["provinces"].values():
         for key in ("fiscal_db", "debt_db", "debt_stock_file", "debt_metrics_file", "floating_debt_file"):
             if spec.get(key):

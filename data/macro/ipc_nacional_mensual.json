@@ -1,8 +1,7 @@
 {
-  "source_url": "https://apis.datos.gob.ar/series/api/series/?ids=148.3_INIVELNAL_DICI_M_26",
-  "base": "diciembre 2016 = 100",
-  "latest_date": "2026-07-01",
-  "latest_index": 12076.3937,
+  "latest_date": "2026-09-01",
+  "latest_index": 12514.1508,
+  "source_url": "https://www.indec.gob.ar/ftp/cuadros/economia/serie_ipc_divisiones.csv",
   "records": [
     {
       "date": "2016-12-01",
@@ -118,7 +117,7 @@
     },
     {
       "date": "2019-04-01",
-      "index": 212.9596414
+      "index": 213.0517
     },
     {
       "date": "2019-05-01",
@@ -358,35 +357,35 @@
     },
     {
       "date": "2024-04-01",
-      "index": 5830.2271
+      "index": 5830.227
     },
     {
       "date": "2024-05-01",
-      "index": 6073.7
+      "index": 6073.717
     },
     {
       "date": "2024-06-01",
-      "index": 6351.7145
+      "index": 6351.715
     },
     {
       "date": "2024-07-01",
-      "index": 6607.7479
+      "index": 6607.748
     },
     {
       "date": "2024-08-01",
-      "index": 6883.4412
+      "index": 6883.441
     },
     {
       "date": "2024-09-01",
-      "index": 7122.2421
+      "index": 7122.242
     },
     {
       "date": "2024-10-01",
-      "index": 7313.9542
+      "index": 7313.954
     },
     {
       "date": "2024-11-01",
-      "index": 7491.4314
+      "index": 7491.431
     },
     {
       "date": "2024-12-01",
@@ -467,6 +466,14 @@
     {
       "date": "2026-07-01",
       "index": 12076.3937
+    },
+    {
+      "date": "2026-08-01",
+      "index": 12276.766
+    },
+    {
+      "date": "2026-09-01",
+      "index": 12514.1508
     }
   ]
 }

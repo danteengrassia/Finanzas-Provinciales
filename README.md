@@ -22,6 +22,7 @@ Ejecutar `actualizar_datos.bat`. El proceso lee la versión congelada indicada e
 - `data/base_consolidada.sqlite`: base común con indicadores, flujos nominales y reales, tendencias mensuales y deuda/liquidez.
 - `data/dashboard_data.json`: salida estructurada para futuras integraciones.
 - `data/dashboard_data.js`: datos consumidos por el HTML offline.
+- `data/detalle/`: jerarquías provinciales para ejecución, stock y servicios. El generador usa las bases provinciales en modo de solo lectura.
 - `data/control_calidad.json`: controles y advertencias.
 - `data/manifest.json`: rutas, fechas y huellas SHA-256 de las fuentes.
 - `data/versiones/<fecha_hora>/`: copia histórica de cada reconstrucción.
@@ -39,4 +40,4 @@ La versión activa combina Santa Fe `santa_fe_20260814_213940` con Neuquén `202
 
 ## Publicación futura
 
-Para GitHub Pages alcanza con publicar los archivos del dashboard, `vendor/` y `data/dashboard_data.js`. Las fuentes congeladas, las SQLite y el historial de versiones no son necesarios para que funcione la página y están excluidos mediante `.gitignore`.
+Para GitHub Pages alcanza con publicar los archivos del dashboard, `vendor/`, `data/dashboard_data.js` y `data/detalle/`. Las fuentes congeladas, las SQLite y el historial de versiones no son necesarios para que funcione la página y están excluidos mediante `.gitignore`.
