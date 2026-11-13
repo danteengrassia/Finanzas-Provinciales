@@ -362,6 +362,11 @@
 
   function renderServiceChart(province) {
     const canvasId = "serviceChart";
+    const note = document.getElementById("serviceCoverageNote");
+    note.hidden = province.id !== "rio_negro";
+    note.textContent = province.id === "rio_negro"
+      ? "Anexo II, devengado. Los cortes en la serie indican que no hay cuatro trimestres comparables consecutivos."
+      : "";
     destroyChart(canvasId);
     if (typeof Chart === "undefined") return;
     const periods = visiblePeriods(province, 32, 32, false);
@@ -898,7 +903,7 @@
     if (!detail.loads.has(id)) {
       const loading = new Promise((resolve, reject) => {
         const script = document.createElement("script");
-        script.src = `data/detalle/${encodeURIComponent(id)}.js?v=27`;
+        script.src = `data/detalle/${encodeURIComponent(id)}.js?v=29`;
         script.onload = () => {
           const data = window.PROVINCIAS_DETALLE?.[id];
           if (data) resolve(data);
@@ -1033,9 +1038,13 @@
     const status = document.getElementById("detailStatus");
     const cashLabel = detail.province === "santa_fe" && detail.view === "budget"
       ? "Pagado del ejercicio corriente."
-      : detail.province === "entre_rios" ? "Caja · ejercicio corriente y anteriores."
+      : ["entre_rios", "rio_negro"].includes(detail.province) && detail.view === "budget" ? "Caja · ejercicio corriente y anteriores."
         : "Base caja según la publicación de origen.";
     const notes = [];
+    if (detail.province === "rio_negro" && detail.view === "debt") {
+      notes.push(stock ? "Anexo II y SIGADE: stocks de distinto alcance, no sumables."
+        : "Anexo II · detalle disponible. Se excluyen ventanas no comparables.");
+    }
     if (!periods.length) notes.push("Seleccione uno o más períodos.");
     if ([...factors.values()].some((factor) => factor === null)) notes.push("s/d en períodos sin índice de conversión.");
     if (construction === "acumulado") notes.push("Acumulado desde enero hasta cada cierre.");

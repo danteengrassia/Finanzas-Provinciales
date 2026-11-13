@@ -1139,6 +1139,13 @@ def load_debt(province_id: str, spec: dict[str, object], checks: list[dict[str, 
             else:
                 flows[period][key] = None
 
+    if province_id == "rio_negro":
+        direct_flows = defaultdict(dict)
+        with readonly_connection(path) as source:
+            for period, metric, value in source.execute("SELECT period, metric, value FROM quarterly_debt_flows"):
+                direct_flows[period][metric] = value
+        flows = dict(direct_flows)
+
     for period, floating_record in floating.items():
         total = as_float(floating_record.get("total"))
         component_total = as_float(floating_record.get("component_total"))
@@ -1227,6 +1234,8 @@ def build_indicators(
             return None
         numbers = [values.get(("APNOF", period, item_key)) for item_key in component_keys]
         valid = [number for number in numbers if number is not None]
+        if province_id == "rio_negro" and len(valid) != len(numbers):
+            return None
         return sum(float(number) for number in valid) if valid else 0.0
 
     def financial_component_ltm_usd(period: str, component: str) -> float | None:

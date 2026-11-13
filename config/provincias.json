@@ -1,6 +1,6 @@
 {
   "schema_version": "1.2.0",
-  "frozen_source_version": "Santa Fe 20260814_213940; Neuquén 20260823_222944; Mendoza, Córdoba y Entre Ríos 20261109",
+  "frozen_source_version": "Santa Fe 20260814_213940; Neuquén 20260823_222944; Mendoza, Córdoba y Entre Ríos 20261109; Río Negro 20261113",
   "macro_file": "data/macro/a3500_trimestral.csv",
   "monthly_macro_file": "data/macro/a3500_mensual.csv",
   "ipc_file": "data/macro/ipc_nacional_mensual.json",
@@ -173,6 +173,39 @@
         "financial_investment_decrease": [
           "d1a875b4f6b44bda336f1510"
         ]
+      }
+    },
+    "rio_negro": {
+      "name": "Río Negro",
+      "fiscal_db": "data/fuentes_congeladas/rio_negro_20261113/rio_negro_data.sqlite",
+      "debt_db": "data/fuentes_congeladas/rio_negro_20261113/rio_negro_data.sqlite",
+      "floating_debt_file": "data/fuentes_congeladas/rio_negro_20261113/deuda_flotante.csv",
+      "fiscal_keys": {
+        "ingresos_corrientes": "Ingresos corrientes|INGRESOSCORRIENTES|1",
+        "ingresos_origen_nacional": "Ingresos corrientes|DEORIGENNACIONAL|1",
+        "contribuciones_seguridad_social": null,
+        "transferencias_corrientes_ingresos": "Ingresos corrientes|TRANSFERENCIASCORRIENTES|1",
+        "gastos_corrientes": "Gastos corrientes|GASTOSCORRIENTES|1",
+        "resultado_economico": "Resultados|RESULTADOECONOMICO|1",
+        "inversion_real_directa": "Gastos de capital|INVERSIONREALDIRECTA|1",
+        "transferencias_capital_gasto": "Gastos de capital|TRANSFERENCIASDECAPITAL|1",
+        "coparticipacion_municipios": "Gastos corrientes|COPARTICIPACIONAMUNICIPIOS|1",
+        "ingresos_totales": "Resultados|INGRESOSTOTALES|1",
+        "gastos_totales": "Resultados|GASTOSTOTALES|1",
+        "gastos_primarios": "Resultados|GASTOSPRIMARIOS|1",
+        "resultado_financiero_previo_figurativas": null,
+        "contribuciones_figurativas": null,
+        "resultado_primario": "Resultados|RESULTADOPRIMARIO|1",
+        "resultado_financiero": "Resultados|RESULTADOFINANCIERO|1",
+        "endeudamiento_publico_pasivos": "Fuentes financieras|ENDEUDAMIENTOPUBLICOEINCREMENTODEOTROSPASIVOS|1",
+        "amortizacion_deuda_pasivos": "Aplicaciones financieras|AMORTIZACIONDEDEUDASYDISMINUCIONDEOTROSPASIVOS|1"
+      },
+      "financial_keys": {
+        "amortization_commercial": ["Aplicaciones financieras|AMORTIZACIONDETITULOSPUBLICOS|1"],
+        "borrowing_commercial": ["Fuentes financieras|COLOCACIONDETITULOSPUBLICOS|1"],
+        "borrowing_multilateral": ["Fuentes financieras|OBTENCIONDEPRESTAMOSENORGANISMOSINTERNACIONALES|1"],
+        "financial_investment_application": ["Aplicaciones financieras|INVERSIONFINANCIERA|1"],
+        "financial_investment_decrease": ["Fuentes financieras|DISMINUCIONDELAINVERSIONFINANCIERA|1"]
       }
     },
     "entre_rios": {

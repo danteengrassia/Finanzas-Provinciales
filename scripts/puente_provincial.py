@@ -208,15 +208,16 @@ def build_hierarchical(source, province, auxiliary):
     return fiscal, debt, sources, {}, floating
 
 
-def write_bridge(province, builder):
+def write_bridge(province, builder, *, default_source=None, source_version="20261109", quarterly_flows=None):
     parser = argparse.ArgumentParser(description=f"Genera el puente SQLite de {province}.")
-    parser.add_argument("--source", type=Path, default=BASE / {
+    parser.add_argument("--source", type=Path, default=default_source or BASE / {
         "mendoza": "Mendoza", "cordoba": "Cordoba", "entre_rios": "Entre Rios",
     }[province] / "database" / f"{province}_data.sqlite")
-    parser.add_argument("--output", type=Path, default=ROOT / "data" / "fuentes_congeladas" / f"{province}_20261109")
+    parser.add_argument("--output", type=Path, default=ROOT / "data" / "fuentes_congeladas" / f"{province}_{source_version}")
     args = parser.parse_args()
     with readonly_connection(args.source) as source:
         fiscal, debt, sources, fx, floating = builder(source, args.source)
+        direct_flows = quarterly_flows(source) if quarterly_flows else {}
     if not fiscal or not debt:
         raise ValueError(f"{province}: puente sin datos fiscales o de deuda")
     args.output.mkdir(parents=True, exist_ok=True)
@@ -247,6 +248,13 @@ def write_bridge(province, builder):
             ):
                 placeholders = ",".join("?" for _ in range(count))
                 db.executemany(f"INSERT INTO {table} VALUES ({placeholders})", rows)
+            if quarterly_flows:
+                db.execute("""CREATE TABLE quarterly_debt_flows (
+                    period TEXT, metric TEXT, value REAL, PRIMARY KEY(period, metric))""")
+                db.executemany("INSERT INTO quarterly_debt_flows VALUES (?, ?, ?)", (
+                    (period, metric, value)
+                    for period, metrics in direct_flows.items() for metric, value in metrics.items()
+                ))
         db.close()
         if floating:
             csv_path = Path(temp) / "deuda_flotante.csv"

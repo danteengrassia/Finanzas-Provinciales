@@ -2184,6 +2184,534 @@
     "detail": "44/45 indicadores disponibles en 2026Q2."
   },
   {
+    "province_id": "rio_negro",
+    "check_id": "fiscal_duplicate_conflicts",
+    "status": "pass",
+    "detail": "0 conflictos de duplicación con valores diferentes."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2012Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2012Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2013Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: -0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2013Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2013Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: -0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2013Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2014Q1",
+    "status": "warn",
+    "detail": "Diferencia total menos categorías: 7.580 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2014Q2",
+    "status": "warn",
+    "detail": "Diferencia total menos categorías: 7.170 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2014Q3",
+    "status": "warn",
+    "detail": "Diferencia total menos categorías: 7.330 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2014Q4",
+    "status": "warn",
+    "detail": "Diferencia total menos categorías: 7.370 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2015Q1",
+    "status": "warn",
+    "detail": "Diferencia total menos categorías: 7.600 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2015Q3",
+    "status": "warn",
+    "detail": "Diferencia total menos categorías: 7.800 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2015Q4",
+    "status": "warn",
+    "detail": "Diferencia total menos categorías: 10.280 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2016Q1",
+    "status": "warn",
+    "detail": "Diferencia total menos categorías: 11.680 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2016Q2",
+    "status": "warn",
+    "detail": "Diferencia total menos categorías: 11.990 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2016Q3",
+    "status": "warn",
+    "detail": "Diferencia total menos categorías: 11.340 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2016Q4",
+    "status": "warn",
+    "detail": "Diferencia total menos categorías: 11.470 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2017Q1",
+    "status": "warn",
+    "detail": "Diferencia total menos categorías: 7.140 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2017Q2",
+    "status": "warn",
+    "detail": "Diferencia total menos categorías: 7.690 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2017Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 8.550 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2018Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: -0.010 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2018Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2018Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.010 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2019Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2019Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: -0.010 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2019Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2019Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2020Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2020Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2020Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2020Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2021Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2021Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.010 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2021Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: -0.010 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2021Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.010 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2022Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2022Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2022Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2022Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: -0.010 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2023Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2023Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: -0.010 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2023Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2023Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2024Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2024Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2024Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: -0.010 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2024Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: -0.010 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2025Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2025Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2025Q3",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2025Q4",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2026Q1",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: -0.010 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "debt_categories_2026Q2",
+    "status": "pass",
+    "detail": "Diferencia total menos categorías: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "floating_debt_components_2019Q1",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "floating_debt_components_2019Q2",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "floating_debt_components_2019Q3",
+    "status": "warn",
+    "detail": "Diferencia total publicado menos componentes: -7773.450 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "floating_debt_components_2019Q4",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "floating_debt_components_2020Q1",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: -0.010 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "floating_debt_components_2020Q2",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "floating_debt_components_2020Q3",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "floating_debt_components_2021Q1",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "floating_debt_components_2020Q4",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: -0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "floating_debt_components_2021Q3",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "floating_debt_components_2021Q2",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "floating_debt_components_2021Q4",
+    "status": "warn",
+    "detail": "Diferencia total publicado menos componentes: -18950.920 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "floating_debt_components_2022Q1",
+    "status": "warn",
+    "detail": "Diferencia total publicado menos componentes: -23857.200 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "floating_debt_components_2022Q2",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "floating_debt_components_2022Q3",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "floating_debt_components_2022Q4",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "floating_debt_components_2023Q1",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "floating_debt_components_2023Q2",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "floating_debt_components_2023Q3",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "floating_debt_components_2023Q4",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "floating_debt_components_2024Q1",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "floating_debt_components_2024Q2",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "floating_debt_components_2024Q3",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: -0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "floating_debt_components_2024Q4",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: -0.010 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "floating_debt_components_2025Q1",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.010 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "floating_debt_components_2025Q2",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "floating_debt_components_2025Q3",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "floating_debt_components_2026Q1",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "floating_debt_components_2025Q4",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.010 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "floating_debt_components_2026Q2",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "floating_debt_components_2018Q3",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.010 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "floating_debt_components_2018Q2",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "floating_debt_components_2018Q4",
+    "status": "pass",
+    "detail": "Diferencia total publicado menos componentes: 0.000 millones de pesos."
+  },
+  {
+    "province_id": "rio_negro",
+    "check_id": "latest_indicator_coverage",
+    "status": "warn",
+    "detail": "29/45 indicadores disponibles en 2026Q2."
+  },
+  {
     "province_id": "entre_rios",
     "check_id": "fiscal_duplicate_conflicts",
     "status": "pass",

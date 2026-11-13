@@ -13,7 +13,7 @@ from actualizar_datos import ROOT, load_macro, norm_text, period_end
 
 PROVINCES = {
     "cordoba": "CORDOBA", "entre_rios": "ENTRE RIOS", "mendoza": "MENDOZA",
-    "neuquen": "NEUQUEN", "santa_fe": "SANTA FE",
+    "neuquen": "NEUQUEN", "santa_fe": "SANTA FE", "rio_negro": "RIO NEGRO",
 }
 
 

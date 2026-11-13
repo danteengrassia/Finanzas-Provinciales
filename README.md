@@ -21,6 +21,7 @@ Ejecutar `actualizar_datos.bat`. El proceso lee la versión congelada indicada e
 
 - `data/base_consolidada.sqlite`: base común con indicadores, flujos nominales y reales, tendencias mensuales y deuda/liquidez.
 - `data/economia.js`: series anuales de la pestaña Economía. El actualizador la reconstruye con `scripts/generar_economia.py` desde el archivo `Series_macro/Economia/base_pib_provincias_subtotales_monedas.json` (carpeta hermana de `WEB`) y los cierres de la base consolidada. Para regenerar solo esta pestaña, ejecutar `python scripts/generar_economia.py`; `--pbg` permite indicar otra ubicación del JSON.
+- Río Negro usa la entrega provincial jerárquica `extraccion_fiscal_deuda_20261113_jerarquia`. Para incorporar una revisión, regenerar el puente con `python scripts/generar_rio_negro_puente.py` y luego ejecutar el actualizador. El resumen usa stock y flujos trimestrales comparables del Anexo II, sin agregar las letras publicadas fuera del total. El detalle muestra SIGADE por separado. No se imputan ventanas de deuda faltantes ni contribuciones de una entidad de seguridad social que no está publicada por separado.
 - `data/dashboard_data.json`: salida estructurada para futuras integraciones.
 - `data/dashboard_data.js`: datos consumidos por el HTML offline.
 - `data/detalle/`: jerarquías provinciales para ejecución, stock y servicios. El generador usa las bases provinciales en modo de solo lectura.

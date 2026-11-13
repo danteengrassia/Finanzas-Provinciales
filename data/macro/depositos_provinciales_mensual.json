@@ -1,6 +1,6 @@
 {
   "unit": "miles de pesos",
-  "latest_date": "2026-08-01",
+  "latest_date": "2026-09-01",
   "records": [
     {
       "province_id": "cordoba",
@@ -11236,6 +11236,2260 @@
       "domestic_ars_thousands": 2501453883.0,
       "foreign_ars_thousands": 95291243.24939999,
       "total_ars_thousands": 2596745126.2494
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "1999-12-01",
+      "domestic_ars_thousands": 24393.0,
+      "foreign_ars_thousands": 514.0,
+      "total_ars_thousands": 24907.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2000-01-01",
+      "domestic_ars_thousands": 33080.0,
+      "foreign_ars_thousands": 842.0,
+      "total_ars_thousands": 33922.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2000-02-01",
+      "domestic_ars_thousands": 45767.0,
+      "foreign_ars_thousands": 848.0,
+      "total_ars_thousands": 46615.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2000-03-01",
+      "domestic_ars_thousands": 42281.0,
+      "foreign_ars_thousands": 527.0,
+      "total_ars_thousands": 42808.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2000-04-01",
+      "domestic_ars_thousands": 38914.0,
+      "foreign_ars_thousands": 559.0,
+      "total_ars_thousands": 39473.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2000-05-01",
+      "domestic_ars_thousands": 36125.0,
+      "foreign_ars_thousands": 526.0,
+      "total_ars_thousands": 36651.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2000-06-01",
+      "domestic_ars_thousands": 66389.0,
+      "foreign_ars_thousands": 526.0,
+      "total_ars_thousands": 66915.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2000-07-01",
+      "domestic_ars_thousands": 57129.0,
+      "foreign_ars_thousands": 589.0,
+      "total_ars_thousands": 57718.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2000-08-01",
+      "domestic_ars_thousands": 48065.0,
+      "foreign_ars_thousands": 514.0,
+      "total_ars_thousands": 48579.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2000-09-01",
+      "domestic_ars_thousands": 61868.0,
+      "foreign_ars_thousands": 514.0,
+      "total_ars_thousands": 62382.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2000-10-01",
+      "domestic_ars_thousands": 54822.0,
+      "foreign_ars_thousands": 514.0,
+      "total_ars_thousands": 55336.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2000-11-01",
+      "domestic_ars_thousands": 82009.0,
+      "foreign_ars_thousands": 514.0,
+      "total_ars_thousands": 82523.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2000-12-01",
+      "domestic_ars_thousands": 58002.0,
+      "foreign_ars_thousands": 514.0,
+      "total_ars_thousands": 58516.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2001-01-01",
+      "domestic_ars_thousands": 49913.0,
+      "foreign_ars_thousands": 514.0,
+      "total_ars_thousands": 50427.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2001-02-01",
+      "domestic_ars_thousands": 40943.0,
+      "foreign_ars_thousands": 556.0,
+      "total_ars_thousands": 41499.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2001-03-01",
+      "domestic_ars_thousands": 41015.0,
+      "foreign_ars_thousands": 557.0,
+      "total_ars_thousands": 41572.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2001-04-01",
+      "domestic_ars_thousands": 52105.0,
+      "foreign_ars_thousands": 527.0,
+      "total_ars_thousands": 52632.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2001-05-01",
+      "domestic_ars_thousands": 45136.0,
+      "foreign_ars_thousands": 556.0,
+      "total_ars_thousands": 45692.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2001-06-01",
+      "domestic_ars_thousands": 42555.0,
+      "foreign_ars_thousands": 599.0,
+      "total_ars_thousands": 43154.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2001-07-01",
+      "domestic_ars_thousands": 43620.0,
+      "foreign_ars_thousands": 201.0,
+      "total_ars_thousands": 43821.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2001-08-01",
+      "domestic_ars_thousands": 35271.0,
+      "foreign_ars_thousands": 1197.0,
+      "total_ars_thousands": 36468.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2001-09-01",
+      "domestic_ars_thousands": 31311.0,
+      "foreign_ars_thousands": 3224.0,
+      "total_ars_thousands": 34535.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2001-10-01",
+      "domestic_ars_thousands": 25592.0,
+      "foreign_ars_thousands": 4192.0,
+      "total_ars_thousands": 29784.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2001-11-01",
+      "domestic_ars_thousands": 23809.0,
+      "foreign_ars_thousands": 4283.0,
+      "total_ars_thousands": 28092.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2001-12-01",
+      "domestic_ars_thousands": 19890.0,
+      "foreign_ars_thousands": 3444.0,
+      "total_ars_thousands": 23334.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2002-01-01",
+      "domestic_ars_thousands": 17278.0,
+      "foreign_ars_thousands": 0.0,
+      "total_ars_thousands": 17278.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2002-02-01",
+      "domestic_ars_thousands": 23399.0,
+      "foreign_ars_thousands": 0.0,
+      "total_ars_thousands": 23399.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2002-03-01",
+      "domestic_ars_thousands": 24795.0,
+      "foreign_ars_thousands": 8.850000000000001,
+      "total_ars_thousands": 24803.85
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2002-04-01",
+      "domestic_ars_thousands": 19838.0,
+      "foreign_ars_thousands": 0.0,
+      "total_ars_thousands": 19838.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2002-05-01",
+      "domestic_ars_thousands": 25462.0,
+      "foreign_ars_thousands": 10.8,
+      "total_ars_thousands": 25472.8
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2002-06-01",
+      "domestic_ars_thousands": 20453.0,
+      "foreign_ars_thousands": 0.0,
+      "total_ars_thousands": 20453.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2002-07-01",
+      "domestic_ars_thousands": 26395.0,
+      "foreign_ars_thousands": 0.0,
+      "total_ars_thousands": 26395.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2002-08-01",
+      "domestic_ars_thousands": 29163.0,
+      "foreign_ars_thousands": 0.0,
+      "total_ars_thousands": 29163.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2002-09-01",
+      "domestic_ars_thousands": 32687.0,
+      "foreign_ars_thousands": 0.0,
+      "total_ars_thousands": 32687.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2002-10-01",
+      "domestic_ars_thousands": 40302.0,
+      "foreign_ars_thousands": 0.0,
+      "total_ars_thousands": 40302.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2002-11-01",
+      "domestic_ars_thousands": 49372.0,
+      "foreign_ars_thousands": 0.0,
+      "total_ars_thousands": 49372.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2002-12-01",
+      "domestic_ars_thousands": 37398.0,
+      "foreign_ars_thousands": 0.0,
+      "total_ars_thousands": 37398.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2003-01-01",
+      "domestic_ars_thousands": 51222.0,
+      "foreign_ars_thousands": 0.0,
+      "total_ars_thousands": 51222.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2003-02-01",
+      "domestic_ars_thousands": 48685.0,
+      "foreign_ars_thousands": 0.0,
+      "total_ars_thousands": 48685.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2003-03-01",
+      "domestic_ars_thousands": 48028.0,
+      "foreign_ars_thousands": 0.0,
+      "total_ars_thousands": 48028.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2003-04-01",
+      "domestic_ars_thousands": 46275.0,
+      "foreign_ars_thousands": 0.0,
+      "total_ars_thousands": 46275.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2003-05-01",
+      "domestic_ars_thousands": 47240.0,
+      "foreign_ars_thousands": 0.0,
+      "total_ars_thousands": 47240.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2003-06-01",
+      "domestic_ars_thousands": 84000.0,
+      "foreign_ars_thousands": 0.0,
+      "total_ars_thousands": 84000.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2003-07-01",
+      "domestic_ars_thousands": 80858.0,
+      "foreign_ars_thousands": 0.0,
+      "total_ars_thousands": 80858.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2003-08-01",
+      "domestic_ars_thousands": 71763.0,
+      "foreign_ars_thousands": 0.0,
+      "total_ars_thousands": 71763.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2003-09-01",
+      "domestic_ars_thousands": 82510.0,
+      "foreign_ars_thousands": 0.0,
+      "total_ars_thousands": 82510.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2003-10-01",
+      "domestic_ars_thousands": 82533.0,
+      "foreign_ars_thousands": 0.0,
+      "total_ars_thousands": 82533.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2003-11-01",
+      "domestic_ars_thousands": 90199.0,
+      "foreign_ars_thousands": 0.0,
+      "total_ars_thousands": 90199.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2003-12-01",
+      "domestic_ars_thousands": 56341.0,
+      "foreign_ars_thousands": 868.612,
+      "total_ars_thousands": 57209.612
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2004-01-01",
+      "domestic_ars_thousands": 63049.0,
+      "foreign_ars_thousands": 871.0688,
+      "total_ars_thousands": 63920.0688
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2004-02-01",
+      "domestic_ars_thousands": 61866.0,
+      "foreign_ars_thousands": 865.5928,
+      "total_ars_thousands": 62731.5928
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2004-03-01",
+      "domestic_ars_thousands": 69954.0,
+      "foreign_ars_thousands": 845.08,
+      "total_ars_thousands": 70799.08
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2004-04-01",
+      "domestic_ars_thousands": 125226.0,
+      "foreign_ars_thousands": 554.8140000000001,
+      "total_ars_thousands": 125780.814
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2004-05-01",
+      "domestic_ars_thousands": 170991.0,
+      "foreign_ars_thousands": 578.019,
+      "total_ars_thousands": 171569.019
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2004-06-01",
+      "domestic_ars_thousands": 118906.0,
+      "foreign_ars_thousands": 577.3365,
+      "total_ars_thousands": 119483.3365
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2004-07-01",
+      "domestic_ars_thousands": 84956.0,
+      "foreign_ars_thousands": 583.296,
+      "total_ars_thousands": 85539.296
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2004-08-01",
+      "domestic_ars_thousands": 165983.0,
+      "foreign_ars_thousands": 588.0588,
+      "total_ars_thousands": 166571.0588
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2004-09-01",
+      "domestic_ars_thousands": 207107.0,
+      "foreign_ars_thousands": 521.9375,
+      "total_ars_thousands": 207628.9375
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2004-10-01",
+      "domestic_ars_thousands": 147434.0,
+      "foreign_ars_thousands": 521.1850000000001,
+      "total_ars_thousands": 147955.185
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2004-11-01",
+      "domestic_ars_thousands": 202853.0,
+      "foreign_ars_thousands": 519.376,
+      "total_ars_thousands": 203372.376
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2004-12-01",
+      "domestic_ars_thousands": 170538.0,
+      "foreign_ars_thousands": 2444.4636,
+      "total_ars_thousands": 172982.4636
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2005-01-01",
+      "domestic_ars_thousands": 133860.0,
+      "foreign_ars_thousands": 2404.5966,
+      "total_ars_thousands": 136264.5966
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2005-02-01",
+      "domestic_ars_thousands": 184055.0,
+      "foreign_ars_thousands": 2410.6794,
+      "total_ars_thousands": 186465.6794
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2005-03-01",
+      "domestic_ars_thousands": 190230.0,
+      "foreign_ars_thousands": 514.5007999999999,
+      "total_ars_thousands": 190744.5008
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2005-04-01",
+      "domestic_ars_thousands": 179016.0,
+      "foreign_ars_thousands": 509.8275,
+      "total_ars_thousands": 179525.8275
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2005-05-01",
+      "domestic_ars_thousands": 171651.0,
+      "foreign_ars_thousands": 0.0,
+      "total_ars_thousands": 171651.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2005-06-01",
+      "domestic_ars_thousands": 165664.0,
+      "foreign_ars_thousands": 0.0,
+      "total_ars_thousands": 165664.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2005-07-01",
+      "domestic_ars_thousands": 135581.0,
+      "foreign_ars_thousands": 0.0,
+      "total_ars_thousands": 135581.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2005-08-01",
+      "domestic_ars_thousands": 148466.0,
+      "foreign_ars_thousands": 0.0,
+      "total_ars_thousands": 148466.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2005-09-01",
+      "domestic_ars_thousands": 151646.0,
+      "foreign_ars_thousands": 0.0,
+      "total_ars_thousands": 151646.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2005-10-01",
+      "domestic_ars_thousands": 144442.0,
+      "foreign_ars_thousands": 0.0,
+      "total_ars_thousands": 144442.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2005-11-01",
+      "domestic_ars_thousands": 144458.0,
+      "foreign_ars_thousands": 0.0,
+      "total_ars_thousands": 144458.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2005-12-01",
+      "domestic_ars_thousands": 173557.0,
+      "foreign_ars_thousands": 0.0,
+      "total_ars_thousands": 173557.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2006-01-01",
+      "domestic_ars_thousands": 205088.0,
+      "foreign_ars_thousands": 0.0,
+      "total_ars_thousands": 205088.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2006-02-01",
+      "domestic_ars_thousands": 204112.0,
+      "foreign_ars_thousands": 0.0,
+      "total_ars_thousands": 204112.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2006-03-01",
+      "domestic_ars_thousands": 147325.0,
+      "foreign_ars_thousands": 0.0,
+      "total_ars_thousands": 147325.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2006-04-01",
+      "domestic_ars_thousands": 167367.0,
+      "foreign_ars_thousands": 0.0,
+      "total_ars_thousands": 167367.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2006-05-01",
+      "domestic_ars_thousands": 169497.0,
+      "foreign_ars_thousands": 0.0,
+      "total_ars_thousands": 169497.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2006-06-01",
+      "domestic_ars_thousands": 175821.0,
+      "foreign_ars_thousands": 0.0,
+      "total_ars_thousands": 175821.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2006-07-01",
+      "domestic_ars_thousands": 144426.0,
+      "foreign_ars_thousands": 0.0,
+      "total_ars_thousands": 144426.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2006-08-01",
+      "domestic_ars_thousands": 143184.0,
+      "foreign_ars_thousands": 0.0,
+      "total_ars_thousands": 143184.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2006-09-01",
+      "domestic_ars_thousands": 145402.0,
+      "foreign_ars_thousands": 0.0,
+      "total_ars_thousands": 145402.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2006-10-01",
+      "domestic_ars_thousands": 133033.0,
+      "foreign_ars_thousands": 0.0,
+      "total_ars_thousands": 133033.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2006-11-01",
+      "domestic_ars_thousands": 137162.0,
+      "foreign_ars_thousands": 0.0,
+      "total_ars_thousands": 137162.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2006-12-01",
+      "domestic_ars_thousands": 127253.0,
+      "foreign_ars_thousands": 0.0,
+      "total_ars_thousands": 127253.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2007-01-01",
+      "domestic_ars_thousands": 97700.0,
+      "foreign_ars_thousands": 0.0,
+      "total_ars_thousands": 97700.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2007-02-01",
+      "domestic_ars_thousands": 89384.0,
+      "foreign_ars_thousands": 0.0,
+      "total_ars_thousands": 89384.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2007-03-01",
+      "domestic_ars_thousands": 91408.0,
+      "foreign_ars_thousands": 0.0,
+      "total_ars_thousands": 91408.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2007-04-01",
+      "domestic_ars_thousands": 89264.0,
+      "foreign_ars_thousands": 0.0,
+      "total_ars_thousands": 89264.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2007-05-01",
+      "domestic_ars_thousands": 111927.0,
+      "foreign_ars_thousands": 95.4335,
+      "total_ars_thousands": 112022.4335
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2007-06-01",
+      "domestic_ars_thousands": 119360.0,
+      "foreign_ars_thousands": 95.8148,
+      "total_ars_thousands": 119455.8148
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2007-07-01",
+      "domestic_ars_thousands": 92818.0,
+      "foreign_ars_thousands": 71.74849999999999,
+      "total_ars_thousands": 92889.7485
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2007-08-01",
+      "domestic_ars_thousands": 155017.0,
+      "foreign_ars_thousands": 72.5834,
+      "total_ars_thousands": 155089.5834
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2007-09-01",
+      "domestic_ars_thousands": 142117.0,
+      "foreign_ars_thousands": 97.6345,
+      "total_ars_thousands": 142214.6345
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2007-10-01",
+      "domestic_ars_thousands": 134311.0,
+      "foreign_ars_thousands": 97.5787,
+      "total_ars_thousands": 134408.5787
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2007-11-01",
+      "domestic_ars_thousands": 139763.0,
+      "foreign_ars_thousands": 97.4702,
+      "total_ars_thousands": 139860.4702
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2007-12-01",
+      "domestic_ars_thousands": 78721.0,
+      "foreign_ars_thousands": 75.624,
+      "total_ars_thousands": 78796.624
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2008-01-01",
+      "domestic_ars_thousands": 136139.0,
+      "foreign_ars_thousands": 75.7368,
+      "total_ars_thousands": 136214.7368
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2008-02-01",
+      "domestic_ars_thousands": 131130.0,
+      "foreign_ars_thousands": 75.8088,
+      "total_ars_thousands": 131205.8088
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2008-03-01",
+      "domestic_ars_thousands": 173853.0,
+      "foreign_ars_thousands": 75.96719999999999,
+      "total_ars_thousands": 173928.9672
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2008-04-01",
+      "domestic_ars_thousands": 165038.0,
+      "foreign_ars_thousands": 75.924,
+      "total_ars_thousands": 165113.924
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2008-05-01",
+      "domestic_ars_thousands": 176617.0,
+      "foreign_ars_thousands": 343.8558,
+      "total_ars_thousands": 176960.8558
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2008-06-01",
+      "domestic_ars_thousands": 205464.0,
+      "foreign_ars_thousands": 338.7104,
+      "total_ars_thousands": 205802.7104
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2008-07-01",
+      "domestic_ars_thousands": 156799.0,
+      "foreign_ars_thousands": 312.1415,
+      "total_ars_thousands": 157111.1415
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2008-08-01",
+      "domestic_ars_thousands": 163254.0,
+      "foreign_ars_thousands": 127.2096,
+      "total_ars_thousands": 163381.2096
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2008-09-01",
+      "domestic_ars_thousands": 116691.0,
+      "foreign_ars_thousands": 234.765,
+      "total_ars_thousands": 116925.765
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2008-10-01",
+      "domestic_ars_thousands": 127578.0,
+      "foreign_ars_thousands": 253.425,
+      "total_ars_thousands": 127831.425
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2008-11-01",
+      "domestic_ars_thousands": 111044.0,
+      "foreign_ars_thousands": 245.937,
+      "total_ars_thousands": 111289.937
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2008-12-01",
+      "domestic_ars_thousands": 93314.0,
+      "foreign_ars_thousands": 238.3053,
+      "total_ars_thousands": 93552.3053
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2009-01-01",
+      "domestic_ars_thousands": 67691.0,
+      "foreign_ars_thousands": 1970.4375,
+      "total_ars_thousands": 69661.4375
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2009-02-01",
+      "domestic_ars_thousands": 74724.0,
+      "foreign_ars_thousands": 1096.326,
+      "total_ars_thousands": 75820.326
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2009-03-01",
+      "domestic_ars_thousands": 42809.0,
+      "foreign_ars_thousands": 1132.6174999999998,
+      "total_ars_thousands": 43941.6175
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2009-04-01",
+      "domestic_ars_thousands": 132173.0,
+      "foreign_ars_thousands": 892.7520000000001,
+      "total_ars_thousands": 133065.752
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2009-05-01",
+      "domestic_ars_thousands": 131790.0,
+      "foreign_ars_thousands": 599.44,
+      "total_ars_thousands": 132389.44
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2009-06-01",
+      "domestic_ars_thousands": 129000.0,
+      "foreign_ars_thousands": 538.9184,
+      "total_ars_thousands": 129538.9184
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2009-07-01",
+      "domestic_ars_thousands": 85610.0,
+      "foreign_ars_thousands": 528.6089999999999,
+      "total_ars_thousands": 86138.609
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2009-08-01",
+      "domestic_ars_thousands": 25039.0,
+      "foreign_ars_thousands": 377.545,
+      "total_ars_thousands": 25416.545
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2009-09-01",
+      "domestic_ars_thousands": 50235.0,
+      "foreign_ars_thousands": 357.37109999999996,
+      "total_ars_thousands": 50592.3711
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2009-10-01",
+      "domestic_ars_thousands": 44961.0,
+      "foreign_ars_thousands": 336.072,
+      "total_ars_thousands": 45297.072
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2009-11-01",
+      "domestic_ars_thousands": 24917.0,
+      "foreign_ars_thousands": 320.0568,
+      "total_ars_thousands": 25237.0568
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2009-12-01",
+      "domestic_ars_thousands": 24124.0,
+      "foreign_ars_thousands": 315.1261,
+      "total_ars_thousands": 24439.1261
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2010-01-01",
+      "domestic_ars_thousands": 74415.0,
+      "foreign_ars_thousands": 401.415,
+      "total_ars_thousands": 74816.415
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2010-02-01",
+      "domestic_ars_thousands": 32052.0,
+      "foreign_ars_thousands": 2288.8614,
+      "total_ars_thousands": 34340.8614
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2010-03-01",
+      "domestic_ars_thousands": 27069.0,
+      "foreign_ars_thousands": 2403.306,
+      "total_ars_thousands": 29472.306
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2010-04-01",
+      "domestic_ars_thousands": 66437.0,
+      "foreign_ars_thousands": 1255.2426,
+      "total_ars_thousands": 67692.2426
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2010-05-01",
+      "domestic_ars_thousands": 155960.0,
+      "foreign_ars_thousands": 1107.3576,
+      "total_ars_thousands": 157067.3576
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2010-06-01",
+      "domestic_ars_thousands": 225389.0,
+      "foreign_ars_thousands": 1081.245,
+      "total_ars_thousands": 226470.245
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2010-07-01",
+      "domestic_ars_thousands": 115004.0,
+      "foreign_ars_thousands": 866.6899999999999,
+      "total_ars_thousands": 115870.69
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2010-08-01",
+      "domestic_ars_thousands": 85710.0,
+      "foreign_ars_thousands": 746.4933,
+      "total_ars_thousands": 86456.4933
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2010-09-01",
+      "domestic_ars_thousands": 122872.0,
+      "foreign_ars_thousands": 835.7077,
+      "total_ars_thousands": 123707.7077
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2010-10-01",
+      "domestic_ars_thousands": 139075.0,
+      "foreign_ars_thousands": 819.0989999999999,
+      "total_ars_thousands": 139894.099
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2010-11-01",
+      "domestic_ars_thousands": 138537.0,
+      "foreign_ars_thousands": 223.10399999999998,
+      "total_ars_thousands": 138760.104
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2010-12-01",
+      "domestic_ars_thousands": 102288.0,
+      "foreign_ars_thousands": 377.701,
+      "total_ars_thousands": 102665.701
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2011-01-01",
+      "domestic_ars_thousands": 148502.0,
+      "foreign_ars_thousands": 100.02,
+      "total_ars_thousands": 148602.02
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2011-02-01",
+      "domestic_ars_thousands": 158299.0,
+      "foreign_ars_thousands": 100.7625,
+      "total_ars_thousands": 158399.7625
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2011-03-01",
+      "domestic_ars_thousands": 125408.0,
+      "foreign_ars_thousands": 93.196,
+      "total_ars_thousands": 125501.196
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2011-04-01",
+      "domestic_ars_thousands": 109359.0,
+      "foreign_ars_thousands": 102.01249999999999,
+      "total_ars_thousands": 109461.0125
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2011-05-01",
+      "domestic_ars_thousands": 173988.0,
+      "foreign_ars_thousands": 98.12880000000001,
+      "total_ars_thousands": 174086.1288
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2011-06-01",
+      "domestic_ars_thousands": 171312.0,
+      "foreign_ars_thousands": 102.77499999999999,
+      "total_ars_thousands": 171414.775
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2011-07-01",
+      "domestic_ars_thousands": 67642.0,
+      "foreign_ars_thousands": 4.143,
+      "total_ars_thousands": 67646.143
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2011-08-01",
+      "domestic_ars_thousands": 159177.0,
+      "foreign_ars_thousands": 4.1995,
+      "total_ars_thousands": 159181.1995
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2011-09-01",
+      "domestic_ars_thousands": 58794.0,
+      "foreign_ars_thousands": 4.2045,
+      "total_ars_thousands": 58798.2045
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2011-10-01",
+      "domestic_ars_thousands": 68163.0,
+      "foreign_ars_thousands": 4.2355,
+      "total_ars_thousands": 68167.2355
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2011-11-01",
+      "domestic_ars_thousands": 23415.0,
+      "foreign_ars_thousands": 4.2807,
+      "total_ars_thousands": 23419.2807
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2011-12-01",
+      "domestic_ars_thousands": 45688.0,
+      "foreign_ars_thousands": 21.516000000000002,
+      "total_ars_thousands": 45709.516
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2012-01-01",
+      "domestic_ars_thousands": 206155.0,
+      "foreign_ars_thousands": 4.3362,
+      "total_ars_thousands": 206159.3362
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2012-02-01",
+      "domestic_ars_thousands": 261820.0,
+      "foreign_ars_thousands": 4.3565,
+      "total_ars_thousands": 261824.3565
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2012-03-01",
+      "domestic_ars_thousands": 263351.0,
+      "foreign_ars_thousands": 4.3785,
+      "total_ars_thousands": 263355.3785
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2012-04-01",
+      "domestic_ars_thousands": 845206.0,
+      "foreign_ars_thousands": 4.4148,
+      "total_ars_thousands": 845210.4148
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2012-05-01",
+      "domestic_ars_thousands": 924304.0,
+      "foreign_ars_thousands": 22.3565,
+      "total_ars_thousands": 924326.3565
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2012-06-01",
+      "domestic_ars_thousands": 992644.0,
+      "foreign_ars_thousands": 4.5253,
+      "total_ars_thousands": 992648.5253
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2012-07-01",
+      "domestic_ars_thousands": 969897.0,
+      "foreign_ars_thousands": 4.5833,
+      "total_ars_thousands": 969901.5833
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2012-08-01",
+      "domestic_ars_thousands": 1068755.0,
+      "foreign_ars_thousands": 23.173499999999997,
+      "total_ars_thousands": 1068778.1735
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2012-09-01",
+      "domestic_ars_thousands": 1137360.0,
+      "foreign_ars_thousands": 4.6942,
+      "total_ars_thousands": 1137364.6942
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2012-10-01",
+      "domestic_ars_thousands": 1170069.0,
+      "foreign_ars_thousands": 81.01350000000001,
+      "total_ars_thousands": 1170150.0135
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2012-11-01",
+      "domestic_ars_thousands": 1086134.0,
+      "foreign_ars_thousands": 8783.0146,
+      "total_ars_thousands": 1094917.0146
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2012-12-01",
+      "domestic_ars_thousands": 1088458.0,
+      "foreign_ars_thousands": 7941.4395,
+      "total_ars_thousands": 1096399.4395
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2013-01-01",
+      "domestic_ars_thousands": 1120823.0,
+      "foreign_ars_thousands": 8002.694399999999,
+      "total_ars_thousands": 1128825.6944
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2013-02-01",
+      "domestic_ars_thousands": 1171149.0,
+      "foreign_ars_thousands": 9140.59776,
+      "total_ars_thousands": 1180289.59776
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2013-03-01",
+      "domestic_ars_thousands": 1176000.0,
+      "foreign_ars_thousands": 7611.7378,
+      "total_ars_thousands": 1183611.7378
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2013-04-01",
+      "domestic_ars_thousands": 1299294.0,
+      "foreign_ars_thousands": 7718.976000000001,
+      "total_ars_thousands": 1307012.976
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2013-05-01",
+      "domestic_ars_thousands": 1254438.0,
+      "foreign_ars_thousands": 13425.8817,
+      "total_ars_thousands": 1267863.8817
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2013-06-01",
+      "domestic_ars_thousands": 1270200.0,
+      "foreign_ars_thousands": 13683.7932,
+      "total_ars_thousands": 1283883.7932
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2013-07-01",
+      "domestic_ars_thousands": 1309604.0,
+      "foreign_ars_thousands": 13992.0165,
+      "total_ars_thousands": 1323596.0165
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2013-08-01",
+      "domestic_ars_thousands": 1152927.0,
+      "foreign_ars_thousands": 277.89369999999997,
+      "total_ars_thousands": 1153204.8937
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2013-09-01",
+      "domestic_ars_thousands": 1200861.0,
+      "foreign_ars_thousands": 289.575,
+      "total_ars_thousands": 1201150.575
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2013-10-01",
+      "domestic_ars_thousands": 1285191.0,
+      "foreign_ars_thousands": 289.6292,
+      "total_ars_thousands": 1285480.6292
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2013-11-01",
+      "domestic_ars_thousands": 1271640.0,
+      "foreign_ars_thousands": 325.208,
+      "total_ars_thousands": 1271965.208
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2013-12-01",
+      "domestic_ars_thousands": 1175975.0,
+      "foreign_ars_thousands": 312.864,
+      "total_ars_thousands": 1176287.864
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2014-01-01",
+      "domestic_ars_thousands": 1317175.0,
+      "foreign_ars_thousands": 384.8736,
+      "total_ars_thousands": 1317559.8736
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2014-02-01",
+      "domestic_ars_thousands": 1410585.0,
+      "foreign_ars_thousands": 386.0318,
+      "total_ars_thousands": 1410971.0318
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2014-03-01",
+      "domestic_ars_thousands": 1487678.0,
+      "foreign_ars_thousands": 392.4802,
+      "total_ars_thousands": 1488070.4802
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2014-04-01",
+      "domestic_ars_thousands": 1583106.0,
+      "foreign_ars_thousands": 392.0735,
+      "total_ars_thousands": 1583498.0735
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2014-05-01",
+      "domestic_ars_thousands": 1604938.0,
+      "foreign_ars_thousands": 7980.7676,
+      "total_ars_thousands": 1612918.7676
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2014-06-01",
+      "domestic_ars_thousands": 1784831.0,
+      "foreign_ars_thousands": 8026.9749,
+      "total_ars_thousands": 1792857.9749
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2014-07-01",
+      "domestic_ars_thousands": 1809400.0,
+      "foreign_ars_thousands": 8103.4674,
+      "total_ars_thousands": 1817503.4674
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2014-08-01",
+      "domestic_ars_thousands": 1872450.0,
+      "foreign_ars_thousands": 8294.748,
+      "total_ars_thousands": 1880744.748
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2014-09-01",
+      "domestic_ars_thousands": 1956394.0,
+      "foreign_ars_thousands": 8379.657,
+      "total_ars_thousands": 1964773.657
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2014-10-01",
+      "domestic_ars_thousands": 1972824.0,
+      "foreign_ars_thousands": 8425.7793,
+      "total_ars_thousands": 1981249.7793
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2014-11-01",
+      "domestic_ars_thousands": 2036482.0,
+      "foreign_ars_thousands": 15968.261499999999,
+      "total_ars_thousands": 2052450.2615
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2014-12-01",
+      "domestic_ars_thousands": 1976956.0,
+      "foreign_ars_thousands": 461.808,
+      "total_ars_thousands": 1977417.808
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2015-01-01",
+      "domestic_ars_thousands": 2386427.0,
+      "foreign_ars_thousands": 466.533,
+      "total_ars_thousands": 2386893.533
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2015-02-01",
+      "domestic_ars_thousands": 2438204.0,
+      "foreign_ars_thousands": 471.1122,
+      "total_ars_thousands": 2438675.1122
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2015-03-01",
+      "domestic_ars_thousands": 2364694.0,
+      "foreign_ars_thousands": 476.26379999999995,
+      "total_ars_thousands": 2365170.2638
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2015-04-01",
+      "domestic_ars_thousands": 2528285.0,
+      "foreign_ars_thousands": 471.9491,
+      "total_ars_thousands": 2528756.9491
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2015-05-01",
+      "domestic_ars_thousands": 2644058.0,
+      "foreign_ars_thousands": 8324.0918,
+      "total_ars_thousands": 2652382.0918
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2015-06-01",
+      "domestic_ars_thousands": 2760506.0,
+      "foreign_ars_thousands": 8414.098999999998,
+      "total_ars_thousands": 2768920.099
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2015-07-01",
+      "domestic_ars_thousands": 2857761.0,
+      "foreign_ars_thousands": 8507.4398,
+      "total_ars_thousands": 2866268.4398
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2015-08-01",
+      "domestic_ars_thousands": 2876863.0,
+      "foreign_ars_thousands": 8607.633,
+      "total_ars_thousands": 2885470.633
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2015-09-01",
+      "domestic_ars_thousands": 2733542.0,
+      "foreign_ars_thousands": 8646.8256,
+      "total_ars_thousands": 2742188.8256
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2015-10-01",
+      "domestic_ars_thousands": 2469862.0,
+      "foreign_ars_thousands": 8763.228,
+      "total_ars_thousands": 2478625.228
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2015-11-01",
+      "domestic_ars_thousands": 2461907.0,
+      "foreign_ars_thousands": 17157.448,
+      "total_ars_thousands": 2479064.448
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2015-12-01",
+      "domestic_ars_thousands": 2407518.0,
+      "foreign_ars_thousands": 23031.855000000003,
+      "total_ars_thousands": 2430549.855
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2016-01-01",
+      "domestic_ars_thousands": 2557842.0,
+      "foreign_ars_thousands": 24623.984,
+      "total_ars_thousands": 2582465.984
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2016-02-01",
+      "domestic_ars_thousands": 2752557.0,
+      "foreign_ars_thousands": 27599.618199999997,
+      "total_ars_thousands": 2780156.6182
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2016-03-01",
+      "domestic_ars_thousands": 2844855.0,
+      "foreign_ars_thousands": 25824.1907,
+      "total_ars_thousands": 2870679.1907
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2016-04-01",
+      "domestic_ars_thousands": 3011223.0,
+      "foreign_ars_thousands": 25251.2722,
+      "total_ars_thousands": 3036474.2722
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2016-05-01",
+      "domestic_ars_thousands": 3204196.0,
+      "foreign_ars_thousands": 36404.9946,
+      "total_ars_thousands": 3240600.9946
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2016-06-01",
+      "domestic_ars_thousands": 3569129.0,
+      "foreign_ars_thousands": 38747.24,
+      "total_ars_thousands": 3607876.24
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2016-07-01",
+      "domestic_ars_thousands": 3850541.0,
+      "foreign_ars_thousands": 39116.22,
+      "total_ars_thousands": 3889657.22
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2016-08-01",
+      "domestic_ars_thousands": 3901120.0,
+      "foreign_ars_thousands": 38697.3776,
+      "total_ars_thousands": 3939817.3776
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2016-09-01",
+      "domestic_ars_thousands": 3119896.0,
+      "foreign_ars_thousands": 39623.5268,
+      "total_ars_thousands": 3159519.5268
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2016-10-01",
+      "domestic_ars_thousands": 3145002.0,
+      "foreign_ars_thousands": 39408.1765,
+      "total_ars_thousands": 3184410.1765
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2016-11-01",
+      "domestic_ars_thousands": 3231599.0,
+      "foreign_ars_thousands": 41654.4018,
+      "total_ars_thousands": 3273253.4018
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2016-12-01",
+      "domestic_ars_thousands": 3325217.0,
+      "foreign_ars_thousands": 41448.273,
+      "total_ars_thousands": 3366665.273
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2017-01-01",
+      "domestic_ars_thousands": 3632352.0,
+      "foreign_ars_thousands": 41609.095499999996,
+      "total_ars_thousands": 3673961.0955
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2017-02-01",
+      "domestic_ars_thousands": 3741004.0,
+      "foreign_ars_thousands": 40198.455,
+      "total_ars_thousands": 3781202.455
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2017-03-01",
+      "domestic_ars_thousands": 3983503.0,
+      "foreign_ars_thousands": 40223.407,
+      "total_ars_thousands": 4023726.407
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2017-04-01",
+      "domestic_ars_thousands": 3896547.0,
+      "foreign_ars_thousands": 38335.598,
+      "total_ars_thousands": 3934882.598
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2017-05-01",
+      "domestic_ars_thousands": 3930877.0,
+      "foreign_ars_thousands": 40080.585999999996,
+      "total_ars_thousands": 3970957.586
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2017-06-01",
+      "domestic_ars_thousands": 4120745.0,
+      "foreign_ars_thousands": 38143.353,
+      "total_ars_thousands": 4158888.353
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2017-07-01",
+      "domestic_ars_thousands": 4031335.0,
+      "foreign_ars_thousands": 40552.65,
+      "total_ars_thousands": 4071887.65
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2017-08-01",
+      "domestic_ars_thousands": 4171569.0,
+      "foreign_ars_thousands": 35407.23499999999,
+      "total_ars_thousands": 4206976.235
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2017-09-01",
+      "domestic_ars_thousands": 4104055.0,
+      "foreign_ars_thousands": 38048.305100000005,
+      "total_ars_thousands": 4142103.3051
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2017-10-01",
+      "domestic_ars_thousands": 4151296.0,
+      "foreign_ars_thousands": 38770.8322,
+      "total_ars_thousands": 4190066.8322
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2017-11-01",
+      "domestic_ars_thousands": 4411140.0,
+      "foreign_ars_thousands": 40436.347,
+      "total_ars_thousands": 4451576.347
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2017-12-01",
+      "domestic_ars_thousands": 4549453.0,
+      "foreign_ars_thousands": 41228.1432,
+      "total_ars_thousands": 4590681.1432
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2018-01-01",
+      "domestic_ars_thousands": 5418501.0,
+      "foreign_ars_thousands": 43117.585,
+      "total_ars_thousands": 5461618.585
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2018-02-01",
+      "domestic_ars_thousands": 5497110.0,
+      "foreign_ars_thousands": 36126.53999999999,
+      "total_ars_thousands": 5533236.54
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2018-03-01",
+      "domestic_ars_thousands": 5330496.0,
+      "foreign_ars_thousands": 36137.0802,
+      "total_ars_thousands": 5366633.0802
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2018-04-01",
+      "domestic_ars_thousands": 5718103.0,
+      "foreign_ars_thousands": 37182.9849,
+      "total_ars_thousands": 5755285.9849
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2018-05-01",
+      "domestic_ars_thousands": 5734495.0,
+      "foreign_ars_thousands": 46452.245,
+      "total_ars_thousands": 5780947.245
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2018-06-01",
+      "domestic_ars_thousands": 5690428.0,
+      "foreign_ars_thousands": 53798.2088,
+      "total_ars_thousands": 5744226.2088
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2018-07-01",
+      "domestic_ars_thousands": 6063525.0,
+      "foreign_ars_thousands": 48150.1425,
+      "total_ars_thousands": 6111675.1425
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2018-08-01",
+      "domestic_ars_thousands": 6200639.0,
+      "foreign_ars_thousands": 65080.125,
+      "total_ars_thousands": 6265719.125
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2018-09-01",
+      "domestic_ars_thousands": 6679886.0,
+      "foreign_ars_thousands": 71814.6052,
+      "total_ars_thousands": 6751700.6052
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2018-10-01",
+      "domestic_ars_thousands": 7286970.0,
+      "foreign_ars_thousands": 61208.6197,
+      "total_ars_thousands": 7348178.6197
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2018-11-01",
+      "domestic_ars_thousands": 7338237.0,
+      "foreign_ars_thousands": 61709.2191,
+      "total_ars_thousands": 7399946.2191
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2018-12-01",
+      "domestic_ars_thousands": 5640023.0,
+      "foreign_ars_thousands": 68508.63960000001,
+      "total_ars_thousands": 5708531.6396
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2019-01-01",
+      "domestic_ars_thousands": 7043169.0,
+      "foreign_ars_thousands": 67144.45499999999,
+      "total_ars_thousands": 7110313.455
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2019-02-01",
+      "domestic_ars_thousands": 6685945.0,
+      "foreign_ars_thousands": 70703.9179,
+      "total_ars_thousands": 6756648.9179
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2019-03-01",
+      "domestic_ars_thousands": 7399715.0,
+      "foreign_ars_thousands": 79423.2456,
+      "total_ars_thousands": 7479138.2456
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2019-04-01",
+      "domestic_ars_thousands": 6640538.0,
+      "foreign_ars_thousands": 581988.24,
+      "total_ars_thousands": 7222526.24
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2019-05-01",
+      "domestic_ars_thousands": 6960752.0,
+      "foreign_ars_thousands": 648147.1499999999,
+      "total_ars_thousands": 7608899.15
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2019-06-01",
+      "domestic_ars_thousands": 7186103.0,
+      "foreign_ars_thousands": 1817423.9645000002,
+      "total_ars_thousands": 9003526.9645
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2019-07-01",
+      "domestic_ars_thousands": 7739302.0,
+      "foreign_ars_thousands": 122833.76,
+      "total_ars_thousands": 7862135.76
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2019-08-01",
+      "domestic_ars_thousands": 7622558.0,
+      "foreign_ars_thousands": 502964.55000000005,
+      "total_ars_thousands": 8125522.55
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2019-09-01",
+      "domestic_ars_thousands": 8181630.0,
+      "foreign_ars_thousands": 1065807.0411,
+      "total_ars_thousands": 9247437.0411
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2019-10-01",
+      "domestic_ars_thousands": 6750194.0,
+      "foreign_ars_thousands": 1793174.7141,
+      "total_ars_thousands": 8543368.7141
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2019-11-01",
+      "domestic_ars_thousands": 7304610.0,
+      "foreign_ars_thousands": 4064897.6599000003,
+      "total_ars_thousands": 11369507.6599
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2019-12-01",
+      "domestic_ars_thousands": 5552855.0,
+      "foreign_ars_thousands": 3846816.27,
+      "total_ars_thousands": 9399671.27
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2020-01-01",
+      "domestic_ars_thousands": 7179948.0,
+      "foreign_ars_thousands": 3785119.1568,
+      "total_ars_thousands": 10965067.1568
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2020-02-01",
+      "domestic_ars_thousands": 7417242.0,
+      "foreign_ars_thousands": 3712884.48,
+      "total_ars_thousands": 11130126.48
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2020-03-01",
+      "domestic_ars_thousands": 7221837.0,
+      "foreign_ars_thousands": 3134001.0564,
+      "total_ars_thousands": 10355838.056400001
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2020-04-01",
+      "domestic_ars_thousands": 6219540.0,
+      "foreign_ars_thousands": 2960857.3349999995,
+      "total_ars_thousands": 9180397.334999999
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2020-05-01",
+      "domestic_ars_thousands": 7162144.0,
+      "foreign_ars_thousands": 3026437.065,
+      "total_ars_thousands": 10188581.065
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2020-06-01",
+      "domestic_ars_thousands": 7260536.0,
+      "foreign_ars_thousands": 3114886.005,
+      "total_ars_thousands": 10375422.004999999
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2020-07-01",
+      "domestic_ars_thousands": 7497267.0,
+      "foreign_ars_thousands": 2942641.98,
+      "total_ars_thousands": 10439908.98
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2020-08-01",
+      "domestic_ars_thousands": 8084076.0,
+      "foreign_ars_thousands": 3249384.225,
+      "total_ars_thousands": 11333460.225
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2020-09-01",
+      "domestic_ars_thousands": 8255800.0,
+      "foreign_ars_thousands": 3122032.375,
+      "total_ars_thousands": 11377832.375
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2020-10-01",
+      "domestic_ars_thousands": 8756622.0,
+      "foreign_ars_thousands": 3161486.8446,
+      "total_ars_thousands": 11918108.8446
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2020-11-01",
+      "domestic_ars_thousands": 9300021.0,
+      "foreign_ars_thousands": 3262273.9776,
+      "total_ars_thousands": 12562294.9776
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2020-12-01",
+      "domestic_ars_thousands": 8439107.0,
+      "foreign_ars_thousands": 2913015.755,
+      "total_ars_thousands": 11352122.754999999
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2021-01-01",
+      "domestic_ars_thousands": 7343215.0,
+      "foreign_ars_thousands": 3253433.0444,
+      "total_ars_thousands": 10596648.0444
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2021-02-01",
+      "domestic_ars_thousands": 8155158.0,
+      "foreign_ars_thousands": 3163995.8000000003,
+      "total_ars_thousands": 11319153.8
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2021-03-01",
+      "domestic_ars_thousands": 8611397.0,
+      "foreign_ars_thousands": 2871495.745,
+      "total_ars_thousands": 11482892.745000001
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2021-04-01",
+      "domestic_ars_thousands": 9040930.0,
+      "foreign_ars_thousands": 2764550.25,
+      "total_ars_thousands": 11805480.25
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2021-05-01",
+      "domestic_ars_thousands": 10361608.0,
+      "foreign_ars_thousands": 2648907.56,
+      "total_ars_thousands": 13010515.56
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2021-06-01",
+      "domestic_ars_thousands": 9890782.0,
+      "foreign_ars_thousands": 2657277.4653,
+      "total_ars_thousands": 12548059.4653
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2021-07-01",
+      "domestic_ars_thousands": 10143693.0,
+      "foreign_ars_thousands": 674474.56,
+      "total_ars_thousands": 10818167.56
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2021-08-01",
+      "domestic_ars_thousands": 10797754.0,
+      "foreign_ars_thousands": 809384.076,
+      "total_ars_thousands": 11607138.076
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2021-09-01",
+      "domestic_ars_thousands": 11060589.0,
+      "foreign_ars_thousands": 188386.38,
+      "total_ars_thousands": 11248975.38
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2021-10-01",
+      "domestic_ars_thousands": 10977085.0,
+      "foreign_ars_thousands": 190568.1687,
+      "total_ars_thousands": 11167653.1687
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2021-11-01",
+      "domestic_ars_thousands": 12988020.0,
+      "foreign_ars_thousands": 192968.6,
+      "total_ars_thousands": 13180988.6
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2021-12-01",
+      "domestic_ars_thousands": 10426362.0,
+      "foreign_ars_thousands": 196355.25,
+      "total_ars_thousands": 10622717.25
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2022-01-01",
+      "domestic_ars_thousands": 10267551.0,
+      "foreign_ars_thousands": 200683.665,
+      "total_ars_thousands": 10468234.665
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2022-02-01",
+      "domestic_ars_thousands": 11060950.0,
+      "foreign_ars_thousands": 205213.647,
+      "total_ars_thousands": 11266163.647
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2022-03-01",
+      "domestic_ars_thousands": 10370516.0,
+      "foreign_ars_thousands": 211968.553,
+      "total_ars_thousands": 10582484.553
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2022-04-01",
+      "domestic_ars_thousands": 11750167.0,
+      "foreign_ars_thousands": 220245.347,
+      "total_ars_thousands": 11970412.347
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2022-05-01",
+      "domestic_ars_thousands": 14246789.0,
+      "foreign_ars_thousands": 229388.68529999998,
+      "total_ars_thousands": 14476177.6853
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2022-06-01",
+      "domestic_ars_thousands": 13840501.0,
+      "foreign_ars_thousands": 248050.915,
+      "total_ars_thousands": 14088551.915
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2022-07-01",
+      "domestic_ars_thousands": 14936338.0,
+      "foreign_ars_thousands": 260091.31939999998,
+      "total_ars_thousands": 15196429.3194
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2022-08-01",
+      "domestic_ars_thousands": 16596870.0,
+      "foreign_ars_thousands": 274791.04730000003,
+      "total_ars_thousands": 16871661.0473
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2022-09-01",
+      "domestic_ars_thousands": 20435082.0,
+      "foreign_ars_thousands": 291978.33,
+      "total_ars_thousands": 20727060.33
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2022-10-01",
+      "domestic_ars_thousands": 13420220.0,
+      "foreign_ars_thousands": 310965.89,
+      "total_ars_thousands": 13731185.89
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2022-11-01",
+      "domestic_ars_thousands": 14399974.0,
+      "foreign_ars_thousands": 331499.41,
+      "total_ars_thousands": 14731473.41
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2022-12-01",
+      "domestic_ars_thousands": 14896634.0,
+      "foreign_ars_thousands": 351068.2906,
+      "total_ars_thousands": 15247702.2906
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2023-01-01",
+      "domestic_ars_thousands": 18963173.0,
+      "foreign_ars_thousands": 370386.25,
+      "total_ars_thousands": 19333559.25
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2023-02-01",
+      "domestic_ars_thousands": 20610428.0,
+      "foreign_ars_thousands": 36276.2072,
+      "total_ars_thousands": 20646704.2072
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2023-03-01",
+      "domestic_ars_thousands": 24743443.0,
+      "foreign_ars_thousands": 38453.847200000004,
+      "total_ars_thousands": 24781896.8472
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2023-04-01",
+      "domestic_ars_thousands": 22941296.0,
+      "foreign_ars_thousands": 38060.325,
+      "total_ars_thousands": 22979356.325
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2023-05-01",
+      "domestic_ars_thousands": 26845527.0,
+      "foreign_ars_thousands": 26086.425,
+      "total_ars_thousands": 26871613.425
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2023-06-01",
+      "domestic_ars_thousands": 31054186.0,
+      "foreign_ars_thousands": 27977.575,
+      "total_ars_thousands": 31082163.575
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2023-07-01",
+      "domestic_ars_thousands": 32122314.0,
+      "foreign_ars_thousands": 29730.5964,
+      "total_ars_thousands": 32152044.5964
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2023-08-01",
+      "domestic_ars_thousands": 36712289.0,
+      "foreign_ars_thousands": 38151.8203,
+      "total_ars_thousands": 36750440.8203
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2023-09-01",
+      "domestic_ars_thousands": 36081308.0,
+      "foreign_ars_thousands": 34300.8134,
+      "total_ars_thousands": 36115608.8134
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2023-10-01",
+      "domestic_ars_thousands": 41851566.0,
+      "foreign_ars_thousands": 38150.9047,
+      "total_ars_thousands": 41889716.9047
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2023-11-01",
+      "domestic_ars_thousands": 42884944.0,
+      "foreign_ars_thousands": 38576.174999999996,
+      "total_ars_thousands": 42923520.175
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2023-12-01",
+      "domestic_ars_thousands": 55424123.0,
+      "foreign_ars_thousands": 87316.1964,
+      "total_ars_thousands": 55511439.1964
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2024-01-01",
+      "domestic_ars_thousands": 33457731.0,
+      "foreign_ars_thousands": 91713.75,
+      "total_ars_thousands": 33549444.75
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2024-02-01",
+      "domestic_ars_thousands": 36303427.0,
+      "foreign_ars_thousands": 92647.5,
+      "total_ars_thousands": 36396074.5
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2024-03-01",
+      "domestic_ars_thousands": 34922624.0,
+      "foreign_ars_thousands": 95173.2537,
+      "total_ars_thousands": 35017797.2537
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2024-04-01",
+      "domestic_ars_thousands": 43848068.0,
+      "foreign_ars_thousands": 97319.25,
+      "total_ars_thousands": 43945387.25
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2024-05-01",
+      "domestic_ars_thousands": 48449320.0,
+      "foreign_ars_thousands": 99372.75,
+      "total_ars_thousands": 48548692.75
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2024-06-01",
+      "domestic_ars_thousands": 55970891.0,
+      "foreign_ars_thousands": 101204.25,
+      "total_ars_thousands": 56072095.25
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2024-07-01",
+      "domestic_ars_thousands": 57805793.0,
+      "foreign_ars_thousands": 98871.5,
+      "total_ars_thousands": 57904664.5
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2024-08-01",
+      "domestic_ars_thousands": 60955667.0,
+      "foreign_ars_thousands": 121009.8291,
+      "total_ars_thousands": 61076676.8291
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2024-09-01",
+      "domestic_ars_thousands": 67575491.0,
+      "foreign_ars_thousands": 113597.2539,
+      "total_ars_thousands": 67689088.2539
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2024-10-01",
+      "domestic_ars_thousands": 79382879.0,
+      "foreign_ars_thousands": 115917.75,
+      "total_ars_thousands": 79498796.75
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2024-11-01",
+      "domestic_ars_thousands": 71324977.0,
+      "foreign_ars_thousands": 109269.0,
+      "total_ars_thousands": 71434246.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2024-12-01",
+      "domestic_ars_thousands": 73906433.0,
+      "foreign_ars_thousands": 111510.0,
+      "total_ars_thousands": 74017943.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2025-01-01",
+      "domestic_ars_thousands": 75586822.0,
+      "foreign_ars_thousands": 113778.0,
+      "total_ars_thousands": 75700600.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2025-02-01",
+      "domestic_ars_thousands": 85827149.0,
+      "foreign_ars_thousands": 114952.5,
+      "total_ars_thousands": 85942101.5
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2025-03-01",
+      "domestic_ars_thousands": 92514012.0,
+      "foreign_ars_thousands": 114904.625,
+      "total_ars_thousands": 92628916.625
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2025-04-01",
+      "domestic_ars_thousands": 115069131.0,
+      "foreign_ars_thousands": 127748.0,
+      "total_ars_thousands": 115196879.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2025-05-01",
+      "domestic_ars_thousands": 131595886.0,
+      "foreign_ars_thousands": 107579.7,
+      "total_ars_thousands": 131703465.7
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2025-06-01",
+      "domestic_ars_thousands": 177466459.0,
+      "foreign_ars_thousands": 108661.5803,
+      "total_ars_thousands": 177575120.5803
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2025-07-01",
+      "domestic_ars_thousands": 171108031.0,
+      "foreign_ars_thousands": 124368.6636,
+      "total_ars_thousands": 171232399.6636
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2025-08-01",
+      "domestic_ars_thousands": 183788562.0,
+      "foreign_ars_thousands": 123116.4969,
+      "total_ars_thousands": 183911678.4969
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2025-09-01",
+      "domestic_ars_thousands": 203420024.0,
+      "foreign_ars_thousands": 128458.8302,
+      "total_ars_thousands": 203548482.8302
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2025-10-01",
+      "domestic_ars_thousands": 217792081.0,
+      "foreign_ars_thousands": 137085.0,
+      "total_ars_thousands": 217929166.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2025-11-01",
+      "domestic_ars_thousands": 224934715.0,
+      "foreign_ars_thousands": 139272.0,
+      "total_ars_thousands": 225073987.0
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2025-12-01",
+      "domestic_ars_thousands": 216941313.0,
+      "foreign_ars_thousands": 129888.0863,
+      "total_ars_thousands": 217071201.0863
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2026-01-01",
+      "domestic_ars_thousands": 188509784.0,
+      "foreign_ars_thousands": 5784872.1372,
+      "total_ars_thousands": 194294656.1372
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2026-02-01",
+      "domestic_ars_thousands": 212946078.0,
+      "foreign_ars_thousands": 18143257.757400002,
+      "total_ars_thousands": 231089335.7574
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2026-03-01",
+      "domestic_ars_thousands": 215575707.0,
+      "foreign_ars_thousands": 18964523.227,
+      "total_ars_thousands": 234540230.227
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2026-04-01",
+      "domestic_ars_thousands": 332019226.0,
+      "foreign_ars_thousands": 9858258.9652,
+      "total_ars_thousands": 341877484.9652
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2026-05-01",
+      "domestic_ars_thousands": 249234453.0,
+      "foreign_ars_thousands": 10032805.9056,
+      "total_ars_thousands": 259267258.9056
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2026-06-01",
+      "domestic_ars_thousands": 328856620.0,
+      "foreign_ars_thousands": 13347.1782,
+      "total_ars_thousands": 328869967.1782
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2026-07-01",
+      "domestic_ars_thousands": 475895852.0,
+      "foreign_ars_thousands": 13396.0779,
+      "total_ars_thousands": 475909248.0779
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2026-08-01",
+      "domestic_ars_thousands": 389162860.0,
+      "foreign_ars_thousands": 43774.5894,
+      "total_ars_thousands": 389206634.5894
+    },
+    {
+      "province_id": "rio_negro",
+      "date": "2026-09-01",
+      "domestic_ars_thousands": 531333617.0,
+      "foreign_ars_thousands": 30350.417999999998,
+      "total_ars_thousands": 531363967.418
     }
   ],
   "source_url": "https://www.bcra.gob.ar/archivos/Pdfs/PublicacionesEstadisticas/perser_pub.xls"

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T21:46:32-03:00",
+  "generated_at": "2026-11-13T15:56:56-03:00",
   "schema_version": "1.2.0",
   "sources": [
     {
@@ -22,9 +22,9 @@
     },
     {
       "path": "E:\\bkpdante26\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\macro\\depositos_provinciales_mensual.json",
-      "size": 335171,
-      "modified": "2026-11-10T21:36:26",
-      "sha256": "c9a5fdd035c460bf906b6f9b9346229666c6a88e979c3bf38eee023539a080bd"
+      "size": 388330,
+      "modified": "2026-11-13T15:56:22",
+      "sha256": "2cd1feb1b68d4373ddeaf99fde62f54b08d9a7385df2db45cfc7a2803e69da64"
     },
     {
       "path": "E:\\bkpdante26\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\santa_fe_20260814_213940\\santa_fe_data.sqlite",
@@ -75,6 +75,18 @@
       "sha256": "37d2f27954099ffb45db2abc7ebe226963f5c69138cd74e9243dca92616a218c"
     },
     {
+      "path": "E:\\bkpdante26\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\rio_negro_20261113\\rio_negro_data.sqlite",
+      "size": 9887744,
+      "modified": "2026-11-13T15:56:55",
+      "sha256": "676218c7369dd76cd18f709bae74c304698d9d8a8632ff0a61c79e33c341e688"
+    },
+    {
+      "path": "E:\\bkpdante26\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\rio_negro_20261113\\deuda_flotante.csv",
+      "size": 34827,
+      "modified": "2026-11-13T15:56:56",
+      "sha256": "5d3164ecfbfe9ca67a8911b1a0ad04d812573e098eed1563d41d14dc31b2637c"
+    },
+    {
       "path": "E:\\bkpdante26\\Documentos\\Trabajo\\Analisis Provincias\\WEB\\data\\fuentes_congeladas\\entre_rios_20261109\\entre_rios_data.sqlite",
       "size": 4321280,
       "modified": "2026-11-09T23:16:50",
@@ -107,6 +119,11 @@
       "name": "Córdoba",
       "latest_period": "2026Q2",
       "period_count": 76
+    },
+    "rio_negro": {
+      "name": "Río Negro",
+      "latest_period": "2026Q2",
+      "period_count": 55
     },
     "entre_rios": {
       "name": "Entre Ríos",

@@ -11,6 +11,7 @@ from actualizar_datos import (
     load_santa_fe_debt, load_monthly_macro, norm_text, period_month_key, readonly_connection, trailing_periods,
 )
 from puente_provincial import BASE, quarter
+from generar_rio_negro_puente import FLOW_FIELDS, NATIVE as RIO_NEGRO_DB, STOCK as RIO_NEGRO_STOCK
 
 
 def clean(label):
@@ -276,6 +277,87 @@ def neuquen_debt(spec, output):
     emit_debt_flows(output, accumulated)
 
 
+def rio_negro_detail(db, output):
+    constructions = {"Trim": "trimestral", "Periodo": "mensual", "Acumulado": "acumulado"}
+    for row in db.execute("""
+        SELECT * FROM series_fiscales WHERE serie IN ('Trim','Periodo','Acumulado')
+        ORDER BY periodo, nivel, rowid
+    """):
+        basis = "dev" if row["base"] == "Devengado" else "caja"
+        label = clean(row["concepto"])
+        occurrence = row["concepto_id"].rsplit("|", 1)[-1]
+        if occurrence.isdecimal() and int(occurrence) > 1:
+            label += f" ({occurrence})"
+        path = tuple(filter(None, map(clean, (row["grupo"] or "").split(" > ")))) + (label,)
+        put(output, "APNOF_" + basis, row["periodo"], path, row["valor_millones_ars"], constructions[row["serie"]])
+
+    def stock_token(value):
+        return re.sub(r"[^A-Z0-9]", "", norm_text(value))
+
+    groups = defaultdict(list)
+    for row in db.execute(RIO_NEGRO_STOCK + " ORDER BY s.periodo, s.grupo, s.nivel, s.rowid"):
+        groups[row["periodo"], row["grupo"]].append(row)
+    for (month, origin), rows in groups.items():
+        subtotal = {tuple(r["concepto_id"].split("|")[2:]): clean(r["concepto"])
+                    for r in rows if r["nivel"] == 2}
+        seen = defaultdict(int)
+        for row in rows:
+            key = row["concepto_id"].split("|")
+            label = clean(row["concepto"])
+            if row["nivel"] == 1:
+                path = (origin,)
+            elif row["nivel"] == 2:
+                category, subgroup = key[2:]
+                category_label = subtotal.get((category, category), category)
+                path = (origin, category_label) if category == subgroup else (origin, category_label, label)
+            else:
+                category, subgroup = key[1:3]
+                if category == "LETRASDECORTOPLAZOFUERADELTOTAL":
+                    # Sibling of the reported Anexo II total, not part of it.
+                    path = ("Anexo II: letras fuera del total", label)
+                else:
+                    match = next((token for token in (category, "1" + category)
+                                  if (token, token) in subtotal), category)
+                    category_label = subtotal.get((match, match), clean(row["emisor"]) or category)
+                    subgroup_label = subtotal.get((match, subgroup), clean(row["subgrupo"]))
+                    subgroup_path = (subgroup_label,) if subgroup_label and stock_token(subgroup_label) != stock_token(category_label) else ()
+                    path = (origin, category_label, *subgroup_path, label)
+            if row["nivel"] == 2 and key[2] == "LETRASDECORTOPLAZO":
+                if key[3] != key[2]:
+                    continue
+                path = ("Anexo II: letras fuera del total",)
+            if row["nivel"] == 3:
+                seen[path] += 1
+                if seen[path] > 1:
+                    path = (*path[:-1], f"{path[-1]} ({seen[path]})")
+            value = row["valor_millones_ars"]
+            put(output, "stock", month, path, value, "mensual")
+            put(output, "stock", quarter(month), path, value)
+
+    hierarchy = {}
+    siblings = defaultdict(int)
+    for row in db.execute("SELECT * FROM jerarquia_flujos_deuda WHERE origen='Anexo II' ORDER BY concepto_id"):
+        parent, label = row["concepto_superior_id"], clean(row["concepto"])
+        siblings[parent, label] += 1
+        index = siblings[parent, label]
+        hierarchy[row["concepto_id"]] = parent, label if index == 1 else f"{label} ({index})"
+
+    def flow_path(key):
+        parent, label = hierarchy[key]
+        return (*flow_path(parent), label) if parent else (label,)
+
+    paths = {key: flow_path(key) for key in hierarchy}
+    for row in db.execute("""
+        SELECT s.* FROM series_deuda s JOIN jerarquia_flujos_deuda h USING(concepto_id)
+        WHERE h.origen='Anexo II' AND s.serie IN ('Trim','Periodo','Acumulado')
+        ORDER BY s.periodo, h.nivel, s.rowid
+    """):
+        measure = FLOW_FIELDS.get(row["base"])
+        if measure:
+            put(output, measure, row["periodo"], paths[row["concepto_id"]],
+                row["valor_millones_ars"], constructions[row["serie"]])
+
+
 def add_accumulated(output):
     monthly_keys = [key for key in output if key.startswith("mensual|") and key != "mensual|stock"]
     for key in monthly_keys:
@@ -330,7 +412,10 @@ def build_details(config, macro, ipc):
     for province, spec in config["provinces"].items():
         output = defaultdict(lambda: defaultdict(dict))
         fx = {}
-        if province in {"mendoza", "cordoba", "entre_rios"}:
+        if province == "rio_negro":
+            with readonly_connection(RIO_NEGRO_DB) as db:
+                rio_negro_detail(db, output)
+        elif province in {"mendoza", "cordoba", "entre_rios"}:
             folder = {"mendoza": "Mendoza", "cordoba": "Cordoba", "entre_rios": "Entre Rios"}[province]
             with readonly_connection(BASE/folder/"database"/f"{province}_data.sqlite") as db:
                 if province == "mendoza":
